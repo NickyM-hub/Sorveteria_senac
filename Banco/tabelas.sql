@@ -72,3 +72,4 @@ CREATE TABLE produto_pedido(
     FOREIGN KEY (id_produto) REFERENCES tb_produto(id_produto),
     FOREIGN KEY (id_pedido) REFERENCES tb_pedido(id_pedido)
 );
+
