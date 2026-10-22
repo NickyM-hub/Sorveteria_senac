@@ -1,0 +1,177 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff9f2;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 12px 5%;
+}
+
+.voltar {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    background-color: white;
+    color: #e82b91;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 465px;
+    margin: 15px auto 0;
+}
+
+.etapas {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 13px;
+}
+
+.etapa {
+    min-width: 42px;
+    text-align: center;
+    color: #8d164f;
+}
+
+.etapa span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto 5px;
+    border: 1px solid #8d737d;
+    border-radius: 50%;
+    background-color: #fbe4ed;
+    color: #222;
+    font-size: 14px;
+}
+
+.etapa.ativa span {
+    background-color: #f12c9b;
+    color: white;
+    border-color: #f12c9b;
+}
+
+.etapa p {
+    font-size: 10px;
+}
+
+.linha {
+    width: 55px;
+    height: 1px;
+    margin-top: 12px;
+    background-color: #b9ada7;
+}
+
+.cartao {
+    width: 100%;
+    min-height: 266px;
+    padding: 21px 30px 32px;
+    border: 2px solid #168bff;
+    border-radius: 0 0 0 0;
+    background-color: white;
+    text-align: center;
+}
+
+.icone-email {
+    width: 41px;
+    height: 41px;
+    margin: 0 auto 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #fbd9e9;
+}
+
+.icone-email svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: #222;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cartao h1 {
+    margin-bottom: 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+}
+
+.descricao {
+    margin-bottom: 35px;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.cartao form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cartao input {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    outline: none;
+    font-size: 9px;
+}
+
+.cartao input:focus {
+    border-color: #f12c9b;
+}
+
+.cartao button {
+    width: 100%;
+    height: 33px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f12c9b;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.cartao button:hover {
+    background-color: #d91c85;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px 16px;
+    }
+
+    .container {
+        margin-top: 25px;
+    }
+
+    .cartao {
+        padding: 25px 18px;
+    }
+
+    .linha {
+        width: 35px;
+    }
+
+    .etapas {
+        gap: 6px;
+    }
+
+    .descricao {
+        margin-bottom: 28px;
+    }
+}

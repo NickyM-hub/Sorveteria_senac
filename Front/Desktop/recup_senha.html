@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recuperar senha - Sorveteria</title>
+
+    <link rel="stylesheet" href="recup_senha.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <a href="home.html" class="voltar">
+        ‹ Voltar ao Login
+    </a>
+
+    <main class="container">
+
+        <section class="etapas">
+            <div class="etapa ativa">
+                <span>1</span>
+                <p>E-mail</p>
+            </div>
+
+            <div class="linha"></div>
+
+            <div class="etapa">
+                <span>2</span>
+                <p>Código</p>
+            </div>
+
+            <div class="linha"></div>
+
+            <div class="etapa">
+                <span>3</span>
+                <p>Nova senha</p>
+            </div>
+        </section>
+
+        <section class="cartao">
+
+            <div class="icone-email">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="4"/>
+                    <path d="M3 6l9 7 9-7"/>
+                </svg>
+            </div>
+
+            <h1>Recuperar senha</h1>
+
+            <p class="descricao">
+                Digite seu e-mail para receber o código de recuperação.
+            </p>
+
+            <form action="" method="post">
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Digite seu e-mail cadastrado"
+                    autocomplete="email"
+                    required
+                >
+
+                <button type="submit">
+                    Enviar Código
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

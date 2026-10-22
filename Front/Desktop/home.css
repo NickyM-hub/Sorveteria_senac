@@ -1,0 +1,218 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 35px;
+    padding: 35px;
+    position: relative;
+    overflow: hidden;
+    background-color: #fffaf5;
+    border: 2px solid #168bff;
+}
+
+/* Círculos decorativos */
+
+.container::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background-color: #fbd9e6;
+    border-radius: 50%;
+    bottom: -115px;
+    left: -110px;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    background-color: #fbd9e6;
+    border-radius: 50%;
+    top: -100px;
+    right: -70px;
+}
+
+/* Logo */
+
+.Logotipo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.Logotipo img {
+    width: 110px;
+    height: auto;
+    object-fit: contain;
+}
+
+.Logotipo h1 {
+    margin-top: 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: bold;
+    transform: rotate(-8deg);
+}
+
+.slogan {
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+/* Formulário */
+
+.formulario {
+    width: 48%;
+    max-width: 420px;
+    min-height: 385px;
+    padding: 24px 28px;
+    background-color: #ffffff;
+    border: 1px solid #999;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.formulario h2 {
+    margin-bottom: 18px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+}
+
+.descricao {
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formulario form > input {
+    width: 100%;
+    height: 38px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    outline: none;
+    font-size: 12px;
+}
+
+.formulario form > input:focus {
+    border-color: #f12c9b;
+    box-shadow: 0 0 4px #f8b2d9;
+}
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.lembrar input {
+    accent-color: #f12c9b;
+}
+
+.env_dados {
+    width: 100%;
+    height: 38px;
+    margin-top: 20px;
+    background-color: #f12c9b;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.env_dados:hover {
+    background-color: #d91c85;
+}
+
+.esqueci,
+.cadastro {
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.esqueci {
+    color: #f12c9b;
+    margin-top: -12px;
+}
+
+.cadastro {
+    color: #222;
+    margin-top: 2px;
+}
+
+.esqueci:hover,
+.cadastro:hover {
+    text-decoration: underline;
+}
+
+/* Adaptação para celulares */
+
+@media (max-width: 700px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 18px;
+    }
+
+    .Logotipo {
+        width: 100%;
+    }
+
+    .Logotipo img {
+        width: 85px;
+    }
+
+    .Logotipo h1 {
+        font-size: 34px;
+    }
+
+    .slogan {
+        margin-top: 15px;
+    }
+
+    .formulario {
+        width: 100%;
+        max-width: 420px;
+        padding: 24px 20px;
+    }
+}

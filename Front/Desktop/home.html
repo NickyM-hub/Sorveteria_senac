@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sorveteria</title>
+
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <section class="Logotipo">
+            <img src="assets/Logo_Sorveteria.png" alt="Logo da Sorveteria">
+
+            <h1>Sorveteria</h1>
+            <p class="slogan">Mais sabor no seu dia!</p>
+        </section>
+
+        <section class="formulario" id="form_login">
+
+            <h2>Área Administrativa</h2>
+            <p class="descricao">Faça login para acessar o sistema</p>
+
+            <form action="" method="post">
+
+                <input
+                    type="text"
+                    name="usuario"
+                    placeholder="CPF ou e-mail"
+                    autocomplete="username"
+                    required
+                >
+
+                <input
+                    type="password"
+                    name="senha"
+                    placeholder="Senha"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <label class="lembrar">
+                    <input type="checkbox" name="lembrar">
+                    Lembre de mim
+                </label>
+
+                <button type="submit" class="env_dados">
+                    Entrar
+                </button>
+
+                <a href="#" class="esqueci">Esqueci minha senha?</a>
+
+                <a href="#" class="cadastro">Cadastre-se</a>
+
+            </form>
+
+        </section>
+
+    </main>
+</body>
+</html>
