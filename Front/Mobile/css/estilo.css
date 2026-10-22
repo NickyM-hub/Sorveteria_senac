@@ -1,4 +1,7 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
@@ -35,11 +38,28 @@ body {
     font-size: 55px;
 }
 
-.logo-area h1 {
-    color: #e75480;
-    font-size: 30px;
+
+.titulo-curvo {
+    text-align: center;
+    width: 100%;
     margin: 5px 0;
 }
+
+.titulo-curvo svg {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.titulo-curvo text {
+    font-family: 'Irish Grover', cursive;
+    font-size: 42px;
+    fill: #e75480;
+}
+
 
 .logo-area p {
     color: #805466;
@@ -331,4 +351,31 @@ button:hover {
     .recuperar-area h2 {
         font-size: 21px;
     }
+}
+
+.mensagem-codigo {
+    color: #e75480;
+    font-size: 13px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+
+.voltar {
+    display: inline-block;
+    color: #e75480;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+.mensagem-codigo {
+    color: #e75480;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
 }

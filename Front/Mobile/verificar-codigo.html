@@ -54,14 +54,24 @@
 
             <button type="submit">Verificar código</button>
 
-            <a href="recuperar-senha.html" class="voltar">
+            <a href="#" class="voltar" id="reenviarCodigo">
                 Não recebi o código
             </a>
+            
+             <p id="mensagemCodigo" class="mensagem-codigo"></p>
 
         </form>
 
     </section>
 </main>
+ 
+
+<script>
+    document.getElementById("reenviarCodigo").addEventListener("click", function() {
+        document.getElementById("mensagemCodigo").textContent =
+            "✓ Um novo código foi enviado para seu e-mail!";
+    });
+</script>
 
 </body>
 </html>
