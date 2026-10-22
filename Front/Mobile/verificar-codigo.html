@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar código - Sorveteria</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<main class="container">
+
+    <section class="etapas">
+        <div class="etapa concluida">
+            <div class="circulo">✓</div>
+            <span>E-mail</span>
+        </div>
+        <div class="linha"></div>
+        <div class="etapa ativa">
+            <div class="circulo">2</div>
+            <span>Verificar</span>
+        </div>
+        <div class="linha"></div>
+        <div class="etapa">
+            <div class="circulo">3</div>
+            <span>Nova senha</span>
+        </div>
+    </section>
+
+    <section class="login-area recuperar-area">
+
+        <div class="sticker-email">📩</div>
+
+        <h2>Verifique seu e-mail</h2>
+
+        <p class="subtitulo">
+            Enviamos um código de verificação para
+            o seu e-mail. Digite-o abaixo.
+        </p>
+
+        <form action="#" method="post">
+
+            <input
+                type="text"
+                name="codigo"
+                placeholder="Digite o código de 6 dígitos"
+                inputmode="numeric"
+                pattern="[0-9]{6}"
+                maxlength="6"
+                autocomplete="one-time-code"
+                required
+            >
+
+            <button type="submit">Verificar código</button>
+
+            <a href="recuperar-senha.html" class="voltar">
+                Não recebi o código
+            </a>
+
+        </form>
+
+    </section>
+</main>
+
+</body>
+</html>

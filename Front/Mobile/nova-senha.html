@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova senha - Sorveteria</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<main class="container">
+
+    <section class="etapas">
+        <div class="etapa concluida">
+            <div class="circulo">✓</div>
+            <span>E-mail</span>
+        </div>
+        <div class="linha"></div>
+        <div class="etapa concluida">
+            <div class="circulo">✓</div>
+            <span>Verificar</span>
+        </div>
+        <div class="linha"></div>
+        <div class="etapa ativa">
+            <div class="circulo">3</div>
+            <span>Nova senha</span>
+        </div>
+    </section>
+
+    <section class="login-area recuperar-area">
+
+        <div class="sticker-email">🔑</div>
+
+        <h2>Crie uma nova senha</h2>
+
+        <p class="subtitulo">
+            Escolha uma nova senha para acessar
+            sua conta novamente.
+        </p>
+
+        <form action="#" method="post">
+
+            <input
+                type="password"
+                name="nova_senha"
+                placeholder="Digite a nova senha"
+                autocomplete="new-password"
+                minlength="8"
+                required
+            >
+
+            <input
+                type="password"
+                name="confirmar_senha"
+                placeholder="Confirme a nova senha"
+                autocomplete="new-password"
+                minlength="8"
+                required
+            >
+
+            <p class="dica-senha">
+                A senha deve ter pelo menos 8 caracteres.
+            </p>
+
+            <button type="submit">Salvar nova senha</button>
+
+        </form>
+
+    </section>
+</main>
+
+</body>
+</html>

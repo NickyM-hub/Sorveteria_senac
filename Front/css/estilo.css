@@ -1,0 +1,334 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #fff0f5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Nome da sorveteria em cima */
+
+.logo-area {
+    text-align: center;
+    width: 100%;
+}
+
+.sorvete {
+    font-size: 55px;
+}
+
+.logo-area h1 {
+    color: #e75480;
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+.logo-area p {
+    color: #805466;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Caixa de login */
+
+.login-area {
+    background-color: white;
+    width: 100%;
+    padding: 28px 22px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(180, 70, 110, 0.15);
+    text-align: center;
+}
+
+.login-area h2 {
+    color: #333;
+    font-size: 24px;
+    margin: 0 0 8px;
+}
+
+.subtitulo {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Campos de preenchimento */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form > input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e4cbd5;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+form > input:focus {
+    border-color: #e75480;
+}
+
+.lembrar {
+    text-align: left;
+    font-size: 13px;
+    color: #555;
+}
+
+.lembrar input {
+    accent-color: #e75480;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e75480;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d94370;
+}
+
+.esqueci,
+.cadastro {
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.esqueci {
+    color: #e75480;
+}
+
+.cadastro {
+    color: #805466;
+    margin-top: 3px;
+}
+
+/* Ajustes para telas pequenas */
+
+@media (max-width: 360px) {
+    body {
+        padding: 15px;
+    }
+
+    .logo-area h1 {
+        font-size: 26px;
+    }
+
+    .login-area {
+        padding: 24px 18px;
+    }
+}
+
+
+
+/* Tela de cadastro */
+
+
+.cadastro-area h2 {
+    color: #e75454;
+}
+
+.cadastro-area form {
+    gap: 20px;
+}
+
+.termos {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.termos input {
+    margin-top: 2px;
+    accent-color: #e75480;
+    flex-shrink: 0;
+}
+
+.voltar-login {
+    color: #666;
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+
+.voltar-login a {
+    color: #e75480;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.rosa {
+    color: #e75480
+}
+/* Cadastro em celulares pequenos */
+
+@media (max-width: 360px) {
+    .cadastro-area {
+        padding: 22px 16px;
+    }
+
+    .cadastro-area h2 {
+        font-size: 22px;
+    }
+
+    .termos {
+        font-size: 11px;
+    }
+}
+
+
+/* Etapas da recuperação de senha */
+
+.etapas {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;
+    margin: 10px 0;
+}
+
+.etapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    flex: 1;
+    color: #997786;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.circulo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #f3c9d8;
+    color: #99506a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.etapa.ativa .circulo,
+.etapa.concluida .circulo {
+    background-color: #e75480;
+    color: white;
+}
+
+.etapa.ativa span {
+    color: #c83d6a;
+    font-weight: bold;
+}
+
+.linha {
+    height: 2px;
+    background-color: #e9a4bb;
+    flex: 0.35;
+    margin-top: 20px;
+}
+
+.sticker-email {
+    width: 95px;
+    height: 95px;
+    border-radius: 25px;
+    background-color: #ffe2ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    margin: 0 auto 18px;
+}
+
+.recuperar-area {
+    text-align: center;
+}
+
+.recuperar-area h2 {
+    color: #e75480;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.recuperar-area .subtitulo {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.recuperar-area form {
+    gap: 18px;
+}
+
+.voltar {
+    display: block;
+    color: #e75480;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.dica-senha {
+    color: #805466;
+    font-size: 12px;
+    text-align: left;
+    margin: -8px 0 0;
+}
+
+@media (max-width: 360px) {
+    .etapa {
+        font-size: 10px;
+    }
+
+    .circulo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .linha {
+        margin-top: 17px;
+    }
+
+    .recuperar-area {
+        padding: 24px 18px;
+    }
+
+    .recuperar-area h2 {
+        font-size: 21px;
+    }
+}
