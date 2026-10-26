@@ -30,7 +30,7 @@ body {
 .etapas {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: center ;
     gap: 12px;
     margin-bottom: 13px;
 }
@@ -84,21 +84,21 @@ body {
 
 .icone-email {
     width: 41px;
-    height: 41px;
-    margin: 0 auto 17px;
+    height: 42px;
+    margin: 0 auto 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 90%;
     background-color: #fbd9e9;
 }
 
 .icone-email svg {
     width: 24px;
-    height: 24px;
+    height: 26px;
     fill: none;
     stroke: #222;
-    stroke-width: 1.4;
+    stroke-width: 1.6;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
@@ -122,13 +122,13 @@ body {
 }
 
 .cartao input {
-    width: 100%;
-    height: 35px;
+    width: 96%;
+    height: 33px;
     padding: 0 10px;
     border: 1px solid #999;
-    border-radius: 5px;
-    outline: none;
-    font-size: 9px;
+    border-radius: 20px;
+    
+    font-size: 10px;
 }
 
 .cartao input:focus {
