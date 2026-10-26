@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu carrinho - Sorveteria</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="body-carrinho">
+
+    <main class="pagina-carrinho">
+
+        <header class="cabecalho-carrinho">
+            <a href="inicio.html" class="voltar-carrinho" aria-label="Voltar">
+                ‹
+            </a>
+
+            <h1>Meu carrinho</h1>
+
+            <span class="icone-carrinho">♡</span>
+        </header>
+
+        <section class="conteudo-carrinho">
+
+            <h2>Seus produtos</h2>
+
+            <div id="listaCarrinho"></div>
+
+            <div id="carrinhoVazio" class="carrinho-vazio" hidden>
+                <span>🍦</span>
+                <h3>Seu carrinho está vazio!</h3>
+                <p>Que tal escolher um sorvete delicioso?</p>
+                <a href="sorvetes.html" class="botao-voltar-loja">
+                    Escolher produtos
+                </a>
+            </div>
+
+            <section class="secao-entrega" id="opcoesEntrega">
+                <h2>Como deseja receber?</h2>
+
+                <label class="opcao-entrega">
+                    <input
+                        type="radio"
+                        name="entrega"
+                        value="retirada"
+                        checked
+                    >
+                    <span>
+                        <strong>Retirar no local</strong>
+                        <small>Busque seu pedido na sorveteria</small>
+                    </span>
+                </label>
+
+                <label class="opcao-entrega">
+                    <input
+                        type="radio"
+                        name="entrega"
+                        value="entrega"
+                    >
+                    <span>
+                        <strong>Receber em casa</strong>
+                        <small>Taxa de entrega: R$ 5,00</small>
+                    </span>
+                </label>
+            </section>
+
+            <section class="secao-cupom" id="secaoCupom">
+                <h2>Cupom de desconto</h2>
+
+                <div class="campo-cupom">
+                    <input
+                        type="text"
+                        id="cupom"
+                        placeholder="Digite seu cupom"
+                    >
+
+                    <button type="button" id="aplicarCupom">
+                        Aplicar
+                    </button>
+                </div>
+
+                <p id="mensagemCupom"></p>
+            </section>
+
+            <section class="resumo-carrinho" id="resumoCarrinho">
+                <h2>Resumo do pedido</h2>
+
+                <div class="linha-resumo">
+                    <span>Subtotal</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+
+                <div class="linha-resumo">
+                    <span>Entrega</span>
+                    <span id="valorEntrega">R$ 0,00</span>
+                </div>
+
+                <div class="linha-resumo">
+                    <span>Desconto</span>
+                    <span id="valorDesconto">R$ 0,00</span>
+                </div>
+
+                <div class="linha-resumo linha-total">
+                    <strong>Total</strong>
+                    <strong id="totalCarrinho">R$ 0,00</strong>
+                </div>
+
+                <button
+                    type="button"
+                    class="botao-pagamento"
+                    id="continuarPagamento"
+                >
+                    Continuar para pagamento
+                </button>
+
+                <a href="sorvetes.html" class="continuar-comprando">
+                    ‹ Continuar comprando
+                </a>
+            </section>
+
+        </section>
+    </main>
+
+    <script src="js/carrinho-pagina.js"></script>
+
+</body>
+</html>

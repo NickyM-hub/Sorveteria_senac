@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do produto - Sorveteria</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<main class="pagina-produto">
+
+    <header class="topo-produto">
+        <a href="sorvetes.html" class="voltar-produto" aria-label="Voltar">
+            &#8249;
+        </a>
+        <h1>Detalhes do produto</h1>
+    </header>
+
+    <!-- Informações do produto -->
+    <section class="detalhe-produto">
+
+        <img id="imagemProduto"
+             src="imagens/sorvete-chocolate.png"
+             alt="Sorvete selecionado"
+             class="imagem-detalhe">
+
+        <div class="informacoes-detalhe">
+            <h2 id="nomeProduto">Sorvete Chocolate</h2>
+
+            <div class="nota-produto">
+                <span class="estrelas">★★★★★</span>
+                <span id="notaProduto">4,8</span>
+                <a href="#avaliacoes" class="link-avaliacoes">
+                    Ver avaliações
+                </a>
+            </div>
+
+            <p id="descricaoProduto">
+                Cremoso e irresistível!
+            </p>
+
+            <strong class="preco-detalhe" id="precoProduto">
+                R$ 9,50
+            </strong>
+        </div>
+
+    </section>
+
+    <!-- Tamanhos -->
+    <section class="opcoes-produto">
+        <h2>Escolha o tamanho</h2>
+        <p class="texto-auxiliar">Selecione uma opção:</p>
+
+        <div class="opcoes-tamanho">
+
+            <label class="opcao-tamanho">
+                <input type="radio" name="tamanho" value="200" checked>
+                <span>200 ml</span>
+                <small id="preco200">R$ 9,50</small>
+            </label>
+
+            <label class="opcao-tamanho">
+                <input type="radio" name="tamanho" value="350">
+                <span>350 ml</span>
+                <small id="preco350">R$ 14,90</small>
+            </label>
+
+            <label class="opcao-tamanho">
+                <input type="radio" name="tamanho" value="500">
+                <span>500 ml</span>
+                <small id="preco500">R$ 17,70</small>
+            </label>
+
+        </div>
+    </section>
+
+    <!-- Adicionais -->
+    <section class="opcoes-produto">
+        <h2>Escolha seus adicionais</h2>
+        <p class="texto-auxiliar">Adicione seus acompanhamentos favoritos.</p>
+
+        <div class="lista-adicionais">
+
+            <label class="item-adicional">
+                <span>
+                    <input type="checkbox" name="adicional"
+                           value="Granulado" data-preco="2.00">
+                    Granulado
+                </span>
+                <strong>+ R$ 2,00</strong>
+            </label>
+
+            <label class="item-adicional">
+                <span>
+                    <input type="checkbox" name="adicional"
+                           value="Calda de chocolate" data-preco="2.50">
+                    Calda de chocolate
+                </span>
+                <strong>+ R$ 2,50</strong>
+            </label>
+
+            <label class="item-adicional">
+                <span>
+                    <input type="checkbox" name="adicional"
+                           value="Calda de morango" data-preco="2.50">
+                    Calda de morango
+                </span>
+                <strong>+ R$ 2,50</strong>
+            </label>
+
+            <label class="item-adicional">
+                <span>
+                    <input type="checkbox" name="adicional"
+                           value="Leite em pó" data-preco="3.00">
+                    Leite em pó
+                </span>
+                <strong>+ R$ 3,00</strong>
+            </label>
+
+            <label class="item-adicional">
+                <span>
+                    <input type="checkbox" name="adicional"
+                           value="Confete" data-preco="2.00">
+                    Confete
+                </span>
+                <strong>+ R$ 2,00</strong>
+            </label>
+
+        </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section class="secao-avaliacoes" id="avaliacoes">
+        <div class="titulo-avaliacoes">
+            <h2>Avaliações dos clientes</h2>
+            <span class="estrelas">★★★★★</span>
+        </div>
+
+        <p class="resumo-nota">
+            <strong id="notaResumo">4,8</strong> de 5
+            <span id="quantidadeAvaliacoes">(12 avaliações)</span>
+        </p>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Mariana S.</strong>
+                <span class="estrelas">★★★★★</span>
+            </div>
+            <p>Muito cremoso e saboroso! Adorei.</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Lucas R.</strong>
+                <span class="estrelas">★★★★☆</span>
+            </div>
+            <p>Gostei bastante, chegou bem embalado.</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Camila A.</strong>
+                <span class="estrelas">★★★★★</span>
+            </div>
+            <p>Ótimo sabor. Compraria novamente!</p>
+        </article>
+    </section>
+
+    <!-- Resumo do pedido -->
+    <section class="resumo-pedido">
+        <div>
+            <span>Total do produto</span>
+            <strong id="totalProduto">R$ 9,50</strong>
+        </div>
+
+        <label for="quantidadeProduto">Quantidade</label>
+        <select id="quantidadeProduto">
+            <option value="1">1 unidade</option>
+            <option value="2">2 unidades</option>
+            <option value="3">3 unidades</option>
+            <option value="4">4 unidades</option>
+            <option value="5">5 unidades</option>
+        </select>
+
+            <div class="botoes-produto">
+        <button type="button" id="adicionarCarrinho">
+            Adicionar ao carrinho
+        </button>
+
+    <a href="sorvetes.html" class="botao-continuar">
+        Continuar comprando
+    </a>
+</div>
+
+        <p id="mensagemCarrinho" class="mensagem-produto"
+           role="status" hidden></p>
+    </section>
+
+</main>
+
+<script src="js/detalhe-produto.js"></script>
+
+</body>
+</html>

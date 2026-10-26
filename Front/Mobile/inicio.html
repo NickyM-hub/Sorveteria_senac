@@ -226,11 +226,26 @@
 
     </main>
 
+    <script>
+        document.querySelectorAll(".card-sorvete").forEach(function (card) {
+            card.style.cursor = "pointer";
+
+            card.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const nome = card.querySelector("h2").textContent.trim();
+
+                window.location.href =
+                    "produto.html?nome=" + encodeURIComponent(nome);
+            });
+        });
+    </script>
+
     <!-- Menu inferior -->
     <nav class="menu-inferior">
 
         <a href="inicio.html" class="item-menu ativo">
-            <span class="icone">&#9829;</span>
+            <span class="icone">&#8962;</span>
             <span>Início</span>
         </a>
 
