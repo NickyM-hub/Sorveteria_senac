@@ -129,6 +129,31 @@
             </label>
 
         </div>
+        
+    </section>
+
+     <!-- Resumo do pedido -->
+    <section class="resumo-pedido">
+
+        <div class="total-produto">
+            <span>Total do produto</span>
+            <strong id="totalProduto">R$ 9,50</strong>
+        </div>
+
+        <label for="quantidadeProduto">Quantidade</label>
+        <select id="quantidadeProduto">
+            <option value="1">1 unidade</option>
+            <option value="2">2 unidades</option>
+            <option value="3">3 unidades</option>
+            <option value="4">4 unidades</option>
+            <option value="5">5 unidades</option>
+        </select>
+
+        <p id="mensagemCarrinho"
+        class="mensagem-produto"
+        role="status"
+        hidden></p>
+
     </section>
 
     <!-- Avaliações -->
@@ -140,7 +165,7 @@
 
         <p class="resumo-nota">
             <strong id="notaResumo">4,8</strong> de 5
-            <span id="quantidadeAvaliacoes">(12 avaliações)</span>
+            <span id="quantidadeAvaliacoes">(13 avaliações)</span>
         </p>
 
         <article class="avaliacao">
@@ -166,37 +191,102 @@
             </div>
             <p>Ótimo sabor. Compraria novamente!</p>
         </article>
+
+                <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Beatriz M.</strong>
+                <span class="estrelas">★★★★★</span>
+            </div>
+            <p>Uma delícia! O sorvete é muito cremoso e o sabor é maravilhoso.</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Rafael C.</strong>
+                <span class="estrelas">★★★★★</span>
+            </div>
+            <p>Chegou tudo certinho e estava muito gostoso. Recomendo!</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Juliana P.</strong>
+                <span class="estrelas">★★★★☆</span>
+            </div>
+            <p>Gostei bastante! Veio bem embalado e com uma ótima apresentação.</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Gabriel F.</strong>
+                <span class="estrelas">★★★★★</span>
+            </div>
+            <p>Meu novo sabor favorito! Com certeza vou pedir novamente.</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Larissa R.</strong>
+                <span class="estrelas">★★★★☆</span>
+            </div>
+            <p>Muito bom e com preço justo. Adorei os adicionais também!</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Matheus G.</strong>
+                <span class="estrelas">★★★★★</span>
+            </div>
+            <p>O sabor é incrível e a textura é super cremosa. Amei! 💗</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Isabela T.</strong>
+                <span class="estrelas">★★★★★</span>
+            </div>
+            <p>Perfeito para refrescar o dia. Muito gostoso!</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Pedro H.</strong>
+                <span class="estrelas">★★★☆☆</span>
+            </div>
+            <p>Gostei do sabor, mas gostaria que a porção fosse um pouco maior.</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Mariana L.</strong>
+                <span class="estrelas">★★★★★</span>
+            </div>
+            <p>Vale muito a pena! Tudo delicioso e preparado com capricho.</p>
+        </article>
+
+        <article class="avaliacao">
+            <div class="cabecalho-avaliacao">
+                <strong>Eduardo N.</strong>
+                <span class="estrelas">★★★★☆</span>
+            </div>
+            <p>Muito bom! Gostei bastante e pretendo experimentar outros sabores.</p>
+        </article>
     </section>
 
-    <!-- Resumo do pedido -->
-    <section class="resumo-pedido">
-        <div>
-            <span>Total do produto</span>
-            <strong id="totalProduto">R$ 9,50</strong>
-        </div>
 
-        <label for="quantidadeProduto">Quantidade</label>
-        <select id="quantidadeProduto">
-            <option value="1">1 unidade</option>
-            <option value="2">2 unidades</option>
-            <option value="3">3 unidades</option>
-            <option value="4">4 unidades</option>
-            <option value="5">5 unidades</option>
-        </select>
 
-            <div class="botoes-produto">
+    <!-- Barra inferior com botões -->
+    <nav class="menu-botoes-produto" aria-label="Ações do produto">
+
         <button type="button" id="adicionarCarrinho">
             Adicionar ao carrinho
         </button>
 
-    <a href="sorvetes.html" class="botao-continuar">
-        Continuar comprando
-    </a>
-</div>
+        <a href="sorvetes.html" class="botao-continuar">
+            Continuar comprando
+        </a>
 
-        <p id="mensagemCarrinho" class="mensagem-produto"
-           role="status" hidden></p>
-    </section>
+    </nav>
 
 </main>
 
