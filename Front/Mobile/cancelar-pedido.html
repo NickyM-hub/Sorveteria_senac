@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelar pedido - Sorveteria</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/pedidos.css">
+    <script src="js/pedidos.js" defer></script>
+</head>
+<body class="body-pedidos">
+    <main class="tela-pedidos tela-confirmacao">
+        <header class="cabecalho-pedidos">
+            <a id="voltarDetalhes" class="voltar-pedidos" href="detalhes-pedido.html" aria-label="Voltar aos detalhes">‹</a>
+            <h1>Cancelar pedido</h1>
+        </header>
+
+        <section class="confirmacao-cancelamento">
+            <div class="ilustracao-cancelamento" aria-hidden="true">🍦❗</div>
+            <h2>Cancelar pedido?</h2>
+            <p>Tem certeza de que deseja cancelar este pedido?</p>
+
+            <div class="resumo-cancelamento">
+                <p><span>Número do pedido</span><strong id="cancelarNumero">#10111</strong></p>
+                <p><span>Valor total</span><strong id="cancelarTotal">R$ 00,00</strong></p>
+                <p><span>Pagamento</span><strong>PIX</strong></p>
+            </div>
+
+            <p class="aviso-cancelamento">Ao confirmar, o pedido será marcado como cancelado. Se o pagamento já foi realizado, o reembolso poderá levar alguns dias, conforme o processamento do pagamento.</p>
+
+            <button type="button" id="confirmarCancelamento" class="botao-pedido botao-perigo">Sim, cancelar pedido</button>
+            <a id="voltarSemCancelar" class="botao-pedido botao-secundario" href="detalhes-pedido.html">Não, voltar</a>
+        </section>
+    </main>
+</body>
+</html>

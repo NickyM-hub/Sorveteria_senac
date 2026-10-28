@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do pedido - Sorveteria</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/pedidos.css">
+    <script src="js/pedidos.js" defer></script>
+</head>
+<body class="body-pedidos">
+    <main class="tela-pedidos">
+        <header class="cabecalho-pedidos">
+            <a class="voltar-pedidos" href="meus-pedidos.html" aria-label="Voltar para meus pedidos">‹</a>
+            <h1>Detalhes do pedido</h1>
+        </header>
+
+        <section class="status-detalhe">
+            <span id="detalheStatus" class="etiqueta-status preparando">Em preparação</span>
+            <div>
+                <strong id="detalheNumero">Pedido #10111</strong>
+                <small id="detalheData">Realizado em 28/10/2026</small>
+            </div>
+        </section>
+
+        <section class="bloco-pedido">
+            <h2>Produtos do pedido</h2>
+            <div id="detalheProdutos"></div>
+        </section>
+
+        <section class="bloco-pedido resumo-pedido">
+            <h2>Resumo do pedido</h2>
+            <p><span>Subtotal</span><strong id="detalheSubtotal">R$ 0,00</strong></p>
+            <p><span>Frete</span><strong id="detalheFrete">R$ 0,00</strong></p>
+            <p><span>Desconto</span><strong id="detalheDesconto">R$ 0,00</strong></p>
+            <p class="linha-total"><span>Total</span><strong id="detalheTotal">R$ 0,00</strong></p>
+        </section>
+
+        <section class="bloco-pedido endereco-pedido">
+            <h2>Endereço de entrega</h2>
+            <p>⌖ <span id="detalheEndereco">Rua das Flores, 321 - Embu das Artes - SP</span></p>
+        </section>
+
+        <section class="bloco-pedido pagamento-pedido">
+            <h2>Forma de pagamento</h2>
+            <p><span>PIX</span><strong id="detalhePagamento">Pago</strong></p>
+        </section>
+
+        <div class="acoes-pedido">
+            <a id="botaoCancelar" class="botao-pedido botao-perigo" href="cancelar-pedido.html">Cancelar pedido</a>
+            <a class="botao-pedido botao-secundario" href="meus-pedidos.html">Voltar para meus pedidos</a>
+        </div>
+
+        <!-- Menu inferior -->
+    <nav class="menu-inferior">
+
+        <a href="inicio.html" class="item-menu ativo">
+            <span class="icone">&#8962;</span>
+            <span>Início</span>
+        </a>
+
+        <a href="cupons.html" class="item-menu">
+            <span class="icone">&#9737;</span>
+            <span>Cupons</span>
+        </a>
+
+        <a href="carrinho.html" class="item-menu">
+            <span class="icone">&#128722;</span>
+            <span>Carrinho</span>
+        </a>
+
+        <a href="meus-pedidos.html" class="item-menu">
+            <span class="icone">&#9776;</span>
+            <span>Pedidos</span>
+        </a>
+
+        <a href="perfil.html" class="item-menu">
+            <span class="icone">&#9818;</span>
+            <span>Perfil</span>
+        </a>
+
+    </nav>
+    </main>
+</body>
+</html>
