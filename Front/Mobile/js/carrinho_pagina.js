@@ -3,20 +3,23 @@
 
 const listaCarrinho = document.getElementById("listaCarrinho");
 const carrinhoVazio = document.getElementById("carrinhoVazio");
-
-const subtotalElemento = document.getElementById("subtotal");
-const entregaElemento = document.getElementById("valorEntrega");
-const descontoElemento = document.getElementById("valorDesconto");
-const totalElemento = document.getElementById("totalCarrinho");
-
-const resumoCarrinho = document.getElementById("resumoCarrinho");
 const opcoesEntrega = document.getElementById("opcoesEntrega");
 const secaoCupom = document.getElementById("secaoCupom");
+const resumoCarrinho = document.getElementById("resumoCarrinho");
+const menuBotoes = document.querySelector(".menu-botoes-produto");
 
-const moeda = valor => Number(valor).toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-});
+const subtotalElemento = document.getElementById("subtotal");
+const valorEntregaElemento = document.getElementById("valorEntrega");
+const valorDescontoElemento = document.getElementById("valorDesconto");
+const totalElemento = document.getElementById("totalCarrinho");
+
+const campoCupom = document.getElementById("cupom");
+const botaoAplicarCupom = document.getElementById("aplicarCupom");
+const mensagemCupom = document.getElementById("mensagemCupom");
+const botaoFinalizar = document.getElementById("finalizarPedido");
+
+const TAXA_ENTREGA = 5;
+let cupomAplicado = "";
 
 function lerCarrinho() {
     try {
@@ -31,33 +34,49 @@ function lerCarrinho() {
 }
 
 let carrinho = lerCarrinho();
-let cupomAplicado = "";
-
-const taxaEntrega = 5;
 
 function salvarCarrinho() {
-    localStorage.setItem("carrinhoSorveteria", JSON.stringify(carrinho));
+    localStorage.setItem(
+        "carrinhoSorveteria",
+        JSON.stringify(carrinho)
+    );
+}
+
+function formatarPreco(valor) {
+    return Number(valor || 0).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
 }
 
 function obterSubtotal() {
-    return carrinho.reduce((soma, item) => {
+    return carrinho.reduce((total, item) => {
         const preco = Number(item.precoUnitario) || 0;
         const quantidade = Number(item.quantidade) || 1;
 
-        return soma + preco * quantidade;
+        return total + preco * quantidade;
     }, 0);
 }
 
 function obterEntrega() {
-    const opcao = document.querySelector('input[name="entrega"]:checked');
+    const opcaoSelecionada = document.querySelector(
+        'input[name="entrega"]:checked'
+    );
 
-    return opcao && opcao.value === "entrega" ? taxaEntrega : 0;
+    return opcaoSelecionada &&
+        opcaoSelecionada.value === "entrega"
+        ? TAXA_ENTREGA
+        : 0;
 }
 
 function obterDesconto() {
-    return cupomAplicado === "SORVETE10"
-        ? obterSubtotal() * 0.10
-        : 0;
+    const subtotal = obterSubtotal();
+
+    if (cupomAplicado === "SORVETE10" && subtotal >= 20) {
+        return subtotal * 0.10;
+    }
+
+    return 0;
 }
 
 function atualizarResumo() {
@@ -66,50 +85,53 @@ function atualizarResumo() {
     const desconto = obterDesconto();
     const total = Math.max(0, subtotal + entrega - desconto);
 
-    subtotalElemento.textContent = moeda(subtotal);
-    entregaElemento.textContent = moeda(entrega);
-    descontoElemento.textContent = "- " + moeda(desconto);
-    totalElemento.textContent = moeda(total);
+    subtotalElemento.textContent = formatarPreco(subtotal);
+    valorEntregaElemento.textContent = formatarPreco(entrega);
+    valorDescontoElemento.textContent = formatarPreco(desconto);
+    totalElemento.textContent = formatarPreco(total);
 }
 
 function desenharCarrinho() {
-    listaCarrinho.innerHTML = "";
+    carrinho = lerCarrinho();
+    listaCarrinho.replaceChildren();
 
     const temProdutos = carrinho.length > 0;
 
+    // Esconde a página inteira quando o carrinho está vazio.
+    document.body.classList.toggle(
+        "carrinho-vazio",
+        !temProdutos
+    );
+
     carrinhoVazio.hidden = temProdutos;
-    resumoCarrinho.hidden = !temProdutos;
     opcoesEntrega.hidden = !temProdutos;
     secaoCupom.hidden = !temProdutos;
+    resumoCarrinho.hidden = !temProdutos;
+
+    if (menuBotoes) {
+        menuBotoes.hidden = !temProdutos;
+    }
 
     if (!temProdutos) {
-        subtotalElemento.textContent = moeda(0);
-        entregaElemento.textContent = moeda(0);
-        descontoElemento.textContent = moeda(0);
-        totalElemento.textContent = moeda(0);
+        subtotalElemento.textContent = formatarPreco(0);
+        valorEntregaElemento.textContent = formatarPreco(0);
+        valorDescontoElemento.textContent = formatarPreco(0);
+        totalElemento.textContent = formatarPreco(0);
         return;
     }
 
     carrinho.forEach((item, indice) => {
-        const quantidade = Number(item.quantidade) || 1;
-        const precoUnitario = Number(item.precoUnitario) || 0;
-        const adicionais = Array.isArray(item.adicionais)
-            ? item.adicionais
-            : [];
-
         const card = document.createElement("article");
         card.className = "item-carrinho";
 
-        const foto = document.createElement("img");
-        foto.className = "imagem-item-carrinho";
-        foto.src = item.imagem || "imagens/sem-imagem.png";
-        foto.alt = item.nome || "Produto";
-        foto.onerror = function () {
-            this.style.display = "none";
-        };
+        const imagem = document.createElement("img");
+        imagem.className = "imagem-item-carrinho";
+        imagem.src = item.imagem || "";
+        imagem.alt = item.nome || "Produto";
+        imagem.hidden = !item.imagem;
 
-        const detalhes = document.createElement("div");
-        detalhes.className = "detalhes-item-carrinho";
+        const informacoes = document.createElement("div");
+        informacoes.className = "informacoes-item-carrinho";
 
         const nome = document.createElement("h3");
         nome.textContent = item.nome || "Produto";
@@ -117,21 +139,28 @@ function desenharCarrinho() {
         const tamanho = document.createElement("p");
         tamanho.textContent = "Tamanho: " + (item.tamanho || "Não informado");
 
-        const textoAdicionais = document.createElement("p");
-        textoAdicionais.className = "texto-adicionais";
+        const descricao = document.createElement("p");
+        descricao.textContent = item.descricao || "";
 
-        if (adicionais.length > 0) {
-            textoAdicionais.textContent = "Adicionais: " +
-                adicionais.map(a =>
-                    `${a.nome} (${moeda(Number(a.preco) || 0)})`
-                ).join(", ");
-        } else {
-            textoAdicionais.textContent = "Sem adicionais";
-        }
+        const adicionais = document.createElement("p");
+        adicionais.textContent =
+            item.adicionais && item.adicionais.length
+                ? "Adicionais: " + item.adicionais
+                    .map(adicional =>
+                        typeof adicional === "string"
+                            ? adicional
+                            : adicional.nome || ""
+                    )
+                    .filter(Boolean)
+                    .join(", ")
+                : "";
 
-        const preco = document.createElement("strong");
+        const preco = document.createElement("p");
         preco.className = "preco-item-carrinho";
-        preco.textContent = moeda(precoUnitario * quantidade);
+        preco.textContent = formatarPreco(
+            (Number(item.precoUnitario) || 0) *
+            (Number(item.quantidade) || 1)
+        );
 
         const controles = document.createElement("div");
         controles.className = "controles-quantidade";
@@ -140,34 +169,42 @@ function desenharCarrinho() {
         diminuir.type = "button";
         diminuir.textContent = "−";
         diminuir.setAttribute("aria-label", "Diminuir quantidade");
-        diminuir.onclick = () => alterarQuantidade(indice, -1);
+        diminuir.addEventListener("click", () => {
+            alterarQuantidade(indice, -1);
+        });
 
-        const numero = document.createElement("span");
-        numero.textContent = quantidade;
+        const quantidade = document.createElement("span");
+        quantidade.textContent = Number(item.quantidade) || 1;
 
         const aumentar = document.createElement("button");
         aumentar.type = "button";
         aumentar.textContent = "+";
         aumentar.setAttribute("aria-label", "Aumentar quantidade");
-        aumentar.onclick = () => alterarQuantidade(indice, 1);
+        aumentar.addEventListener("click", () => {
+            alterarQuantidade(indice, 1);
+        });
 
         const remover = document.createElement("button");
         remover.type = "button";
         remover.className = "remover-item";
         remover.textContent = "Remover";
-        remover.onclick = () => removerItem(indice);
+        remover.addEventListener("click", () => {
+            removerItem(indice);
+        });
 
-        controles.append(diminuir, numero, aumentar);
-        detalhes.append(
+        controles.append(diminuir, quantidade, aumentar);
+
+        informacoes.append(
             nome,
             tamanho,
-            textoAdicionais,
+            descricao,
+            adicionais,
             preco,
             controles,
             remover
         );
 
-        card.append(foto, detalhes);
+        card.append(imagem, informacoes);
         listaCarrinho.appendChild(card);
     });
 
@@ -175,12 +212,19 @@ function desenharCarrinho() {
 }
 
 function alterarQuantidade(indice, alteracao) {
-    const atual = Number(carrinho[indice].quantidade) || 1;
-    const nova = atual + alteracao;
+    if (!carrinho[indice]) return;
 
-    if (nova < 1) return;
+    const quantidadeAtual =
+        Number(carrinho[indice].quantidade) || 1;
 
-    carrinho[indice].quantidade = nova;
+    const novaQuantidade = quantidadeAtual + alteracao;
+
+    if (novaQuantidade <= 0) {
+        removerItem(indice);
+        return;
+    }
+
+    carrinho[indice].quantidade = novaQuantidade;
     salvarCarrinho();
     desenharCarrinho();
 }
@@ -191,55 +235,64 @@ function removerItem(indice) {
     desenharCarrinho();
 }
 
-// Atualiza o valor quando o cliente troca a forma de recebimento
 document.querySelectorAll('input[name="entrega"]').forEach(opcao => {
     opcao.addEventListener("change", atualizarResumo);
 });
 
-// Aplica o cupom
-document.getElementById("aplicarCupom").addEventListener("click", () => {
-    const campo = document.getElementById("cupom");
-    const mensagem = document.getElementById("mensagemCupom");
-    const codigo = campo.value.trim().toUpperCase();
+botaoAplicarCupom.addEventListener("click", () => {
+    const codigo = campoCupom.value.trim().toUpperCase();
 
-    if (codigo === "SORVETE10") {
+    if (codigo === "SORVETE10" && obterSubtotal() >= 20) {
         cupomAplicado = codigo;
-        mensagem.textContent = "Cupom aplicado! Você ganhou 10% de desconto.";
-        mensagem.className = "cupom-sucesso";
+        mensagemCupom.textContent = "Cupom aplicado: 10% de desconto!";
+    } else if (codigo === "SORVETE10") {
+        cupomAplicado = "";
+        mensagemCupom.textContent =
+            "Seu pedido precisa ter subtotal de pelo menos R$ 20,00.";
     } else {
         cupomAplicado = "";
-        mensagem.textContent = "Cupom inválido.";
-        mensagem.className = "cupom-erro";
+        mensagemCupom.textContent = "Cupom inválido ou não reconhecido.";
     }
 
     atualizarResumo();
 });
 
-// Prepara o pedido e abre a tela de pagamento
-document.getElementById("continuarPagamento").addEventListener("click", () => {
+botaoFinalizar.addEventListener("click", () => {
     if (carrinho.length === 0) return;
 
-    const subtotal = obterSubtotal();
-    const entrega = obterEntrega();
-    const desconto = obterDesconto();
-    const opcao = document.querySelector('input[name="entrega"]:checked');
+    const opcaoSelecionada = document.querySelector(
+        'input[name="entrega"]:checked'
+    );
 
-    const dadosPedido = {
+    const pedido = {
         itens: carrinho,
-        subtotal: subtotal,
-        entrega: entrega,
-        desconto: desconto,
-        total: Math.max(0, subtotal + entrega - desconto),
-        formaRecebimento: opcao ? opcao.value : "retirada",
+        subtotal: obterSubtotal(),
+        entrega: obterEntrega(),
+        desconto: obterDesconto(),
+        total: Math.max(
+            0,
+            obterSubtotal() + obterEntrega() - obterDesconto()
+        ),
+        formaRecebimento: opcaoSelecionada
+            ? opcaoSelecionada.value
+            : "retirada",
         cupom: cupomAplicado
     };
 
     localStorage.setItem(
         "pedidoEmFinalizacao",
-        JSON.stringify(dadosPedido)
+        JSON.stringify(pedido)
     );
 
     window.location.href = "pagamento.html";
 });
 
+// Atualiza a tela ao abrir o carrinho.
 desenharCarrinho();
+
+// Atualiza se o carrinho for alterado em outra aba.
+window.addEventListener("storage", evento => {
+    if (evento.key === "carrinhoSorveteria") {
+        desenharCarrinho();
+    }
+});

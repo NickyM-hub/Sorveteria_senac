@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar senha - Sorveteria</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<main class="pagina">
+    <header class="pagina-topo">
+        <a href="perfil.html" class="voltar"><i class="fa-solid fa-arrow-left"></i></a>
+        <div><small>MINHA CONTA</small><h1>Alterar senha</h1></div>
+    </header>
+
+    <section class="cartao-intro">
+        <div class="intro-icone"><i class="fa-solid fa-shield-halved"></i></div>
+        <h2>Proteja sua conta</h2>
+        <p>Escolha uma senha segura e não compartilhe com outras pessoas.</p>
+    </section>
+
+    <form class="formulario" action="#" method="post">
+        <h2>Atualizar senha</h2>
+
+        <label for="senha-atual">Senha atual</label>
+        <input id="senha-atual" name="senha_atual"
+               type="password" autocomplete="current-password"
+               placeholder="Digite sua senha atual" required>
+
+        <label for="nova-senha">Nova senha</label>
+        <input id="nova-senha" name="nova_senha"
+               type="password" autocomplete="new-password"
+               minlength="8" placeholder="Mínimo de 8 caracteres" required>
+
+        <label for="confirmar-senha">Confirmar nova senha</label>
+        <input id="confirmar-senha" name="confirmar_senha"
+               type="password" autocomplete="new-password"
+               minlength="8" placeholder="Digite novamente" required>
+
+        <div class="dica-seguranca">
+            <i class="fa-solid fa-lightbulb"></i>
+            <p>Use uma combinação difícil de adivinhar e evite repetir senhas de outros serviços.</p>
+        </div>
+
+        <button type="submit" class="botao-principal">
+            <i class="fa-solid fa-lock"></i> Atualizar senha
+        </button>
+
+        <a href="perfil.html" class="botao-secundario">Cancelar</a>
+    </form>
+</main>
+</body>
+</html>

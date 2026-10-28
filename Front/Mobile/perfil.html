@@ -1,24 +1,191 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Meu perfil - Sorveteria</title>
+
     <link rel="stylesheet" href="css/estilo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-    <main class="app">
-        <section class="tela perfil-principal" id="perfil">
-            <header class="topo"><h1>Meu perfil</h1></header>
-            <div class="usuario">
-                <div class="avatar">♙</div>
-                <div><strong>Ana Carolina Santos</strong><small>aninha123@gmail.com</small></div>
+<main class="app">
+
+    <!-- Cabeçalho -->
+    <header class="topo">
+
+        <div class="titulo">
+            <h1>Meu perfil</h1>
+        </div>
+
+        <div class="icone-topo">
+            <i class="fa-solid fa-ice-cream"></i>
+        </div>
+    </header>
+
+    <!-- Cartão do cliente -->
+    <section class="cartao-usuario">
+
+        <div class="detalhes-usuario">
+
+            <div class="avatar">
+                <i class="fa-solid fa-user"></i>
             </div>
-            <nav class="opcoes">
-                <a href="#dados"><span>♙</span>Meus dados <b>›</b></a>
-                <a href="#endereco"><span>♧</span>Endereço de entrega <b>›</b></a>
-                <a href="#senha"><span>♙</span>Alterar senha <b>›</b></a>
-                <a href="#notificacoes"><span>♧</span>Notificações <b>›</b></a>
-                <a href="#ajuda"><span>ⓘ</span>Ajuda e suporte <b>›</b></a>
-                <a href="login.html" class="sair"><span>⇥</span>Sair</a>
-            </nav>
+
+            <div class="dados-usuario">
+                <span class="etiqueta">CLIENTE</span>
+
+                <h2>Ana Carolina Santos</h2>
+
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    aninha123@gmail.com
+                </p>
+            </div>
+
+            <a href="perfil-meus-dados.html" class="editar-perfil"
+               aria-label="Editar perfil">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Opções da conta -->
+    <section class="secao">
+
+        <div class="cabecalho-secao">
+            <div>
+                <h2>Minha conta</h2>
+                <p>Gerencie suas informações pessoais</p>
+            </div>
+        </div>
+
+        <nav class="lista-opcoes">
+
+            <a href="perfil-meus-dados.html" class="opcao">
+                <div class="icone rosa">
+                    <i class="fa-solid fa-user-pen"></i>
+                </div>
+
+                <div class="texto">
+                    <strong>Meus dados</strong>
+                    <small>Nome, e-mail e telefone</small>
+                </div>
+
+                <i class="fa-solid fa-chevron-right seta"></i>
+            </a>
+
+            <a href="perfil-endereco.html" class="opcao">
+                <div class="icone verde">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="texto">
+                    <strong>Endereço de entrega</strong>
+                    <small>Gerencie seus endereços</small>
+                </div>
+
+                <i class="fa-solid fa-chevron-right seta"></i>
+            </a>
+
+            <a href="perfil-senha.html" class="opcao">
+                <div class="icone roxo">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div class="texto">
+                    <strong>Alterar senha</strong>
+                    <small>Mantenha sua conta segura</small>
+                </div>
+
+                <i class="fa-solid fa-chevron-right seta"></i>
+            </a>
+
+            <a href="perfil-notificacoes.html" class="opcao">
+                <div class="icone amarelo">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+
+                <div class="texto">
+                    <strong>Notificações</strong>
+                    <small>Avisos e atualizações dos pedidos</small>
+                </div>
+
+                <i class="fa-solid fa-chevron-right seta"></i>
+            </a>
+
+            <a href="perfil-ajuda.html" class="opcao">
+                <div class="icone azul">
+                    <i class="fa-regular fa-circle-question"></i>
+                </div>
+
+                <div class="texto">
+                    <strong>Ajuda e suporte</strong>
+                    <small>Estamos aqui para ajudar</small>
+                </div>
+
+                <i class="fa-solid fa-chevron-right seta"></i>
+            </a>
+
+        </nav>
+
+    </section>
+
+    <!-- Sair da conta -->
+    <a href="login.html" class="botao-sair">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Sair da conta
+    </a>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <i class="fa-solid fa-ice-cream"></i>
+        <p>Feito com carinho para adoçar seu dia.</p>
+    </footer>
+
+</main>
+
+
+    <!-- Menu inferior -->
+    <nav class="menu-inferior" aria-label="Menu principal">
+
+        <a href="inicio.html" class="item-menu">
+            <span class="icone" aria-hidden="true">&#8962;</span>
+            <span>Início</span>
+        </a>
+
+        <a href="cupons.html" class="item-menu">
+            <span class="icone" aria-hidden="true">&#9737;</span>
+            <span>Cupons</span>
+        </a>
+
+        <a href="carrinho.html" class="item-menu">
+            <span class="icone" aria-hidden="true">&#128722;</span>
+            <span>Carrinho</span>
+        </a>
+
+        <a href="pedidos.html" class="item-menu">
+            <span class="icone" aria-hidden="true">&#9776;</span>
+            <span>Pedidos</span>
+        </a>
+
+        <a href="perfil.html" class="item-menu ativo" aria-current="page">
+            <span class="icone" aria-hidden="true">&#9818;</span>
+            <span>Perfil</span>
+        </a>
+
+    </nav>
+
+
+</body>
+</html>

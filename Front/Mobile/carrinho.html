@@ -12,10 +12,12 @@
 
 <body class="body-carrinho">
 
-    <main class="pagina-carrinho">
+    <main class="pagina-carrinho" id="paginaCarrinho">
 
         <header class="cabecalho-carrinho">
-            <a href="inicio.html" class="voltar-carrinho" aria-label="Voltar">
+            <a href="inicio.html"
+               class="voltar-carrinho"
+               aria-label="Voltar">
                 ‹
             </a>
 
@@ -24,7 +26,7 @@
             <span class="icone-carrinho">♡</span>
         </header>
 
-        <section class="conteudo-carrinho">
+        <section class="conteudo-carrinho" id="conteudoCarrinho">
 
             <h2>Seus produtos</h2>
 
@@ -34,6 +36,7 @@
                 <span>🍦</span>
                 <h3>Seu carrinho está vazio!</h3>
                 <p>Que tal escolher um sorvete delicioso?</p>
+
                 <a href="sorvetes.html" class="botao-voltar-loja">
                     Escolher produtos
                 </a>
@@ -49,6 +52,7 @@
                         value="retirada"
                         checked
                     >
+
                     <span>
                         <strong>Retirar no local</strong>
                         <small>Busque seu pedido na sorveteria</small>
@@ -61,6 +65,7 @@
                         name="entrega"
                         value="entrega"
                     >
+
                     <span>
                         <strong>Receber em casa</strong>
                         <small>Taxa de entrega: R$ 5,00</small>
@@ -109,23 +114,20 @@
                     <strong id="totalCarrinho">R$ 0,00</strong>
                 </div>
 
-                <button
-                    type="button"
-                    class="botao-pagamento"
-                    id="continuarPagamento"
-                >
-                    Continuar para pagamento
-                </button>
+            <button type="button" id="finalizarPedido">
+                finalizar Pedido
+            </button>
 
-                <a href="sorvetes.html" class="continuar-comprando">
-                    ‹ Continuar comprando
-                </a>
+        
+
             </section>
 
         </section>
+    
+
     </main>
 
-    <script src="js/carrinho-pagina.js"></script>
+    <script src="js/carrinho_pagina.js"></script>
 
 </body>
 </html>
