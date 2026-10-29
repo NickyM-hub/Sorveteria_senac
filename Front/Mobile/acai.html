@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalhes do Açaí - Sorveteria</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/acai.css">
+</head>
+
+<body class="body-acai">
+
+    <main class="tela-acai">
+
+        <!-- Imagem do produto -->
+        <header class="cabecalho-acai">
+
+            <a href="inicio.html" class="botao-voltar" aria-label="Voltar">
+                &#8249;
+            </a>
+
+            <img
+                src="imagens/acai.png"
+                alt="Tigela de açaí com frutas"
+                class="imagem-acai"
+            >
+
+        </header>
+
+        <!-- Informações do produto -->
+        <section class="detalhe-produto detalhe-acai" aria-labelledby="nomeProduto">
+
+            <div class="informacoes-detalhe">
+
+                <h2 id="nomeProduto">Açaí Tradicional</h2>
+
+                <div class="nota-produto">
+                    <span class="estrelas" aria-label="5 estrelas">★★★★★</span>
+
+                    <span id="notaProduto">4,8</span>
+
+                    <a href="#avaliacoes" class="link-avaliacoes">
+                        Ver avaliações
+                    </a>
+                </div>
+
+                <p id="descricaoProduto">
+                    Açaí cremoso e saboroso, perfeito para combinar com suas frutas
+                    e adicionais favoritos!
+                </p>
+
+                <strong class="preco-detalhe" id="precoProduto">
+                    R$ 15,50
+                </strong>
+
+            </div>
+
+        </section>
+
+            
+            <!-- Tamanhos -->
+            <section class="opcoes-produto" aria-labelledby="tituloTamanho">
+
+                <h2 id="tituloTamanho">Escolha o tamanho</h2>
+                <p class="texto-auxiliar">Selecione uma opção:</p>
+
+                <div class="opcoes-tamanho">
+
+                    <label class="opcao-tamanho">
+                        <input
+                            type="radio"
+                            name="tamanho"
+                            value="200"
+                            data-preco="15.50"
+                            checked
+                        >
+                        <span>200 ml</span>
+                        <small id="preco200">R$ 15,50</small>
+                    </label>
+
+                    <label class="opcao-tamanho">
+                        <input
+                            type="radio"
+                            name="tamanho"
+                            value="400"
+                            data-preco="24.50"
+                        >
+                        <span>400 ml</span>
+                        <small id="preco400">R$ 24,50</small>
+                    </label>
+
+                    <label class="opcao-tamanho">
+                        <input
+                            type="radio"
+                            name="tamanho"
+                            value="500"
+                            data-preco="30.50"
+                        >
+                        <span>500 ml</span>
+                        <small id="preco500">R$ 30,50</small>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+          
+            <!-- Adicionais -->
+            <section class="secao-escolhas" aria-labelledby="tituloAdicionais">
+
+                <div class="titulo-escolhas">
+                    <h2 id="tituloAdicionais">Adicionais</h2>
+                    <p>3 grátis, extras pagos</p>
+                </div>
+
+                <div class="lista-opcoes">
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="adicionais-gratis"
+                            value="Granola" data-preco="1.50">
+                        <span>Granola</span>
+                        <small>R$ 1,50 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="adicionais-gratis"
+                            value="Paçoca" data-preco="1.50">
+                        <span>Paçoca</span>
+                        <small>R$ 1,50 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="adicionais-gratis"
+                            value="Leite Condensado" data-preco="1.50">
+                        <span>Leite Cond.</span>
+                        <small>R$ 1,50 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="adicionais-gratis"
+                            value="Cupuaçu" data-preco="1.50">
+                        <span>Cupuaçu</span>
+                        <small>R$ 1,50 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="adicionais-gratis"
+                            value="Leite Ninho" data-preco="1.50">
+                        <span>Leite Ninho</span>
+                        <small>R$ 1,50 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="adicionais-gratis"
+                            value="M&M's" data-preco="1.50">
+                        <span>M&M's</span>
+                        <small>R$ 1,50 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="adicionais-pagos"
+                            value="Ovomaltine" data-preco="1.00">
+                        <span>Ovomaltine</span>
+                        <small>R$ 1,00</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="adicionais-pagos"
+                            value="Nutella" data-preco="2.00">
+                        <span>Nutella</span>
+                        <small>R$ 2,00</small>
+                    </label>
+
+                </div>
+
+            </section>
+
+            <!-- Frutas -->
+            <section class="secao-escolhas secao-frutas"
+                aria-labelledby="tituloFrutas">
+
+                <div class="titulo-escolhas">
+                    <h2 id="tituloFrutas">Frutas</h2>
+                    <p>2 grátis, extras pagos</p>
+                </div>
+
+                <div class="lista-opcoes">
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="frutas"
+                            value="Uva" data-preco="2.00">
+                        <span>Uva</span>
+                        <small>R$ 2,00 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="frutas"
+                            value="Morango" data-preco="2.00">
+                        <span>Morango</span>
+                        <small>R$ 2,00 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="frutas"
+                            value="Banana" data-preco="2.00">
+                        <span>Banana</span>
+                        <small>R$ 2,00 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="frutas"
+                            value="Kiwi" data-preco="2.00">
+                        <span>Kiwi</span>
+                        <small>R$ 2,00 extra</small>
+                    </label>
+
+                    <label class="opcao-item">
+                        <input type="checkbox" name="frutas"
+                            value="Manga" data-preco="2.00">
+                        <span>Manga</span>
+                        <small>R$ 2,00 extra</small>
+                    </label>
+
+                </div>
+
+            </section>
+
+            
+            <!-- Resumo do produto -->
+            <section class="resumo-produto" aria-label="Resumo do pedido">
+
+                <div class="controle-quantidade">
+                    <span>Quantidade</span>
+
+                    <div class="botoes-quantidade">
+                        <button type="button" id="diminuirQuantidade"
+                            aria-label="Diminuir quantidade">−</button>
+
+                        <output id="quantidadeProduto" aria-live="polite">1</output>
+
+                        <button type="button" id="aumentarQuantidade"
+                            aria-label="Aumentar quantidade">+</button>
+                    </div>
+                </div>
+
+                <div class="linha-total">
+                    <span>Preço por unidade</span>
+                    <strong id="precoUnitario">R$ 15,50</strong>
+                </div>
+
+                <div class="linha-total">
+                    <span>Total do produto</span>
+                    <strong id="totalProduto">R$ 15,50</strong>
+                </div>
+
+            </section>
+
+
+
+        <!-- Botões inferiores -->
+        <footer class="acoes-acai">
+
+            <button type="button" class="botao-carrinho">
+                Adicionar ao carrinho
+            </button>
+
+            <button type="button" class="botao-comprar">
+                Comprar agora
+            </button>
+
+        </footer>
+
+    </main>
+
+    <script src="js/acai.js"></script>
+
+</body>
+</html>

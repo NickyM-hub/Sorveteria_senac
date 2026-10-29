@@ -316,11 +316,15 @@ button:hover {
 }
 
 .voltar {
-    display: block;
+    display: inline-block;
+    width: max-content;
+    max-width: none;
+    white-space: nowrap;
     color: #e75480;
     text-decoration: none;
     font-size: 14px;
-    margin-top: 5px;
+    margin: 20px auto 0;
+    font-style: normal;
 }
 
 .dica-senha {
@@ -1084,10 +1088,6 @@ a {
     background-color: #fce0ee;
     color: #222;
 
-    overflow-y: auto;
-    box-sizing: border-box;
-    position: relative;
-    border-radius: 20px;
 }
 
 .topo-produto {
@@ -3621,5 +3621,487 @@ body:has(> main.app) {
 
     .etiqueta-status {
         font-size: 8px;
+    }
+}
+
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+.body-acai {
+    margin: 0;
+    padding: 10px;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.body-acai *,
+.body-acai *::before,
+.body-acai *::after {
+    box-sizing: border-box;
+}
+
+/* ========================================
+   TELA DO APLICATIVO
+======================================== */
+
+.tela-acai {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    min-height: 740px;
+    margin: 0 auto;
+    padding-bottom: 75px;
+    background-color: #ffffff;
+    border: 1px solid #d5d5d5;
+    overflow: hidden;
+}
+
+/* ========================================
+   CABEÇALHO E IMAGEM
+======================================== */
+
+.cabecalho-acai {
+    position: relative;
+    width: 100%;
+    height: 158px;
+}
+
+.imagem-acai {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botão voltar */
+
+.botao-voltar {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 32px;
+    line-height: 1;
+}
+
+/* ========================================
+   CONTEÚDO DO PRODUTO
+======================================== */
+
+.conteudo-acai {
+    padding: 10px 15px 12px;
+}
+
+.informacoes-acai h1 {
+    margin: 0;
+    color: #222222;
+    font-size: 18px;
+}
+
+.descricao-acai {
+    margin: 2px 0 12px;
+    color: #666666;
+    font-size: 13px;
+}
+
+.preco-acai {
+    margin: 0 0 3px 5px;
+    color: #f51b83;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* ========================================
+   AVALIAÇÕES
+======================================== */
+
+.avaliacao-acai {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.estrelas-acai {
+    color: #ffe65a;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.nota-acai {
+    color: #222222;
+    font-size: 14px;
+}
+
+/* ========================================
+   ESCOLHA DO TAMANHO
+======================================== */
+
+.grupo-tamanho {
+    min-width: 0;
+    margin: 0 0 18px;
+    padding: 0;
+    border: 0;
+}
+
+.grupo-tamanho legend {
+    margin-bottom: 9px;
+    padding: 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.opcoes-tamanho {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.opcao-tamanho {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+    height: 37px;
+    border: 1px solid #555555;
+    background-color: #ffffff;
+    color: #222222;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+/* Área clicável do tamanho */
+
+.opcao-tamanho input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Tamanho selecionado */
+
+.opcao-tamanho:has(input:checked) {
+    color: #ffffff;
+    background-color: #f51b83;
+    border-color: #f51b83;
+}
+
+.opcao-tamanho:has(input:focus-visible) {
+    outline: 2px solid #8a164f;
+    outline-offset: 3px;
+}
+
+/* ========================================
+   SEÇÕES DE ADICIONAIS E FRUTAS
+======================================== */
+
+.secao-escolhas {
+    margin-top: 20px;
+}
+
+.titulo-escolhas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 13px;
+}
+
+.titulo-escolhas h2 {
+    margin: 0;
+    color: #111111;
+    font-size: 17px;
+}
+
+.titulo-escolhas p {
+    margin: 0;
+    color: #333333;
+    font-size: 10px;
+    text-align: right;
+}
+
+/* ========================================
+   LISTA DE OPÇÕES
+======================================== */
+
+.lista-opcoes {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+}
+
+.opcao-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    color: #222222;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Caixas de seleção */
+
+.opcao-item input {
+    appearance: none;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    border: 1px solid #777777;
+    border-radius: 2px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.opcao-item input:checked {
+    border-color: #f51b83;
+    background-color: #f51b83;
+}
+
+.opcao-item input:checked::after {
+    display: block;
+    content: "✓";
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.opcao-item input:focus-visible {
+    outline: 2px solid #8a164f;
+    outline-offset: 2px;
+}
+
+.opcao-item span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Preços dos extras */
+
+.opcao-item small {
+    margin-left: auto;
+    color: #555555;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+/* Separação dos adicionais pagos */
+
+.adicionais-pagos {
+    margin-top: 22px;
+    padding-top: 13px;
+    border-top: 1px solid #f0d8e3;
+}
+
+.adicionais-pagos h2 {
+    color: #f51b83;
+}
+
+/* ========================================
+   FRUTAS
+======================================== */
+
+.secao-frutas {
+    margin-top: 25px;
+    padding-bottom: 8px;
+}
+
+/* ========================================
+   RESUMO DOS EXTRAS
+======================================== */
+
+.resumo-extras {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fff0f5;
+    color: #222222;
+    font-size: 13px;
+}
+
+.resumo-extras strong {
+    color: #f51b83;
+    white-space: nowrap;
+}
+
+/* ========================================
+   QUANTIDADE E TOTAL DO PRODUTO
+======================================== */
+
+.resumo-produto {
+    margin: 20px 0;
+    padding: 14px;
+    border-radius: 10px;
+    background-color: #fff0f5;
+}
+
+.controle-quantidade,
+.linha-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.controle-quantidade {
+    margin-bottom: 14px;
+    font-size: 13px;
+}
+
+.botoes-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.botoes-quantidade button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid #f51b83;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #f51b83;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#quantidadeProduto {
+    min-width: 18px;
+    color: #222222;
+    text-align: center;
+}
+
+.linha-total {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.linha-total strong {
+    color: #f51b83;
+    white-space: nowrap;
+}
+
+.linha-total:last-child {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #edcbd9;
+    font-size: 15px;
+}
+
+/* ========================================
+   BOTÕES INFERIORES
+======================================== */
+
+.acoes-acai {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    min-height: 65px;
+    border-top: 1px solid #333333;
+    background-color: #ffffff;
+}
+
+.acoes-acai button {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 5px;
+    border: 0;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.botao-carrinho {
+    border-right: 1px solid #333333 !important;
+    background-color: #ffffff;
+    color: #111111;
+}
+
+.botao-comprar {
+    background-color: #f51b83;
+    color: #ffffff;
+}
+
+.acoes-acai button:focus-visible,
+.botoes-quantidade button:focus-visible {
+    outline: 2px solid #8a164f;
+    outline-offset: -4px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 360px) {
+    .body-acai {
+        padding: 0;
+    }
+
+    .tela-acai {
+        border-right: 0;
+        border-left: 0;
+    }
+
+    .conteudo-acai {
+        padding-right: 11px;
+        padding-left: 11px;
+    }
+
+    .titulo-escolhas h2 {
+        font-size: 15px;
+    }
+
+    .titulo-escolhas p {
+        font-size: 9px;
+    }
+
+    .lista-opcoes {
+        column-gap: 8px;
+        row-gap: 11px;
+    }
+
+    .opcao-item {
+        gap: 4px;
+        font-size: 11px;
+    }
+
+    .opcao-item small {
+        font-size: 9px;
+    }
+
+    .acoes-acai button {
+        font-size: 11px;
     }
 }
