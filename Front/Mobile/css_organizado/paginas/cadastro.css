@@ -1,0 +1,57 @@
+/* Tela de cadastro */
+
+
+.cadastro-area h2 {
+    color: #e75454;
+}
+
+.cadastro-area form {
+    gap: 20px;
+}
+
+.termos {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.termos input {
+    margin-top: 2px;
+    accent-color: #e75480;
+    flex-shrink: 0;
+}
+
+.voltar-login {
+    color: #666;
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+
+.voltar-login a {
+    color: #e75480;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.rosa {
+    color: #e75480
+}
+/* Cadastro em celulares pequenos */
+
+@media (max-width: 360px) {
+    .cadastro-area {
+        padding: 22px 16px;
+    }
+
+    .cadastro-area h2 {
+        font-size: 22px;
+    }
+
+    .termos {
+        font-size: 11px;
+    }
+}

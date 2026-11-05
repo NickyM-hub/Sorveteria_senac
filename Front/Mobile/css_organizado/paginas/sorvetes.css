@@ -1,0 +1,209 @@
+/* =========================================
+   TELA DE SABORES DE SORVETES
+========================================= */
+
+.pagina-sorvetes {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 10px 12px 70px;
+    background-color: #fce0ee;
+}
+
+/* Cabeçalho */
+
+.cabecalho-sorvetes {
+    position: relative;
+    padding: 10px 5px 13px;
+}
+
+.voltar-sorvetes {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    color: #333;
+    font-size: 28px;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+.cabecalho-sorvetes h1 {
+    margin: 10px 0 12px;
+    color: #111;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+/* Campo de pesquisa */
+
+.busca-sorvetes {
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding: 0 11px;
+    border: 1px solid #555;
+    border-radius: 13px;
+    outline: none;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.busca-sorvetes:focus {
+    border-color: #f51b83;
+}
+
+.busca-sorvetes::placeholder {
+    color: #aaa;
+}
+
+/* Lista de sabores */
+
+.lista-sorvetes {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 0 5px;
+}
+
+/* Cartões */
+
+.card-sorvete {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 97px;
+    padding: 10px 12px;
+    background-color: #fff;
+}
+
+/* Fotos */
+
+.foto-sorvete {
+    display: block;
+    flex-shrink: 0;
+    width: 64px;
+    height: 76px;
+    border: 1px solid #777;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+/* Informações dos sabores */
+
+.info-sorvete {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+}
+
+.info-sorvete h2 {
+    margin: 0 0 2px;
+    color: #111;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.info-sorvete p {
+    min-height: 12px;
+    margin: 0 0 7px;
+    color: #555;
+    font-size: 9px;
+    line-height: 1.3;
+}
+
+/* Preço e volume */
+
+.preco-tamanho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.preco-sorvete {
+    color: #f51b83;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.tamanho-sorvete {
+    color: #888;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+/* Botão adicionar */
+
+.botao-adicionar-sorvete {
+    align-self: flex-end;
+    min-width: 61px;
+    padding: 3px 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #f51b9a;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botao-adicionar-sorvete:hover {
+    background-color: #d9167e;
+}
+
+/* Mensagem da pesquisa */
+
+.mensagem-vazia {
+    padding: 20px 10px;
+    color: #805466;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Menu inferior */
+
+.pagina-sorvetes {
+    padding-bottom: 75px;
+}
+
+/* Responsividade */
+
+@media (max-width: 350px) {
+    .pagina-sorvetes {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .lista-sorvetes {
+        padding-right: 3px;
+        padding-left: 3px;
+    }
+
+    .card-sorvete {
+        gap: 9px;
+        padding: 8px;
+    }
+
+    .foto-sorvete {
+        width: 58px;
+        height: 70px;
+    }
+
+    .info-sorvete h2 {
+        font-size: 9px;
+    }
+
+    .info-sorvete p {
+        font-size: 8px;
+    }
+}

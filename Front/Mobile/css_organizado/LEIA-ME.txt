@@ -1,0 +1,11 @@
+ORGANIZACAO DO CSS
+
+1. Copie a pasta css para dentro do seu projeto.
+2. Em cada HTML, mantenha apenas o link para o arquivo principal:
+   <link rel="stylesheet" href="css/estilo.css">
+
+IMPORTANTE:
+- As regras existentes foram separadas por tela, sem alterar seus seletores e valores.
+- Os arquivos da pasta componentes e parte dos arquivos base são espaços preparados.
+- Nesta primeira etapa, estilos compartilhados ainda podem estar repetidos dentro dos arquivos das páginas.
+- Não apague o CSS antigo antes de testar todas as telas.

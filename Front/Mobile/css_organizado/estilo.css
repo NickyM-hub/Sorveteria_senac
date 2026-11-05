@@ -1,0 +1,24 @@
+/* Base */
+@import url("base/reset.css");
+@import url("base/variaveis.css");
+@import url("base/global.css");
+@import url("base/tipografia.css");
+
+/* Componentes compartilhados */
+@import url("componentes/botoes.css");
+@import url("componentes/formularios.css");
+@import url("componentes/cards.css");
+@import url("componentes/menu-inferior.css");
+@import url("componentes/cabecalhos.css");
+
+/* Estilos específicos de cada página */
+@import url("paginas/login.css");
+@import url("paginas/cadastro.css");
+@import url("paginas/recuperar-senha.css");
+@import url("paginas/inicio.css");
+@import url("paginas/sorvetes.css");
+@import url("paginas/produto.css");
+@import url("paginas/carrinho.css");
+@import url("paginas/perfil.css");
+@import url("paginas/pedidos.css");
+@import url("paginas/acai.css");

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #fff0f5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Nome da sorveteria em cima */
+
+.logo-area {
+    text-align: center;
+    width: 100%;
+}
+
+.sorvete {
+    font-size: 55px;
+}
+
+
+.titulo-curvo {
+    text-align: center;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.titulo-curvo svg {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.titulo-curvo text {
+    font-family: 'Irish Grover', cursive;
+    font-size: 42px;
+    fill: #e75480;
+}
+
+
+.logo-area p {
+    color: #805466;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Caixa de login */
+
+.login-area {
+    background-color: white;
+    width: 100%;
+    padding: 28px 22px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(180, 70, 110, 0.15);
+    text-align: center;
+}
+
+.login-area h2 {
+    color: #333;
+    font-size: 24px;
+    margin: 0 0 8px;
+}
+
+.subtitulo {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Campos de preenchimento */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form > input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e4cbd5;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+form > input:focus {
+    border-color: #e75480;
+}
+
+.lembrar {
+    text-align: left;
+    font-size: 13px;
+    color: #555;
+}
+
+.lembrar input {
+    accent-color: #e75480;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e75480;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d94370;
+}
+
+.esqueci,
+.cadastro {
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.esqueci {
+    color: #e75480;
+}
+
+.cadastro {
+    color: #805466;
+    margin-top: 3px;
+}
+
+/* Ajustes para telas pequenas */
+
+@media (max-width: 360px) {
+    body {
+        padding: 15px;
+    }
+
+    .logo-area h1 {
+        font-size: 26px;
+    }
+
+    .login-area {
+        padding: 24px 18px;
+    }
+}
