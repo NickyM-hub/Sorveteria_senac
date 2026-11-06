@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar pedido - Pagamento</title>
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <main class="tela-checkout tela-pagamento">
+        <a class="voltar" href="endereco.html" aria-label="Voltar">‹</a>
+        <h1>Finalizar pedido</h1>
+
+        <nav class="etapas" aria-label="Etapas do pedido">
+            <div class="etapa concluida"><span></span><small>Endereço</small></div>
+            <i></i>
+            <div class="etapa ativa"><span></span><small>Pagamento</small></div>
+            <i></i>
+            <div class="etapa"><span></span><small>Confirmação</small></div>
+        </nav>
+
+        <section class="secao-forma">
+            <h2>Forma de pagamento</h2>
+            <div class="pix-selecionado">
+                <span class="icone-pix">◆</span>
+                <div><strong>Pix</strong><small>pagamento rápido e seguro</small></div>
+            </div>
+        </section>
+
+        <section class="area-qr">
+            <span class="mini-qr">▦</span>
+            <p>Escaneie o QR Code ou copie o código</p>
+            <!-- QR ilustrativo: substitua pelo QR Code real gerado para a cobrança PIX. -->
+            <div class="qr-ilustrativo" role="img" aria-label="Espaço ilustrativo do QR Code PIX">
+                <div class="qr-canto canto-1"></div>
+                <div class="qr-canto canto-2"></div>
+                <div class="qr-canto canto-3"></div>
+                <div class="qr-miolo"></div>
+            </div>
+            <button type="button" class="botao-copiar">Copiar código PIX</button>
+        </section>
+
+        <aside class="aviso-pagamento">
+            <span class="aviso-icone">!</span>
+            <p>Após o pagamento, o pedido será<br> confirmado automaticamente.</p>
+        </aside>
+
+        <a href="confirmacao.html" class="botao-principal botao-confirmar">Continuar</a>
+    </main>
+</body>
+</html>

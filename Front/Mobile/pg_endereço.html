@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar pedido - Endereço</title>
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <main class="tela-checkout">
+        <a class="voltar" href="carrinho.html" aria-label="Voltar">‹</a>
+        <h1>Endereço</h1>
+
+        <nav class="etapas" aria-label="Etapas do pedido">
+            <div class="etapa ativa"><span></span><small>Endereço</small></div>
+            <i></i>
+            <div class="etapa"><span></span><small>Pagamento</small></div>
+            <i></i>
+            <div class="etapa"><span></span><small>Confirmação</small></div>
+        </nav>
+
+        <section class="secao-endereco">
+            <h2>Endereço de entrega</h2>
+            <div class="cartao-endereco">
+                <span class="icone-local" aria-hidden="true">⌖</span>
+                <div>
+                    <p>Rua Napolitano, 321<br>Embu das Artes – SP, 00000-000</p>
+                    <a href="perfil-endereco.html" class="link-editar">Editar</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-pagamento">
+            <h2>Tipo de pagamento</h2>
+            <label class="opcao-pagamento selecionada">
+                <input type="radio" name="pagamento" checked>
+                <span class="radio-personalizado"></span>
+                <span>Pix</span>
+            </label>
+            <label class="opcao-pagamento indisponivel">
+                <input type="radio" name="pagamento" disabled>
+                <span class="radio-personalizado"></span>
+                <span>Cartão de crédito</span>
+                <small>Em breve</small>
+            </label>
+            <label class="opcao-pagamento indisponivel">
+                <input type="radio" name="pagamento" disabled>
+                <span class="radio-personalizado"></span>
+                <span>Cartão de débito</span>
+                <small>Em breve</small>
+            </label>
+        </section>
+
+        <div class="resumo-total">
+            <span>Total do pedido</span>
+            <strong>R$ 00,00</strong>
+        </div>
+        <a href="pagamento.html" class="botao-principal">Finalizar pedido</a>
+    </main>
+</body>
+</html>
