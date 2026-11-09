@@ -1,74 +1,88 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Nova senha - Sorveteria</title>
+
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
 
-<main class="container">
+    <main class="container">
 
-    <section class="etapas">
-        <div class="etapa concluida">
-            <div class="circulo">✓</div>
-            <span>E-mail</span>
-        </div>
-        <div class="linha"></div>
-        <div class="etapa concluida">
-            <div class="circulo">✓</div>
-            <span>Verificar</span>
-        </div>
-        <div class="linha"></div>
-        <div class="etapa ativa">
-            <div class="circulo">3</div>
-            <span>Nova senha</span>
-        </div>
-    </section>
+        <!-- Etapas da recuperação -->
+        <nav class="etapas" aria-label="Etapas da recuperação de senha">
 
-    <section class="login-area recuperar-area">
+            <section class="etapa concluida">
+                <span class="circulo">✓</span>
+                <span>E-mail</span>
+            </section>
 
-        <div class="sticker-email">🔑</div>
+            <span class="linha"></span>
 
-        <h2>Crie uma nova senha</h2>
+            <section class="etapa concluida">
+                <span class="circulo">✓</span>
+                <span>Verificar</span>
+            </section>
 
-        <p class="subtitulo">
-            Escolha uma nova senha para acessar
-            sua conta novamente.
-        </p>
+            <span class="linha"></span>
 
-        <form action="#" method="post">
+            <section class="etapa ativa">
+                <span class="circulo">3</span>
+                <span>Nova senha</span>
+            </section>
 
-            <input
-                type="password"
-                name="nova_senha"
-                placeholder="Digite a nova senha"
-                autocomplete="new-password"
-                minlength="8"
-                required
-            >
+        </nav>
 
-            <input
-                type="password"
-                name="confirmar_senha"
-                placeholder="Confirme a nova senha"
-                autocomplete="new-password"
-                minlength="8"
-                required
-            >
+        <section class="login-area recuperar-area">
 
-            <p class="dica-senha">
-                A senha deve ter pelo menos 8 caracteres.
+            <p class="sticker-email" aria-hidden="true">🔑</p>
+
+            <h2>Crie uma nova senha</h2>
+
+            <p class="subtitulo">
+                Escolha uma nova senha para acessar
+                sua conta novamente.
             </p>
 
-            <button type="submit">Salvar nova senha</button>
+            <form action="login.html" method="post">
 
-        </form>
+                <input
+                    type="password"
+                    name="nova_senha"
+                    placeholder="Digite a nova senha"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required
+                >
 
-    </section>
-</main>
+                <input
+                    type="password"
+                    name="confirmar_senha"
+                    placeholder="Confirme a nova senha"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required
+                >
+
+                <p class="dica-senha">
+                    A senha deve ter pelo menos 8 caracteres.
+                </p>
+
+                <button type="submit">
+                    Salvar nova senha
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
 
 </body>
 </html>

@@ -15,7 +15,6 @@
 
         <!-- Cabeçalho -->
         <header class="cabecalho">
-            
 
             <h1>Sorveteria</h1>
 
@@ -23,18 +22,21 @@
                 <span>5,0 km</span>
                 <span>Mín. R$ 20,00</span>
             </p>
+
         </header>
 
         <!-- Banner de promoção -->
-        <section class="banner">
-            <img src="imagens/banner-promocao.png" alt="Promoção especial">
+        <section class="banner" aria-label="Promoção especial">
+            <img src="imagens/banner-promocao.png"
+                 alt="Promoção especial da sorveteria">
         </section>
 
         <!-- Categorias -->
         <section class="categorias">
+
             <h2>Categorias</h2>
 
-            <div class="lista-categorias">
+            <nav class="lista-categorias" aria-label="Categorias de produtos">
 
                 <a href="sorvetes.html" class="categoria">
                     <img src="imagens/sorvetes.png" alt="Sorvetes">
@@ -51,16 +53,17 @@
                     <span>Bebidas</span>
                 </a>
 
-            </div>
+            </nav>
+
         </section>
 
         <!-- Promoções em destaque -->
         <section class="promocoes">
 
-            <div class="titulo-promocoes">
+            <header class="titulo-promocoes">
                 <h2>Promoções em destaque</h2>
                 <a href="promocoes.html">Ver todas</a>
-            </div>
+            </header>
 
             <!-- Promoção 1 -->
             <article class="card-promocao">
@@ -71,20 +74,22 @@
                     alt="Sorvete em promoção"
                 >
 
-                <div class="detalhes-promocao">
+                <section class="detalhes-promocao">
+
                     <span class="desconto">20% OFF</span>
 
                     <h3>Desconto no sorvete 500ml</h3>
 
                     <p>
-                        Válidos para todos os sabores de
-                        sorvetes 500ml.
+                        Válido para todos os sabores de
+                        sorvetes de 500ml.
                     </p>
 
-                    <span class="validade">
+                    <time class="validade" datetime="2026-10-20">
                         ▢ Válido até 20/10/2026
-                    </span>
-                </div>
+                    </time>
+
+                </section>
 
             </article>
 
@@ -97,155 +102,183 @@
                     alt="Produto da sorveteria em promoção"
                 >
 
-                <div class="detalhes-promocao">
+                <section class="detalhes-promocao">
+
                     <span class="desconto">20% OFF</span>
 
                     <h3>Desconto no sorvete 500ml</h3>
 
                     <p>
-                        Válidos para todos os sabores de
-                        sorvetes 500ml.
+                        Válido para todos os sabores de
+                        sorvetes de 500ml.
                     </p>
 
-                    <span class="validade">
+                    <time class="validade" datetime="2026-10-20">
                         ▢ Válido até 20/10/2026
-                    </span>
-                </div>
+                    </time>
+
+                </section>
 
             </article>
 
         </section>
 
-        
         <!-- Mais vendidos -->
         <section class="secao-produtos">
-            <div class="titulo-secao">
+
+            <header class="titulo-secao">
                 <h2>🍦 Mais vendidos</h2>
                 <a href="mais-vendidos.html">Ver todos</a>
-            </div>
+            </header>
 
-            <div class="lista-produtos">
+            <section class="lista-produtos" aria-label="Produtos mais vendidos">
 
                 <article class="produto">
-                    <img src="imagens/sorvete-chocolate.png" alt="Sorvete de chocolate">
-                    <div class="produto-info">
+
+                    <img src="imagens/sorvete-chocolate.png"
+                         alt="Sorvete de chocolate">
+
+                    <section class="produto-info">
                         <h3>Sorvete de chocolate</h3>
                         <p>Cremoso e delicioso</p>
                         <strong>R$ 14,50</strong>
-                    </div>
-                    <a href="detalhes-produto.html" class="adicionar">+</a>
+                    </section>
+
+                    <a href="detalhes-produto.html"
+                       class="adicionar"
+                       aria-label="Ver detalhes do sorvete de chocolate">+</a>
+
                 </article>
 
                 <article class="produto">
-                    <img src="imagens/acai-com-frutas.png" alt="Açaí com frutas">
-                    <div class="produto-info">
+
+                    <img src="imagens/acai-com-frutas.png"
+                         alt="Açaí com frutas">
+
+                    <section class="produto-info">
                         <h3>Açaí com frutas</h3>
                         <p>Açaí com acompanhamentos</p>
                         <strong>R$ 16,00</strong>
-                    </div>
-                    <a href="detalhes-acai.html" class="adicionar">+</a>
+                    </section>
+
+                    <a href="detalhes-acai.html"
+                       class="adicionar"
+                       aria-label="Ver detalhes do açaí com frutas">+</a>
+
                 </article>
 
                 <article class="produto">
-                    <img src="imagens/milkshake.png" alt="Milk-shake de chocolate">
-                    <div class="produto-info">
+
+                    <img src="imagens/milkshake.png"
+                         alt="Milk-shake de chocolate">
+
+                    <section class="produto-info">
                         <h3>Milk-shake de chocolate</h3>
                         <p>Gelado e irresistível</p>
                         <strong>R$ 12,00</strong>
-                    </div>
-                    <a href="detalhes-bebida.html" class="adicionar">+</a>
+                    </section>
+
+                    <a href="detalhes-bebida.html"
+                       class="adicionar"
+                       aria-label="Ver detalhes do milk-shake de chocolate">+</a>
+
                 </article>
 
-            </div>
+            </section>
+
         </section>
 
         <!-- Monte do seu jeito -->
         <section class="secao-monte">
+
             <h2>Monte do seu jeito! 💕</h2>
+
             <p>Escolha seus sabores e adicionais favoritos.</p>
 
-            <div class="opcoes-monte">
-                <div>
+            <section class="opcoes-monte">
+
+                <article>
                     <span>🍨</span>
                     <h3>Seu sorvete</h3>
                     <p>Escolha o sabor e o tamanho.</p>
-                </div>
+                </article>
 
-                <div>
+                <article>
                     <span>🍓</span>
                     <h3>Seus adicionais</h3>
                     <p>Deixe sua sobremesa especial.</p>
-                </div>
-            </div>
+                </article>
+
+            </section>
 
             <a href="sorvetes.html" class="botao-rosa">
                 Escolher meu pedido
             </a>
+
         </section>
 
         <!-- Ofertas do dia -->
         <section class="secao-ofertas">
-            <div class="titulo-secao">
+
+            <header class="titulo-secao">
                 <h2>💗 Ofertas do dia</h2>
                 <a href="promocoes.html">Ver todas</a>
-            </div>
+            </header>
 
             <article class="oferta">
-                <img src="imagens/sundae.png" alt="Sundae com calda">
 
-                <div>
+                <img src="imagens/sundae.png"
+                     alt="Sundae com calda">
+
+                <section>
                     <span class="etiqueta-oferta">OFERTA ESPECIAL</span>
                     <h3>Sundae com calda</h3>
                     <p>Uma sobremesa para adoçar seu dia!</p>
                     <strong>R$ 10,00</strong>
-                </div>
+                </section>
+
             </article>
 
             <article class="oferta">
-                <img src="imagens/milkshake-morango.png" alt="Milk-shake de morango">
 
-                <div>
+                <img src="imagens/milkshake-morango.png"
+                     alt="Milk-shake de morango">
+
+                <section>
                     <span class="etiqueta-oferta">OFERTA ESPECIAL</span>
                     <h3>Milk-shake de morango</h3>
                     <p>Refrescante e cheio de sabor.</p>
                     <strong>R$ 12,00</strong>
-                </div>
+                </section>
+
             </article>
+
         </section>
 
-        
         <!-- Convite para fazer pedido -->
         <section class="convite-pedido">
+
             <span>🍦 💗 🍓</span>
+
             <h2>Que tal adoçar seu dia?</h2>
-            <p>Temos sorvetes, açaís e delícias esperando por você!</p>
+
+            <p>
+                Temos sorvetes, açaís e delícias
+                esperando por você!
+            </p>
+
             <a href="sorvetes.html" class="botao-rosa">
                 Escolher minhas delícias
             </a>
-        </section>
 
+        </section>
 
     </main>
 
-    <script>
-        document.querySelectorAll(".card-sorvete").forEach(function (card) {
-            card.style.cursor = "pointer";
-
-            card.addEventListener("click", function (event) {
-                event.preventDefault();
-
-                const nome = card.querySelector("h2").textContent.trim();
-
-                window.location.href =
-                    "produto.html?nome=" + encodeURIComponent(nome);
-            });
-        });
-    </script>
-
     <!-- Menu inferior -->
-    <nav class="menu-inferior">
+    <nav class="menu-inferior" aria-label="Menu principal">
 
-        <a href="inicio.html" class="item-menu ativo">
+        <a href="inicio.html" class="item-menu ativo" aria-current="page">
             <span class="icone">&#8962;</span>
             <span>Início</span>
         </a>

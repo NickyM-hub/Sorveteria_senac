@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cupons - Sorveteria</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <main class="pagina-cupons">
+
+        <!-- Cabeçalho -->
+        <header class="cabecalho-cupons">
+
+            <a href="inicio.html" class="voltar">‹</a>
+
+            <h1>Cupons</h1>
+
+            <p>Aproveite descontos especiais e torne seu pedido ainda melhor!</p>
+
+        </header>
+
+        <!-- Filtros dos cupons -->
+                
+        <nav class="filtros-cupons" aria-label="Filtrar cupons">
+
+            <button type="button" class="filtro ativo" data-filtro="todos">
+                Todos
+            </button>
+
+            <button type="button" class="filtro" data-filtro="ativos">
+                Ativos
+            </button>
+
+            <button type="button" class="filtro" data-filtro="expirados">
+                Expirados
+            </button>
+
+        </nav>
+
+
+        <!-- Lista de cupons -->
+        <section class="lista-cupons" aria-label="Lista de cupons">
+
+            <!-- Cupom 1 -->
+            <article class="card-cupom" data-validade="2026-10-20">
+
+                <figure class="imagem-cupom">
+                    <img src="imagens/cupom.png" alt="Imagem do cupom Cliente 10">
+                </figure>
+
+                <section class="informacoes-cupom">
+
+                    <span class="codigo-cupom">CLIENTE10</span>
+
+                    <h2>Cliente Especial</h2>
+
+                    <p class="desconto">10% de desconto</p>
+
+                    <p class="validade">Válido até 20/10/2026</p>
+
+                    <p class="regra">
+                        Regra: uso único por cliente e não cumulativo com outros cupons.
+                    </p>
+
+                </section>
+
+            </article>
+
+            <!-- Cupom 2 -->
+            <article class="card-cupom" data-validade="2026-10-20">
+
+                <figure class="imagem-cupom">
+                    <img src="imagens/cupom.png" alt="Imagem do cupom Pedido 15">
+                </figure>
+
+                <section class="informacoes-cupom">
+
+                    <span class="codigo-cupom">PEDIDO15</span>
+
+                    <h2>Economia no pedido</h2>
+
+                    <p class="desconto">R$ 15,00 de desconto</p>
+
+                    <p class="validade">Válido até 20/10/2026</p>
+
+                    <p class="regra">
+                        Regra: uso único por cliente e não cumulativo com outros cupons.
+                    </p>
+
+                </section>
+
+            </article>
+
+            <!-- Cupom 3 -->
+            <article class="card-cupom" data-validade="2026-11-20">
+
+                <figure class="imagem-cupom">
+                    <img src="imagens/cupom.png" alt="Imagem do cupom Açaí 5">
+                </figure>
+
+                <section class="informacoes-cupom">
+
+                    <span class="codigo-cupom">ACAI5</span>
+
+                    <h2>Açaí com desconto</h2>
+
+                    <p class="desconto">R$ 5,00 de desconto</p>
+
+                    <p class="validade">Válido até 20/10/2026</p>
+
+                    <p class="regra">
+                        Regra de uso: Pedido mínimo de R$ 25,00. Aplicável somente à categoria Açaí.
+                    </p>
+
+                </section>
+
+            </article>
+
+            <!-- Cupom 4 -->
+            <article class="card-cupom" data-validade="2026-10-20">
+
+                <figure class="imagem-cupom">
+                    <img src="imagens/cupom.png" alt="Imagem do cupom Frete Grátis">
+                </figure>
+
+                <section class="informacoes-cupom">
+
+                    <span class="codigo-cupom">FRETEGRATIS</span>
+
+                    <h2>Entrega Grátis</h2>
+
+                    <p class="desconto">Até R$ 10,00 de desconto no frete</p>
+
+                    <p class="validade">Válido até 20/10/2026</p>
+
+                    <p class="regra">
+                        Regra de uso: Pedido mínimo de R$ 30,00. Válido para entregas na área atendida.
+                    </p>
+
+                </section>
+
+            </article>
+
+            <!-- Cupom 5 -->
+            <article class="card-cupom" data-validade="2026-10-20">
+
+                <figure class="imagem-cupom">
+                    <img src="imagens/cupom.png" alt="Imagem do cupom Leve 2">
+                </figure>
+
+
+                    <section class="informacoes-cupom">
+
+                        <span class="codigo-cupom">LEVE2</span>
+
+                        <h2>Dobro de sabor</h2>
+
+                        <p class="desconto">Leve 2 pagando 1</p>
+
+                        <p class="validade">Válido até 20/10/2026</p>
+
+                        <p class="regra">
+                            Regra: válido para produtos selecionados.
+                        </p>
+
+                    </section>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- Menu inferior -->
+    <nav class="menu-inferior" aria-label="Menu principal">
+
+        <a href="inicio.html" class="item-menu ativo" aria-current="page">
+            <span class="icone">&#8962;</span>
+            <span>Início</span>
+        </a>
+
+        <a href="cupons.html" class="item-menu">
+            <span class="icone">&#9737;</span>
+            <span>Cupons</span>
+        </a>
+
+        <a href="carrinho.html" class="item-menu">
+            <span class="icone">&#128722;</span>
+            <span>Carrinho</span>
+        </a>
+
+        <a href="meus-pedidos.html" class="item-menu">
+            <span class="icone">&#9776;</span>
+            <span>Pedidos</span>
+        </a>
+
+        <a href="perfil.html" class="item-menu">
+            <span class="icone">&#9818;</span>
+            <span>Perfil</span>
+        </a>
+
+    </nav>
+
+    </footer>
+
+    <script src="js/cupons.js"></script>
+
+</body>
+</html>

@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
 
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
 
     <main class="container">
@@ -52,6 +54,7 @@
                     name="senha"
                     placeholder="Crie uma senha"
                     autocomplete="new-password"
+                    minlength="8"
                     required
                 >
 
@@ -60,15 +63,33 @@
                     name="confirmar_senha"
                     placeholder="Confirme sua senha"
                     autocomplete="new-password"
+                    minlength="8"
                     required
                 >
 
+                <!-- Aceitação dos termos -->
                 <label class="termos">
-                    <input type="checkbox" name="termos" required>
-                    Li e aceito os termos de<span class="rosa">Uso</span> e a <span class="rosa">Política de Privacidade</span>.
+
+                    <input
+                        type="checkbox"
+                        name="termos"
+                        required
+                    >
+
+                    <span>
+                        Li e aceito os termos de
+                        <a href="termos.html" class="rosa">Uso</a>
+                        e a
+                        <a href="privacidade.html" class="rosa">
+                            Política de Privacidade
+                        </a>.
+                    </span>
+
                 </label>
 
-                <button type="submit">Criar conta</button>
+                <button type="submit">
+                    Criar conta
+                </button>
 
                 <p class="voltar-login">
                     Já tem uma conta?

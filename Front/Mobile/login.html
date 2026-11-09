@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,30 +10,45 @@
 
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
 
     <main class="container">
 
-        <section class="logo-area">
-            <div class="sorvete">🍦</div>
-                 <h1 class="titulo-curvo" aria-label="Sorveteria">
-                    <svg viewBox="0 0 320 110" aria-hidden="true">
-                        <defs>
-                            <path id="curva" d="M 20,85 Q 160,-10 300,85" />
-                        </defs>
+        <!-- Logo da sorveteria -->
+        <header class="logo-area">
 
-                        <text>
-                            <textPath href="#curva" startOffset="50%" text-anchor="middle">
-                                Sorveteria
-                            </textPath>
-                        </text>
-                    </svg>
-                </h1>
+            <p class="sorvete" aria-hidden="true">🍦</p>
+
+            <h1 class="titulo-curvo" aria-label="Sorveteria">
+
+                <svg viewBox="0 0 320 110" aria-hidden="true">
+
+                    <defs>
+                        <path id="curva" d="M 20,85 Q 160,-10 300,85" />
+                    </defs>
+
+                    <text>
+                        <textPath href="#curva"
+                            startOffset="50%"
+                            text-anchor="middle">
+                            Sorveteria
+                        </textPath>
+                    </text>
+
+                </svg>
+
+            </h1>
+
             <p>Mais sabor no seu dia!</p>
-        </section>
 
+        </header>
+
+        <!-- Área de login -->
         <section class="login-area">
+
             <h2>Bem-vindo(a)!</h2>
+
             <p class="subtitulo">
                 Faça login para continuar
             </p>
@@ -43,6 +59,7 @@
                     type="text"
                     name="usuario"
                     placeholder="CPF ou e-mail"
+                    autocomplete="username"
                     required
                 >
 
@@ -50,17 +67,22 @@
                     type="password"
                     name="senha"
                     placeholder="Senha"
+                    autocomplete="current-password"
                     required
                 >
 
-                <div class="lembrar">
+                <section class="lembrar">
+
                     <label>
                         <input type="checkbox" name="lembrar">
                         Lembre de mim
                     </label>
-                </div>
 
-                <button type="submit">Entrar</button>
+                </section>
+
+                <button type="submit">
+                    Entrar
+                </button>
 
                 <a href="recuperar-senha.html" class="esqueci">
                     Esqueci minha senha?
@@ -71,6 +93,7 @@
                 </a>
 
             </form>
+
         </section>
 
     </main>
