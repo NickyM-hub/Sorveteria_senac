@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,10 @@
 
     <main class="pagina-carrinho" id="paginaCarrinho">
 
+        <!-- Cabeçalho -->
+
         <header class="cabecalho-carrinho">
+
             <a href="inicio.html"
                class="voltar-carrinho"
                aria-label="Voltar">
@@ -23,29 +27,44 @@
 
             <h1>Meu carrinho</h1>
 
-            <span class="icone-carrinho">♡</span>
         </header>
 
-        <section class="conteudo-carrinho" id="conteudoCarrinho">
+        <!-- Carrinho vazio -->
 
-            <h2>Seus produtos</h2>
+        <section id="carrinhoVazio" class="carrinho-vazio" hidden>
 
-            <div id="listaCarrinho"></div>
+            <span>🍦</span>
 
-            <div id="carrinhoVazio" class="carrinho-vazio" hidden>
-                <span>🍦</span>
-                <h3>Seu carrinho está vazio!</h3>
-                <p>Que tal escolher uma delícia para adoçar o seu dia?</p>
+            <h3>Seu carrinho está vazio!</h3>
 
-                <a href="sorvetes.html" class="botao-voltar-loja">
-                    Escolher produtos
-                </a>
-            </div>
+            <p>
+                Que tal escolher uma delícia para adoçar o seu dia?
+            </p>
+
+            <a href="sorvetes.html" class="botao-voltar-loja">
+                Escolher produtos
+            </a>
+
+        </section>
+
+        <!-- Conteúdo exibido quando existem produtos -->
+
+        <section class="conteudo-carrinho" id="conteudoCarrinho" hidden>
+
+            <!-- Lista de produtos -->
+
+            <section id="listaCarrinho"
+                     aria-label="Produtos adicionados ao carrinho">
+            </section>
+
+            <!-- Opções de entrega -->
 
             <section class="secao-entrega" id="opcoesEntrega">
+
                 <h2>Como deseja receber?</h2>
 
                 <label class="opcao-entrega">
+
                     <input
                         type="radio"
                         name="entrega"
@@ -57,9 +76,11 @@
                         <strong>Retirar no local</strong>
                         <small>Busque seu pedido na sorveteria</small>
                     </span>
+
                 </label>
 
                 <label class="opcao-entrega">
+
                     <input
                         type="radio"
                         name="entrega"
@@ -70,13 +91,23 @@
                         <strong>Receber em casa</strong>
                         <small>Taxa de entrega: R$ 5,00</small>
                     </span>
+
                 </label>
+
             </section>
 
+            <!-- Cupom de desconto -->
+
             <section class="secao-cupom" id="secaoCupom">
+
                 <h2>Cupom de desconto</h2>
 
-                <div class="campo-cupom">
+                <form class="campo-cupom" onsubmit="return false;">
+
+                    <label for="cupom" hidden>
+                        Digite seu cupom
+                    </label>
+
                     <input
                         type="text"
                         id="cupom"
@@ -86,48 +117,55 @@
                     <button type="button" id="aplicarCupom">
                         Aplicar
                     </button>
-                </div>
 
-                <p id="mensagemCupom"></p>
+                </form>
+
+                <p id="mensagemCupom" aria-live="polite"></p>
+
             </section>
 
+            <!-- Resumo do pedido -->
+
             <section class="resumo-carrinho" id="resumoCarrinho">
+
                 <h2>Resumo do pedido</h2>
 
-                <div class="linha-resumo">
+                <p class="linha-resumo">
                     <span>Subtotal</span>
                     <span id="subtotal">R$ 0,00</span>
-                </div>
+                </p>
 
-                <div class="linha-resumo">
+                <p class="linha-resumo">
                     <span>Entrega</span>
                     <span id="valorEntrega">R$ 0,00</span>
-                </div>
+                </p>
 
-                <div class="linha-resumo">
+                <p class="linha-resumo">
                     <span>Desconto</span>
                     <span id="valorDesconto">R$ 0,00</span>
-                </div>
+                </p>
 
-                <div class="linha-resumo linha-total">
+                <p class="linha-resumo linha-total">
                     <strong>Total</strong>
                     <strong id="totalCarrinho">R$ 0,00</strong>
-                </div>
+                </p>
 
-            <a href="pg_endereço.html" class="botao-finalizar">
-                Finalizar Pedido
-            </a>
+                <a href="pg_endereço.html"
+                   id="finalizarPedido"
+                   class="botao-finalizar">
 
-        
+                    Finalizar Pedido
+
+                </a>
 
             </section>
 
         </section>
-    
 
     </main>
 
     <script src="js/carrinho_pagina.js"></script>
 
 </body>
+
 </html>

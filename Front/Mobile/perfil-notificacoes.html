@@ -1,74 +1,142 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Notificações - Sorveteria</title>
+
     <link rel="stylesheet" href="css/estilo.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body>
-<main class="pagina">
-    <header class="pagina-topo">
-        <a href="perfil.html" class="voltar"><i class="fa-solid fa-arrow-left"></i></a>
-        <div><small>MINHA CONTA</small><h1>Notificações</h1></div>
-    </header>
 
-    <section class="cartao-intro">
-        <div class="intro-icone"><i class="fa-regular fa-bell"></i></div>
-        <h2>Fique por dentro!</h2>
-        <p>Acompanhe novidades, promoções e atualizações dos seus pedidos.</p>
-    </section>
+<body class="body-perfil">
 
-    <div class="titulo-lista">
-        <h2>Preferências</h2>
-        <span>Escolha quais avisos deseja receber</span>
-    </div>
+    <main class="pagina">
 
-    <section class="preferencias">
-        <label class="preferencia">
-            <div class="preferencia-icone rosa">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-            <div class="preferencia-texto">
-                <strong>Atualizações dos pedidos</strong>
-                <small>Confirmação, preparo e entrega</small>
-            </div>
-            <input type="checkbox" name="pedidos" checked>
-        </label>
+        <header class="pagina-topo">
 
-        <label class="preferencia">
-            <div class="preferencia-icone amarelo">
-                <i class="fa-solid fa-percent"></i>
-            </div>
-            <div class="preferencia-texto">
-                <strong>Promoções e descontos</strong>
-                <small>Ofertas e cupons especiais</small>
-            </div>
-            <input type="checkbox" name="promocoes" checked>
-        </label>
+            <a href="perfil.html" class="voltar" aria-label="Voltar">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
 
-        <label class="preferencia">
-            <div class="preferencia-icone verde">
-                <i class="fa-solid fa-gift"></i>
-            </div>
-            <div class="preferencia-texto">
-                <strong>Novidades</strong>
-                <small>Novos sabores e produtos</small>
-            </div>
-            <input type="checkbox" name="novidades">
-        </label>
-    </section>
+            <section>
+                <small>MINHA CONTA</small>
+                <h1>Notificações</h1>
+            </section>
 
-    <div class="titulo-lista">
-        <h2>Últimas notificações</h2>
-        <span>Exemplos de avisos</span>
-    </div>
+        </header>
 
 
-    <a href="perfil.html" class="botao-secundario">Voltar ao perfil</a>
-</main>
+        <section class="cartao-intro">
+
+            <span class="intro-icone">
+                <i class="fa-regular fa-bell"></i>
+            </span>
+
+            <h2>Fique por dentro!</h2>
+
+            <p>
+                Acompanhe novidades, promoções e atualizações dos seus pedidos.
+            </p>
+
+        </section>
+
+
+        <form class="formulario-notificacoes" action="#" method="post">
+
+            <fieldset class="preferencias">
+
+                <legend class="titulo-lista">
+                    <strong>Preferências</strong>
+                    <small>Escolha quais avisos deseja receber</small>
+                </legend>
+
+
+                <label class="preferencia">
+
+                    <span class="preferencia-icone rosa">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </span>
+
+                    <span class="preferencia-texto">
+                        <strong>Atualizações dos pedidos</strong>
+                        <small>Confirmação, preparo e entrega</small>
+                    </span>
+
+                    <input type="checkbox" name="pedidos" checked>
+
+                </label>
+
+
+                <label class="preferencia">
+
+                    <span class="preferencia-icone amarelo">
+                        <i class="fa-solid fa-percent"></i>
+                    </span>
+
+                    <span class="preferencia-texto">
+                        <strong>Promoções e descontos</strong>
+                        <small>Ofertas e cupons especiais</small>
+                    </span>
+
+                    <input type="checkbox" name="promocoes" checked>
+
+                </label>
+
+
+                <label class="preferencia">
+
+                    <span class="preferencia-icone verde">
+                        <i class="fa-solid fa-gift"></i>
+                    </span>
+
+                    <span class="preferencia-texto">
+                        <strong>Novidades</strong>
+                        <small>Novos sabores e produtos</small>
+                    </span>
+
+                    <input type="checkbox" name="novidades">
+
+                </label>
+
+            </fieldset>
+
+
+            <section class="secao-notificacoes">
+
+                <header class="titulo-lista">
+
+                    <h2>Últimas notificações</h2>
+
+                    <span>Exemplos de avisos</span>
+
+                </header>
+
+                <p class="mensagem-notificacoes">
+                    Você ainda não possui notificações recentes.
+                </p>
+
+            </section>
+
+
+            <button type="submit" class="botao-principal">
+                <i class="fa-solid fa-check"></i>
+                Salvar preferências
+            </button>
+
+            <a href="perfil.html" class="botao-secundario">
+                Voltar ao perfil
+            </a>
+
+        </form>
+
+    </main>
+
 </body>
 </html>

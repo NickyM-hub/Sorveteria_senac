@@ -1,61 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Meus pedidos - Sorveteria</title>
+
     <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="css/pedidos.css">
     <script src="js/pedidos.js" defer></script>
 </head>
+
 <body class="body-pedidos">
+
     <main class="tela-pedidos">
+
+        <!-- Cabeçalho -->
         <header class="cabecalho-pedidos">
-            <a class="voltar-pedidos" href="inicio.html" aria-label="Voltar para o início">‹</a>
+
             <h1>Meus pedidos</h1>
+
         </header>
 
-        <nav class="abas-pedidos" aria-label="Filtrar pedidos">
-            <button type="button" class="aba-pedido ativa" data-filtro="todos">Todos</button>
-            <button type="button" class="aba-pedido" data-filtro="andamento">Em andamento</button>
-            <button type="button" class="aba-pedido" data-filtro="finalizados">Finalizados</button>
-        </nav>
+        <!-- Lista de pedidos -->
+        <section class="secao-pedidos">
 
-        <section>
             <h2 class="subtitulo-pedidos">Seus pedidos</h2>
-            <div id="listaPedidos" class="lista-pedidos"></div>
-            <p id="mensagemVazia" class="mensagem-vazia" hidden>Nenhum pedido encontrado nesta categoria.</p>
+
+            <section id="listaPedidos" class="lista-pedidos"
+                     aria-label="Seus pedidos">
+            </section>
+
+            <p id="mensagemVazia" class="mensagem-vazia" hidden>
+                Você ainda não possui pedidos.
+            </p>
+
         </section>
 
-       <!-- Menu inferior -->
-    <nav class="menu-inferior">
+        <!-- Menu inferior -->
+        <nav class="menu-inferior" aria-label="Menu principal">
 
-        <a href="inicio.html" class="item-menu ativo">
-            <span class="icone">&#8962;</span>
-            <span>Início</span>
-        </a>
+            <a href="inicio.html" class="item-menu">
+                <span class="icone">&#8962;</span>
+                <span>Início</span>
+            </a>
 
-        <a href="cupons.html" class="item-menu">
-            <span class="icone">&#9737;</span>
-            <span>Cupons</span>
-        </a>
+            <a href="cupons.html" class="item-menu">
+                <span class="icone">&#9737;</span>
+                <span>Cupons</span>
+            </a>
 
-        <a href="carrinho.html" class="item-menu">
-            <span class="icone">&#128722;</span>
-            <span>Carrinho</span>
-        </a>
+            <a href="carrinho.html" class="item-menu">
+                <span class="icone">&#128722;</span>
+                <span>Carrinho</span>
+            </a>
 
-        <a href="meus-pedidos.html" class="item-menu">
-            <span class="icone">&#9776;</span>
-            <span>Pedidos</span>
-        </a>
+            <a href="meus-pedidos.html" class="item-menu ativo">
+                <span class="icone">&#9776;</span>
+                <span>Pedidos</span>
+            </a>
 
-        <a href="perfil.html" class="item-menu">
-            <span class="icone">&#9818;</span>
-            <span>Perfil</span>
-        </a>
+            <a href="perfil.html" class="item-menu">
+                <span class="icone">&#9818;</span>
+                <span>Perfil</span>
+            </a>
 
-    </nav>
+        </nav>
+
     </main>
+
 </body>
 </html>

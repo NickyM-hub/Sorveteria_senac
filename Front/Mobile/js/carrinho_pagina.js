@@ -3,9 +3,12 @@
 
 const listaCarrinho = document.getElementById("listaCarrinho");
 const carrinhoVazio = document.getElementById("carrinhoVazio");
+const conteudoCarrinho = document.getElementById("conteudoCarrinho");
+
 const opcoesEntrega = document.getElementById("opcoesEntrega");
 const secaoCupom = document.getElementById("secaoCupom");
 const resumoCarrinho = document.getElementById("resumoCarrinho");
+
 const menuBotoes = document.querySelector(".menu-botoes-produto");
 
 const subtotalElemento = document.getElementById("subtotal");
@@ -19,6 +22,7 @@ const mensagemCupom = document.getElementById("mensagemCupom");
 const botaoFinalizar = document.getElementById("finalizarPedido");
 
 const TAXA_ENTREGA = 5;
+
 let cupomAplicado = "";
 
 function lerCarrinho() {
@@ -28,6 +32,7 @@ function lerCarrinho() {
         );
 
         return Array.isArray(dados) ? dados : [];
+
     } catch {
         return [];
     }
@@ -51,10 +56,12 @@ function formatarPreco(valor) {
 
 function obterSubtotal() {
     return carrinho.reduce((total, item) => {
+
         const preco = Number(item.precoUnitario) || 0;
         const quantidade = Number(item.quantidade) || 1;
 
         return total + preco * quantidade;
+
     }, 0);
 }
 
@@ -83,7 +90,11 @@ function atualizarResumo() {
     const subtotal = obterSubtotal();
     const entrega = obterEntrega();
     const desconto = obterDesconto();
-    const total = Math.max(0, subtotal + entrega - desconto);
+
+    const total = Math.max(
+        0,
+        subtotal + entrega - desconto
+    );
 
     subtotalElemento.textContent = formatarPreco(subtotal);
     valorEntregaElemento.textContent = formatarPreco(entrega);
@@ -92,18 +103,18 @@ function atualizarResumo() {
 }
 
 function desenharCarrinho() {
+
     carrinho = lerCarrinho();
+
     listaCarrinho.replaceChildren();
 
     const temProdutos = carrinho.length > 0;
 
-    // Esconde a página inteira quando o carrinho está vazio.
-    document.body.classList.toggle(
-        "carrinho-vazio",
-        !temProdutos
-    );
+    // Controla o que aparece na tela.
 
     carrinhoVazio.hidden = temProdutos;
+    conteudoCarrinho.hidden = !temProdutos;
+
     opcoesEntrega.hidden = !temProdutos;
     secaoCupom.hidden = !temProdutos;
     resumoCarrinho.hidden = !temProdutos;
@@ -112,15 +123,22 @@ function desenharCarrinho() {
         menuBotoes.hidden = !temProdutos;
     }
 
+    // Se não houver produtos, mostra somente a mensagem.
+
     if (!temProdutos) {
+
         subtotalElemento.textContent = formatarPreco(0);
         valorEntregaElemento.textContent = formatarPreco(0);
         valorDescontoElemento.textContent = formatarPreco(0);
         totalElemento.textContent = formatarPreco(0);
+
         return;
     }
 
+    // Cria os produtos do carrinho.
+
     carrinho.forEach((item, indice) => {
+
         const card = document.createElement("article");
         card.className = "item-carrinho";
 
@@ -137,12 +155,14 @@ function desenharCarrinho() {
         nome.textContent = item.nome || "Produto";
 
         const tamanho = document.createElement("p");
-        tamanho.textContent = "Tamanho: " + (item.tamanho || "Não informado");
+        tamanho.textContent =
+            "Tamanho: " + (item.tamanho || "Não informado");
 
         const descricao = document.createElement("p");
         descricao.textContent = item.descricao || "";
 
         const adicionais = document.createElement("p");
+
         adicionais.textContent =
             item.adicionais && item.adicionais.length
                 ? "Adicionais: " + item.adicionais
@@ -157,6 +177,7 @@ function desenharCarrinho() {
 
         const preco = document.createElement("p");
         preco.className = "preco-item-carrinho";
+
         preco.textContent = formatarPreco(
             (Number(item.precoUnitario) || 0) *
             (Number(item.quantidade) || 1)
@@ -168,7 +189,11 @@ function desenharCarrinho() {
         const diminuir = document.createElement("button");
         diminuir.type = "button";
         diminuir.textContent = "−";
-        diminuir.setAttribute("aria-label", "Diminuir quantidade");
+        diminuir.setAttribute(
+            "aria-label",
+            "Diminuir quantidade"
+        );
+
         diminuir.addEventListener("click", () => {
             alterarQuantidade(indice, -1);
         });
@@ -179,7 +204,11 @@ function desenharCarrinho() {
         const aumentar = document.createElement("button");
         aumentar.type = "button";
         aumentar.textContent = "+";
-        aumentar.setAttribute("aria-label", "Aumentar quantidade");
+        aumentar.setAttribute(
+            "aria-label",
+            "Aumentar quantidade"
+        );
+
         aumentar.addEventListener("click", () => {
             alterarQuantidade(indice, 1);
         });
@@ -188,11 +217,16 @@ function desenharCarrinho() {
         remover.type = "button";
         remover.className = "remover-item";
         remover.textContent = "Remover";
+
         remover.addEventListener("click", () => {
             removerItem(indice);
         });
 
-        controles.append(diminuir, quantidade, aumentar);
+        controles.append(
+            diminuir,
+            quantidade,
+            aumentar
+        );
 
         informacoes.append(
             nome,
@@ -205,13 +239,18 @@ function desenharCarrinho() {
         );
 
         card.append(imagem, informacoes);
+
         listaCarrinho.appendChild(card);
+
     });
 
     atualizarResumo();
 }
 
+// Alterar quantidade dos produtos.
+
 function alterarQuantidade(indice, alteracao) {
+
     if (!carrinho[indice]) return;
 
     const quantidadeAtual =
@@ -225,39 +264,68 @@ function alterarQuantidade(indice, alteracao) {
     }
 
     carrinho[indice].quantidade = novaQuantidade;
+
     salvarCarrinho();
+
     desenharCarrinho();
 }
+
+// Remover produtos do carrinho.
 
 function removerItem(indice) {
+
     carrinho.splice(indice, 1);
+
     salvarCarrinho();
+
     desenharCarrinho();
 }
 
+// Atualizar resumo quando mudar a entrega.
+
 document.querySelectorAll('input[name="entrega"]').forEach(opcao => {
+
     opcao.addEventListener("change", atualizarResumo);
+
 });
 
+// Aplicar cupom de desconto.
+
 botaoAplicarCupom.addEventListener("click", () => {
+
     const codigo = campoCupom.value.trim().toUpperCase();
 
     if (codigo === "SORVETE10" && obterSubtotal() >= 20) {
+
         cupomAplicado = codigo;
-        mensagemCupom.textContent = "Cupom aplicado: 10% de desconto!";
+
+        mensagemCupom.textContent =
+            "Cupom aplicado: 10% de desconto!";
+
     } else if (codigo === "SORVETE10") {
+
         cupomAplicado = "";
+
         mensagemCupom.textContent =
             "Seu pedido precisa ter subtotal de pelo menos R$ 20,00.";
+
     } else {
+
         cupomAplicado = "";
-        mensagemCupom.textContent = "Cupom inválido ou não reconhecido.";
+
+        mensagemCupom.textContent =
+            "Cupom inválido ou não reconhecido.";
+
     }
 
     atualizarResumo();
+
 });
 
+// Finalizar pedido.
+
 botaoFinalizar.addEventListener("click", () => {
+
     if (carrinho.length === 0) return;
 
     const opcaoSelecionada = document.querySelector(
@@ -265,18 +333,26 @@ botaoFinalizar.addEventListener("click", () => {
     );
 
     const pedido = {
+
         itens: carrinho,
+
         subtotal: obterSubtotal(),
+
         entrega: obterEntrega(),
+
         desconto: obterDesconto(),
+
         total: Math.max(
             0,
             obterSubtotal() + obterEntrega() - obterDesconto()
         ),
+
         formaRecebimento: opcaoSelecionada
             ? opcaoSelecionada.value
             : "retirada",
+
         cupom: cupomAplicado
+
     };
 
     localStorage.setItem(
@@ -285,14 +361,19 @@ botaoFinalizar.addEventListener("click", () => {
     );
 
     window.location.href = "pagamento.html";
+
 });
 
 // Atualiza a tela ao abrir o carrinho.
+
 desenharCarrinho();
 
 // Atualiza se o carrinho for alterado em outra aba.
+
 window.addEventListener("storage", evento => {
+
     if (evento.key === "carrinhoSorveteria") {
         desenharCarrinho();
     }
+
 });

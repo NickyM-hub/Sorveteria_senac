@@ -479,12 +479,12 @@ button:hover {
 .banner {
     width: 100%;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 20px;
 }
 
 .banner img {
     width: 100%;
-    height: 166px;
+    height: 170px;
     display: block;
     object-fit: cover;
 }
@@ -714,8 +714,8 @@ button:hover {
     font-size: 11px;
 }
 
-/* Botão rosa */
 
+/* Botão rosa */
 .botao-rosa {
     display: inline-block;
     padding: 12px 20px;
@@ -866,8 +866,16 @@ button:hover {
 /* Ícones */
 
 .icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
     font-size: 23px;
-    line-height: 24px;
+    line-height: 1;
+    object-fit: contain;
 }
 
 /* Página atual */
@@ -892,6 +900,7 @@ button:hover {
 .pagina-carrinho {
     padding-bottom: 90px;
 }
+
 
 /* Ajustes para telas pequenas */
 
@@ -955,17 +964,14 @@ button:hover {
     gap: 4px;
 }
 
-.cabecalho-cupons .voltar {
-    align-self: flex-start;
-    color: #222;
-    font-size: 30px;
-    margin: 0 0 5px;
-}
+
 
 .cabecalho-cupons h1 {
-    color: #222;
-    font-size: 26px;
-    font-weight: normal;
+    margin: 0;
+
+    color: #805466;
+    font-size: 25px;
+    text-align: center;
 }
 
 .cabecalho-cupons p {
@@ -1122,3 +1128,1995 @@ button:hover {
     }
 
 }
+
+
+/* ========================================
+   TELA MEU CARRINHO
+======================================== */
+
+/* Estrutura principal */
+
+.body-carrinho {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff8f0;
+}
+
+.pagina-carrinho {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px 15px 35px;
+
+    background-color: #fff0f5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Garante o funcionamento do atributo hidden */
+
+[hidden] {
+    display: none !important;
+}
+
+/* Cabeçalho */
+
+.cabecalho-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.voltar-carrinho {
+    color: #e75480;
+    font-size: 38px;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.cabecalho-carrinho h1 {
+    flex: 1;
+    color: #e75480;
+    font-family: 'Irish Grover', cursive;
+    font-size: 27px;
+    text-align: center;
+}
+
+.icone-carrinho {
+    color: #e75480;
+    font-size: 28px;
+}
+
+/* Conteúdo */
+
+.conteudo-carrinho {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.conteudo-carrinho > h2,
+.secao-entrega h2,
+.secao-cupom h2,
+.resumo-carrinho h2 {
+    color: #805466;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+/* Lista de produtos */
+
+#listaCarrinho {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+/* Card do produto */
+
+.item-carrinho {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 12px;
+
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Imagem */
+
+.imagem-item-carrinho {
+    width: 95px;
+    height: 105px;
+    flex-shrink: 0;
+
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Informações do produto */
+
+.informacoes-item-carrinho {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.informacoes-item-carrinho h3 {
+    color: #805466;
+    font-size: 15px;
+}
+
+.informacoes-item-carrinho p {
+    color: #777777;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.informacoes-item-carrinho .preco-item-carrinho {
+    color: #e75480;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+/* Quantidade */
+
+.controles-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.controles-quantidade button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border: 1px solid #e9a4bb;
+    border-radius: 8px;
+
+    font-size: 20px;
+}
+
+.controles-quantidade button:hover {
+    background-color: #f5c5d9;
+}
+
+.controles-quantidade span {
+    color: #805466;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Remover produto */
+
+.informacoes-item-carrinho .remover-item {
+    width: fit-content;
+    padding: 5px 0;
+
+    background: none;
+    color: #d94370;
+
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.informacoes-item-carrinho .remover-item:hover {
+    background: none;
+    text-decoration: underline;
+}
+
+/* Carrinho vazio */
+
+#carrinhoVazio {
+    padding: 30px 18px;
+
+    background-color: #ffffff;
+    border-radius: 18px;
+
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+#carrinhoVazio > span {
+    font-size: 55px;
+}
+
+#carrinhoVazio h3 {
+    color: #805466;
+    font-size: 18px;
+    margin: 12px 0 8px;
+}
+
+#carrinhoVazio p {
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.botao-voltar-loja {
+    display: inline-block;
+    padding: 12px 18px;
+
+    background-color: #e75480;
+    color: #ffffff;
+
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Opções de entrega */
+
+.secao-entrega {
+    padding: 16px;
+
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+.opcao-entrega {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 10px;
+    margin-top: 9px;
+
+    background-color: #fff8fb;
+    border: 1px solid #f0d3df;
+    border-radius: 12px;
+
+    cursor: pointer;
+}
+
+.opcao-entrega input {
+    width: 18px;
+    height: 18px;
+    accent-color: #e75480;
+    flex-shrink: 0;
+}
+
+.opcao-entrega span {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.opcao-entrega strong {
+    color: #805466;
+    font-size: 13px;
+}
+
+.opcao-entrega small {
+    color: #888888;
+    font-size: 11px;
+}
+
+/* Cupom */
+
+.secao-cupom {
+    padding: 16px;
+
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+.campo-cupom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.campo-cupom input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+
+    border: 1px solid #e4cbd5;
+    border-radius: 9px;
+
+    font-size: 13px;
+    outline: none;
+}
+
+.campo-cupom input:focus {
+    border-color: #e75480;
+}
+
+.campo-cupom button {
+    width: auto;
+    padding: 12px 16px;
+
+    background-color: #e75480;
+    color: #ffffff;
+
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+#mensagemCupom {
+    color: #805466;
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* Resumo do pedido */
+
+.resumo-carrinho {
+    padding: 18px;
+
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.linha-resumo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 10px 0;
+
+    color: #777777;
+    font-size: 13px;
+
+    border-bottom: 1px solid #f3dce5;
+}
+
+.linha-total {
+    color: #805466;
+    font-size: 16px;
+    border-bottom: none;
+    margin-top: 5px;
+}
+
+.linha-total strong:last-child {
+    color: #e75480;
+    font-size: 19px;
+}
+
+/* Finalizar pedido */
+
+.botao-finalizar {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+
+    background-color: #e75480;
+    color: #ffffff;
+
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: background-color 0.3s;
+}
+
+.botao-finalizar:hover {
+    background-color: #d94370;
+}
+
+/* Responsividade */
+
+@media (max-width: 360px) {
+
+    .pagina-carrinho {
+        padding: 15px 10px 30px;
+    }
+
+    .cabecalho-carrinho h1 {
+        font-size: 24px;
+    }
+
+    .imagem-item-carrinho {
+        width: 75px;
+        height: 85px;
+    }
+
+    .item-carrinho {
+        gap: 9px;
+        padding: 10px;
+    }
+
+    .campo-cupom button {
+        padding: 12px 10px;
+    }
+
+}
+
+
+/* ========================================
+   TELA MEUS PEDIDOS
+======================================== */
+
+/* Estrutura principal */
+
+.body-pedidos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #fff8f0;
+}
+
+.tela-pedidos {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 20px 15px 110px;
+
+    background-color: #fff0f5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho-pedidos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    width: 100%;
+    padding: 10px 0;
+}
+
+.voltar-pedidos {
+    position: absolute;
+    left: 0;
+
+    color: #e75480;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.cabecalho-pedidos h1 {
+    margin: 0;
+
+    color: #805466;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+/* ========================================
+   SEÇÃO DOS PEDIDOS
+======================================== */
+
+.secao-pedidos {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.subtitulo-pedidos {
+    margin: 0;
+
+    color: #805466;
+    font-size: 20px;
+}
+
+
+/* ========================================
+   LISTA DE PEDIDOS
+======================================== */
+
+.lista-pedidos {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ========================================
+   CARTÃO DO PEDIDO
+======================================== */
+
+.cartao-lista-pedido {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5c5d7;
+    border-radius: 16px;
+
+    box-shadow: 0 3px 8px rgba(180, 80, 120, 0.12);
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: transform 0.2s;
+}
+
+.cartao-lista-pedido:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================
+   IMAGEM DO PEDIDO
+======================================== */
+
+.miniatura-pedido {
+    width: 75px;
+    height: 75px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+
+/* ========================================
+   INFORMAÇÕES DO PEDIDO
+======================================== */
+
+.info-lista-pedido {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-lista-pedido strong {
+    color: #805466;
+    font-size: 15px;
+}
+
+.info-lista-pedido small {
+    color: #888888;
+    font-size: 11px;
+}
+
+.info-lista-pedido b {
+    color: #e75480;
+    font-size: 15px;
+}
+
+
+/* ========================================
+   STATUS E SETA
+======================================== */
+
+.lado-pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.etiqueta-status {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   CORES DOS STATUS
+======================================== */
+
+/* Em preparação */
+
+.status-preparando {
+    background-color: #fff0c2;
+    color: #a66a00;
+}
+
+
+/* Saiu para entrega */
+
+.status-entrega {
+    background-color: #dcecff;
+    color: #2865a6;
+}
+
+
+/* Entregue */
+
+.status-entregue {
+    background-color: #d9f5df;
+    color: #267a3b;
+}
+
+
+/* Cancelado */
+
+.status-cancelado {
+    background-color: #ffe0e0;
+    color: #c03939;
+}
+
+
+/* ========================================
+   SETA DO PEDIDO
+======================================== */
+
+.seta-pedido {
+    color: #e75480;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   MENSAGEM DE LISTA VAZIA
+======================================== */
+
+.mensagem-vazia {
+    padding: 25px 15px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5c5d7;
+    border-radius: 15px;
+
+    color: #805466;
+    font-size: 14px;
+
+    text-align: center;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 360px) {
+
+    .cartao-lista-pedido {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .miniatura-pedido {
+        width: 60px;
+        height: 60px;
+    }
+
+    .info-lista-pedido strong {
+        font-size: 13px;
+    }
+
+    .info-lista-pedido small {
+        font-size: 10px;
+    }
+
+    .etiqueta-status {
+        padding: 5px 7px;
+        font-size: 9px;
+    }
+
+}
+
+
+
+/* ========================================
+   TELA MEU PERFIL
+======================================== */
+
+/* Estrutura principal */
+
+.body-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #fff8f0;
+}
+
+.pagina-perfil {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 20px 15px 110px;
+
+    background-color: #fff0f5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 0;
+}
+
+.cabecalho-perfil h1 {
+    color: #805466;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+/* ========================================
+   CARTÃO DO USUÁRIO
+======================================== */
+
+.cartao-usuario {
+    width: 100%;
+
+    padding: 18px 14px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5c5d7;
+    border-radius: 17px;
+
+    box-shadow: 0 3px 8px rgba(180, 80, 120, 0.10);
+}
+
+.detalhes-usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Avatar */
+
+.avatar {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+
+/* Dados do usuário */
+
+.dados-usuario {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.etiqueta {
+    width: fit-content;
+
+    padding: 4px 9px;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.dados-usuario h2 {
+    color: #805466;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.dados-usuario p {
+    color: #888888;
+    font-size: 11px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    overflow-wrap: anywhere;
+}
+
+.dados-usuario p i {
+    color: #e75480;
+}
+
+
+/* Botão editar */
+
+.editar-perfil {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.editar-perfil:hover {
+    background-color: #f5c5d9;
+}
+
+
+/* ========================================
+   SEÇÃO MINHA CONTA
+======================================== */
+
+.secao-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cabecalho-secao-perfil h2 {
+    color: #805466;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.cabecalho-secao-perfil p {
+    color: #888888;
+    font-size: 12px;
+}
+
+
+/* ========================================
+   LISTA DE OPÇÕES
+======================================== */
+
+.lista-opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+
+/* Cartões das opções */
+
+.opcao-perfil {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 12px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5d5e1;
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    box-shadow: 0 2px 6px rgba(180, 80, 120, 0.06);
+
+    transition: transform 0.2s;
+}
+
+.opcao-perfil:active {
+    transform: scale(0.98);
+}
+
+
+/* Ícones das opções */
+
+.icone-opcao {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+}
+
+.icone-opcao.rosa {
+    background-color: #ffe1eb;
+    color: #e75480;
+}
+
+.icone-opcao.verde {
+    background-color: #e0f5e8;
+    color: #42a66b;
+}
+
+.icone-opcao.roxo {
+    background-color: #eee4ff;
+    color: #9265c7;
+}
+
+.icone-opcao.amarelo {
+    background-color: #fff2d5;
+    color: #d69a25;
+}
+
+.icone-opcao.azul {
+    background-color: #e1efff;
+    color: #528aca;
+}
+
+
+/* Textos das opções */
+
+.texto-opcao {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.texto-opcao strong {
+    color: #805466;
+    font-size: 14px;
+}
+
+.texto-opcao small {
+    color: #999999;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* Setas */
+
+.seta-opcao {
+    flex-shrink: 0;
+
+    color: #e75480;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   BOTÃO SAIR DA CONTA
+======================================== */
+
+.secao-sair {
+    width: 100%;
+}
+
+.botao-sair {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px;
+
+    background-color: #ffffff;
+    color: #d94370;
+
+    border: 1px solid #f5c5d7;
+    border-radius: 13px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: background-color 0.2s;
+}
+
+.botao-sair:hover {
+    background-color: #ffe5ed;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.rodape-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    padding: 5px 0 10px;
+
+    color: #b77b94;
+    text-align: center;
+}
+
+.rodape-perfil i {
+    color: #e75480;
+    font-size: 23px;
+}
+
+.rodape-perfil p {
+    font-size: 11px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 360px) {
+
+    .pagina-perfil {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .cartao-usuario {
+        padding: 14px 10px;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 21px;
+    }
+
+    .dados-usuario h2 {
+        font-size: 13px;
+    }
+
+    .dados-usuario p {
+        font-size: 10px;
+    }
+
+    .opcao-perfil {
+        gap: 9px;
+        padding: 11px 9px;
+    }
+
+    .icone-opcao {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .texto-opcao strong {
+        font-size: 12px;
+    }
+
+    .texto-opcao small {
+        font-size: 10px;
+    }
+
+}
+
+
+/* ========================================
+   TELAS DO PERFIL - CONFIGURAÇÕES GERAIS
+======================================== */
+
+.body-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #fff8f0;
+}
+
+.pagina {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 20px 15px 35px;
+
+    background-color: #fff0f5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ========================================
+   CABEÇALHO DAS TELAS
+======================================== */
+
+.pagina-topo {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 8px 0;
+}
+
+.pagina-topo > section {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.pagina-topo small {
+    color: #e75480;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.pagina-topo h1 {
+    color: #805466;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.pagina-topo .voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin: 0;
+
+    color: #e75480;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+/* ========================================
+   CARTÃO DE INTRODUÇÃO
+======================================== */
+
+.cartao-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 22px 18px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5d5e1;
+    border-radius: 17px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 8px rgba(180, 80, 120, 0.08);
+}
+
+.intro-icone {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border-radius: 16px;
+
+    font-size: 25px;
+}
+
+.cartao-intro h2 {
+    color: #805466;
+    font-size: 19px;
+}
+
+.cartao-intro p {
+    color: #888888;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   FORMULÁRIOS
+======================================== */
+
+.formulario {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    padding: 20px 16px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5d5e1;
+    border-radius: 17px;
+
+    box-shadow: 0 3px 8px rgba(180, 80, 120, 0.07);
+}
+
+.formulario h2 {
+    color: #805466;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.formulario label {
+    color: #805466;
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-top: 5px;
+}
+
+.formulario > input {
+    width: 100%;
+    padding: 13px;
+
+    background-color: #fffafd;
+
+    border: 1px solid #e9cbd7;
+    border-radius: 10px;
+
+    color: #555555;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.formulario > input:focus {
+    border-color: #e75480;
+    box-shadow: 0 0 0 2px rgba(231, 84, 128, 0.10);
+}
+
+
+/* ========================================
+   BOTÕES DAS TELAS
+======================================== */
+
+.botao-principal {
+    width: 100%;
+    min-height: 47px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 10px;
+    padding: 13px;
+
+    background-color: #e75480;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 11px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: #d94370;
+}
+
+.link-botao {
+    box-sizing: border-box;
+}
+
+.botao-secundario {
+    width: 100%;
+    min-height: 43px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 11px;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border: 1px solid #f3c2d4;
+    border-radius: 11px;
+
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+
+    transition: background-color 0.3s;
+}
+
+.botao-secundario:hover {
+    background-color: #f5c5d9;
+}
+
+
+/* ========================================
+   1. TELA MEUS DADOS
+======================================== */
+
+/* Regras específicas adicionais */
+
+.formulario input::placeholder {
+    color: #aaaaaa;
+}
+
+
+/* ========================================
+   2. TELA ENDEREÇOS
+======================================== */
+
+.secao-enderecos {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+
+/* Título da lista */
+
+.titulo-lista {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.titulo-lista h2,
+.titulo-lista strong {
+    color: #805466;
+    font-size: 18px;
+}
+
+.titulo-lista span,
+.titulo-lista small {
+    color: #999999;
+    font-size: 11px;
+}
+
+
+/* Cartão de endereço */
+
+.endereco-card {
+    padding: 15px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5d5e1;
+    border-radius: 16px;
+
+    box-shadow: 0 3px 8px rgba(180, 80, 120, 0.07);
+}
+
+
+/* Cabeçalho do endereço */
+
+.endereco-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone-endereco {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+}
+
+.endereco-titulo {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.endereco-titulo strong {
+    color: #805466;
+    font-size: 14px;
+}
+
+.tag-principal {
+    width: fit-content;
+
+    padding: 4px 8px;
+
+    background-color: #e0f5e8;
+    color: #368a55;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.acao-icone {
+    width: 33px;
+    height: 33px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+}
+
+
+/* Texto do endereço */
+
+.endereco-texto {
+    margin: 15px 0;
+
+    color: #777777;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 1.8;
+}
+
+
+/* Ações do endereço */
+
+.endereco-acoes {
+    display: flex;
+    gap: 20px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #f3dce5;
+}
+
+.endereco-acoes a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #e75480;
+
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.endereco-acoes a:last-child {
+    color: #d65b6b;
+}
+
+
+/* Observação */
+
+.observacao {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    padding: 12px;
+
+    background-color: #fff8e8;
+    border-radius: 11px;
+
+    color: #a67a32;
+}
+
+.observacao i {
+    margin-top: 2px;
+    font-size: 14px;
+}
+
+.observacao p {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   3. TELA ALTERAR SENHA
+======================================== */
+
+.dica-seguranca {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    padding: 13px;
+
+    margin-top: 5px;
+
+    background-color: #fff8e8;
+    border-radius: 11px;
+
+    color: #a67a32;
+}
+
+.dica-seguranca i {
+    margin-top: 2px;
+    font-size: 17px;
+}
+
+.dica-seguranca p {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   4. TELA NOTIFICAÇÕES
+======================================== */
+
+.formulario-notificacoes {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+
+/* Preferências */
+
+.preferencias {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 15px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5d5e1;
+    border-radius: 16px;
+}
+
+.preferencias legend {
+    float: left;
+    width: 100%;
+    margin-bottom: 13px;
+}
+
+.preferencias legend strong {
+    color: #805466;
+    font-size: 18px;
+}
+
+.preferencias legend small {
+    display: block;
+    margin-top: 5px;
+
+    color: #999999;
+    font-size: 11px;
+}
+
+
+/* Cada preferência */
+
+.preferencia {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 9px;
+
+    background-color: #fffafd;
+    border: 1px solid #f4dce5;
+    border-radius: 12px;
+
+    cursor: pointer;
+}
+
+.preferencia-icone {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 11px;
+
+    font-size: 17px;
+}
+
+.preferencia-icone.rosa {
+    background-color: #ffe1eb;
+    color: #e75480;
+}
+
+.preferencia-icone.amarelo {
+    background-color: #fff2d5;
+    color: #d69a25;
+}
+
+.preferencia-icone.verde {
+    background-color: #e0f5e8;
+    color: #42a66b;
+}
+
+
+/* Texto */
+
+.preferencia-texto {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.preferencia-texto strong {
+    color: #805466;
+    font-size: 12px;
+}
+
+.preferencia-texto small {
+    color: #999999;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+
+/* Checkbox */
+
+.preferencia input {
+    width: 19px;
+    height: 19px;
+
+    flex-shrink: 0;
+
+    accent-color: #e75480;
+
+    cursor: pointer;
+}
+
+
+/* Últimas notificações */
+
+.secao-notificacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mensagem-notificacoes {
+    padding: 20px 14px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5d5e1;
+    border-radius: 13px;
+
+    color: #999999;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   5. TELA AJUDA E SUPORTE
+======================================== */
+
+.secao-perguntas {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+/* Lista de perguntas */
+
+.perguntas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.perguntas details {
+    padding: 14px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5d5e1;
+    border-radius: 13px;
+
+    box-shadow: 0 2px 6px rgba(180, 80, 120, 0.05);
+}
+
+
+/* Pergunta */
+
+.perguntas summary {
+    position: relative;
+
+    padding-right: 25px;
+
+    color: #805466;
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.perguntas summary::-webkit-details-marker {
+    display: none;
+}
+
+.perguntas summary::after {
+    content: "+";
+
+    position: absolute;
+    right: 0;
+    top: -4px;
+
+    color: #e75480;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.perguntas details[open] summary::after {
+    content: "−";
+}
+
+
+/* Resposta */
+
+.perguntas details p {
+    padding-top: 12px;
+    margin-top: 12px;
+
+    border-top: 1px solid #f3dce5;
+
+    color: #888888;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* Cartão de contato */
+
+.contato-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+
+    padding: 20px 16px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #f5d5e1;
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.contato-icone {
+    width: 53px;
+    height: 53px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fce0ee;
+    color: #e75480;
+
+    border-radius: 15px;
+
+    font-size: 23px;
+}
+
+.contato-card h2 {
+    color: #805466;
+    font-size: 18px;
+}
+
+.contato-card p {
+    color: #888888;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.contato-card .botao-principal {
+    margin-top: 5px;
+}
+
+.contato-card > small {
+    color: #aaaaaa;
+    font-size: 10px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE - TODAS AS TELAS
+======================================== */
+
+@media (max-width: 360px) {
+
+    .pagina {
+        padding: 15px 10px 30px;
+        gap: 16px;
+    }
+
+    .pagina-topo h1 {
+        font-size: 22px;
+    }
+
+    .cartao-intro {
+        padding: 18px 13px;
+    }
+
+    .cartao-intro h2 {
+        font-size: 17px;
+    }
+
+    .formulario {
+        padding: 16px 12px;
+    }
+
+    .formulario > input {
+        padding: 11px;
+        font-size: 12px;
+    }
+
+    .endereco-card {
+        padding: 12px;
+    }
+
+    .preferencias {
+        padding: 11px;
+    }
+
+    .preferencia {
+        gap: 7px;
+        padding: 10px 7px;
+    }
+
+    .preferencia-icone {
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .preferencia-texto strong {
+        font-size: 11px;
+    }
+
+    .perguntas summary {
+        font-size: 12px;
+    }
+
+}
+
+
