@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+
+
+/* ==========================================
+   1. CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ==========================================
+   2. CONTAINER PRINCIPAL
+========================================== */
+
+.container {
+    width: 100%;
+    max-width: 380px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* ==========================================
+   3. LOGO DA SORVETERIA
+========================================== */
+
+.logo-area {
+    width: 100%;
+    text-align: center;
+}
+
+.sorvete {
+    font-size: 10px;
+}
+
+.titulo-curvo {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.titulo-curvo svg {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.titulo-curvo text {
+    font-family: 'Irish Grover', cursive;
+    font-size: 42px;
+    fill: #e75480;
+}
+
+.logo-area p {
+    color: #805466;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+
+/* ==========================================
+   4. CAIXAS DOS FORMULÁRIOS
+========================================== */
+
+.login-area {
+    width: 100%;
+    padding: 28px 22px;
+
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(180, 70, 110, 0.15);
+
+    text-align: center;
+}
+
+.login-area h2 {
+    color: #333333;
+    font-size: 24px;
+    margin: 0 0 8px;
+}
+
+.subtitulo {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   5. FORMULÁRIOS E CAMPOS
+========================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form > input {
+    width: 100%;
+    padding: 14px;
+
+    border: 1px solid #e4cbd5;
+    border-radius: 10px;
+
+    font-size: 15px;
+    outline: none;
+}
+
+form > input:focus {
+    border-color: #e75480;
+}
+
+
+/* ==========================================
+   6. BOTÕES
+========================================== */
+
+button {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #e75480;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d94370;
+}
+
+
+/* ==========================================
+   7. LINKS
+========================================== */
+
+.esqueci,
+.cadastro {
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.esqueci {
+    color: #e75480;
+}
+
+.cadastro {
+    color: #805466;
+    margin-top: 3px;
+}
+
+.rosa {
+    color: #e75480;
+    text-decoration: none;
+}
+
+.voltar {
+    display: inline-block;
+    color: #e75480;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    margin: 15px auto 0;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   8. TELA DE LOGIN
+========================================== */
+
+.lembrar {
+    text-align: left;
+    font-size: 13px;
+    color: #555555;
+}
+
+.lembrar label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.lembrar input {
+    accent-color: #e75480;
+}
+
+
+/* ==========================================
+   9. TELA DE CADASTRO
+========================================== */
+
+.cadastro-area h2 {
+    color: #e75454;
+}
+
+.cadastro-area form {
+    gap: 20px;
+}
+
+.termos {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    text-align: left;
+    color: #666666;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.termos input {
+    margin-top: 2px;
+    accent-color: #e75480;
+    flex-shrink: 0;
+}
+
+.voltar-login {
+    color: #666666;
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+
+.voltar-login a {
+    color: #e75480;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   10. ETAPAS DA RECUPERAÇÃO
+========================================== */
+
+.etapas {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 380px;
+    margin: 10px 0;
+}
+
+.etapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    flex: 1;
+
+    color: #997786;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.circulo {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+    background-color: #f3c9d8;
+    color: #99506a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.etapa.ativa .circulo,
+.etapa.concluida .circulo {
+    background-color: #e75480;
+    color: #ffffff;
+}
+
+.etapa.ativa span {
+    color: #c83d6a;
+    font-weight: bold;
+}
+
+.linha {
+    height: 2px;
+    background-color: #e9a4bb;
+    flex: 0.35;
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   11. RECUPERAÇÃO DE SENHA
+========================================== */
+
+.recuperar-area {
+    text-align: center;
+}
+
+.recuperar-area h2 {
+    color: #e75480;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.recuperar-area .subtitulo {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.recuperar-area form {
+    gap: 18px;
+}
+
+
+/* ==========================================
+   12. ILUSTRAÇÃO DAS TELAS
+========================================== */
+
+.sticker-email {
+    width: 95px;
+    height: 95px;
+
+    border-radius: 25px;
+    background-color: #ffe2ed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 52px;
+    margin: 0 auto 18px;
+}
+
+
+/* ==========================================
+   13. MENSAGENS E DICAS
+========================================== */
+
+.mensagem-codigo {
+    color: #e75480;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.mensagem-codigo:empty {
+    display: none;
+}
+
+.dica-senha {
+    color: #777777;
+    font-size: 12px;
+    text-align: left;
+    margin: -8px 0 0;
+}
+
+
+/* ==========================================
+   14. RESPONSIVIDADE MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .login-area {
+        padding: 24px 18px;
+    }
+
+    .cadastro-area {
+        padding: 22px 16px;
+    }
+
+    .cadastro-area h2 {
+        font-size: 22px;
+    }
+
+    .termos {
+        font-size: 11px;
+    }
+
+    .etapas {
+        gap: 2px;
+    }
+
+    .linha {
+        flex: 0.25;
+    }
+
+}

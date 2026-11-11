@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,18 @@
 
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
 
     <main class="pagina-sorvetes">
 
-        <!-- Cabeçalho -->
+        <!-- CABEÇALHO -->
         <header class="cabecalho-sorvetes">
 
-            <a href="inicio.html" class="voltar-sorvetes"
-               aria-label="Voltar">&#8249;</a>
+            <a href="inicio.html" class="voltar"
+                aria-label="Voltar para o início">
+                &#8249;
+            </a>
 
             <h1>Sorvetes</h1>
 
@@ -26,209 +30,367 @@
                 class="busca-sorvetes"
                 id="buscarSorvetes"
                 placeholder="Buscar sorvetes"
-                aria-label="Buscar sabores de sorvete"
             >
 
         </header>
 
-        
-            <section class="lista-sorvetes" id="listaSorvetes">
 
-                <!-- SORVETES -->
+        <!-- LISTA DE PRODUTOS -->
+        <section class="lista-sorvetes" id="listaSorvetes"
+            aria-label="Lista de sorvetes e sundaes">
 
-                <a href="produto.html?nome=Sorvete%20Chocolate"class="link-card-sorvete">
+            <!-- SORVETES -->
+            <section class="categoria-sorvetes">
 
-                    <article class="card-sorvete">
-                    <img src="imagens/sorvete-chocolate.png"
-                        alt="Sorvete de chocolate" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sorvete Chocolate</h2>
-                        <p>Cremoso e irresistível!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 17,70</span>
-                            <span class="tamanho-sorvete">500ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
+                <article class="card-sorvete">
+
+                    <a href="produto.html?nome=Sorvete%20Chocolate"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sorvete-chocolate.png"
+                                alt="Sorvete de chocolate"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sorvete Chocolate</h3>
+
+                            <p>Cremoso e irresistível!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 17,70</strong>
+                                <span class="tamanho-sorvete">500ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
                 </article>
 
-                </a>
 
-                <a href="produto.html?nome=Sorvete%20Morango" class="link-card-sorvete">
+                <article class="card-sorvete">
 
-                    <article class="card-sorvete">
-                    <img src="imagens/sorvete-morango.png"
-                        alt="Sorvete de morango" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sorvete Morango</h2>
-                        <p>Doce e refrescante!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 9,50</span>
-                            <span class="tamanho-sorvete">200ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
+                    <a href="produto.html?nome=Sorvete%20Morango"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sorvete-morango.png"
+                                alt="Sorvete de morango"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sorvete Morango</h3>
+
+                            <p>Doce e refrescante!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 9,50</strong>
+                                <span class="tamanho-sorvete">200ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
                 </article>
 
-                </a>
 
-                <a href="produto.html?nome=Sorvete%20Baunilha" class="link-card-sorvete">
+                <article class="card-sorvete">
 
-                    <article class="card-sorvete">
-                    <img src="imagens/sorvete-baunilha.png"
-                        alt="Sorvete de baunilha" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sorvete Baunilha</h2>
-                        <p>Clássico e delicioso!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 14,90</span>
-                            <span class="tamanho-sorvete">350ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
+                    <a href="produto.html?nome=Sorvete%20Baunilha"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sorvete-baunilha.png"
+                                alt="Sorvete de baunilha"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sorvete Baunilha</h3>
+
+                            <p>Clássico e delicioso!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 14,90</strong>
+                                <span class="tamanho-sorvete">350ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
                 </article>
 
-                </a>
 
-                <a href="produto.html?nome=Sorvete%20Flocos" class="link-card-sorvete">
+                <article class="card-sorvete">
 
-                    <article class="card-sorvete">
-                    <img src="imagens/sorvete-flocos.png"
-                        alt="Sorvete de flocos" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sorvete Flocos</h2>
-                        <p>Baunilha com chocolate!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 14,90</span>
-                            <span class="tamanho-sorvete">350ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
+                    <a href="produto.html?nome=Sorvete%20Flocos"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sorvete-flocos.png"
+                                alt="Sorvete de flocos"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sorvete Flocos</h3>
+
+                            <p>Baunilha com chocolate!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 14,90</strong>
+                                <span class="tamanho-sorvete">350ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
                 </article>
 
-                </a>
 
-                <a href="produto.html?nome=Sorvete%20Napolitano" class="link-card-sorvete">
+                <article class="card-sorvete">
 
-                    <article class="card-sorvete">
-                    <img src="imagens/sorvete-napolitano.png"
-                        alt="Sorvete napolitano" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sorvete Napolitano</h2>
-                        <p>Chocolate, morango e baunilha!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 17,70</span>
-                            <span class="tamanho-sorvete">500ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
+                    <a href="produto.html?nome=Sorvete%20Napolitano"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sorvete-napolitano.png"
+                                alt="Sorvete napolitano"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sorvete Napolitano</h3>
+
+                            <p>Chocolate, morango e baunilha!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 17,70</strong>
+                                <span class="tamanho-sorvete">500ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
                 </article>
 
-                </a>
 
-                <a href="produto.html?nome=Sorvete%20Coco" class="link-card-sorvete">
+                <article class="card-sorvete">
 
-                    <article class="card-sorvete">
-                    <img src="imagens/sorvete-coco.png"
-                        alt="Sorvete de coco" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sorvete Coco</h2>
-                        <p>Leve e cheio de sabor!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 9,50</span>
-                            <span class="tamanho-sorvete">200ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
+                    <a href="produto.html?nome=Sorvete%20Coco"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sorvete-coco.png"
+                                alt="Sorvete de coco"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sorvete Coco</h3>
+
+                            <p>Leve e cheio de sabor!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 9,50</strong>
+                                <span class="tamanho-sorvete">200ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
                 </article>
-
-                </a>
-
-                <!-- SUNDAES -->
-
-                <a href="produto.html?nome=Sundae%20Morango" class="link-card-sorvete">
-
-                    <article class="card-sorvete">
-                    <img src="imagens/sundae-morango.png"
-                        alt="Sundae de morango" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sundae Morango</h2>
-                        <p>Sorvete com calda de morango!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 20,50</span>
-                            <span class="tamanho-sorvete">500ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
-                </article>
-
-                </a>
-
-                <a href="produto.html?nome=Sundae%20Chocolate" class="link-card-sorvete">
-
-                    <article class="card-sorvete">
-                    <img src="imagens/sundae-chocolate.png"
-                        alt="Sundae de chocolate" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sundae Chocolate</h2>
-                        <p>Calda de chocolate e cremosidade!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 20,50</span>
-                            <span class="tamanho-sorvete">500ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
-                </article>
-
-                </a>
-
-                <a href="produto.html?nome=Sundae%20Caramelo" class="link-card-sorvete">
-
-                    <article class="card-sorvete">
-                    <img src="imagens/sundae-caramelo.png"
-                        alt="Sundae de caramelo" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sundae Caramelo</h2>
-                        <p>Calda doce e sabor irresistível!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 20,50</span>
-                            <span class="tamanho-sorvete">500ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
-                </article>
-
-                </a>
-
-                <a href="produto.html?nome=Sundae%20Especial" class="link-card-sorvete">
-
-                    <article class="card-sorvete">
-                    <img src="imagens/sundae-chocolate-morango.png"
-                        alt="Sundae de chocolate e morango" class="foto-sorvete">
-                    <div class="info-sorvete">
-                        <h2>Sundae Especial</h2>
-                        <p>Chocolate, morango e calda!</p>
-                        <div class="preco-tamanho">
-                            <span class="preco-sorvete">R$ 22,50</span>
-                            <span class="tamanho-sorvete">500ml</span>
-                        </div>
-                        <span class="botao-adicionar-sorvete">Ver detalhes</span>
-                    </div>
-                </article>
-
-                </a>
 
             </section>
 
+
+            <!-- SUNDAES -->
+            <section class="categoria-sorvetes">
+
+                <article class="card-sorvete">
+
+                    <a href="produto.html?nome=Sundae%20Morango"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sundae-morango.png"
+                                alt="Sundae de morango"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sundae Morango</h3>
+
+                            <p>Sorvete com calda de morango!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 20,50</strong>
+                                <span class="tamanho-sorvete">500ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
+                </article>
+
+
+                <article class="card-sorvete">
+
+                    <a href="produto.html?nome=Sundae%20Chocolate"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sundae-chocolate.png"
+                                alt="Sundae de chocolate"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sundae Chocolate</h3>
+
+                            <p>Calda de chocolate e cremosidade!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 20,50</strong>
+                                <span class="tamanho-sorvete">500ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
+                </article>
+
+
+                <article class="card-sorvete">
+
+                    <a href="produto.html?nome=Sundae%20Caramelo"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sundae-caramelo.png"
+                                alt="Sundae de caramelo"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sundae Caramelo</h3>
+
+                            <p>Calda doce e sabor irresistível!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 20,50</strong>
+                                <span class="tamanho-sorvete">500ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
+                </article>
+
+
+                <article class="card-sorvete">
+
+                    <a href="produto.html?nome=Sundae%20Especial"
+                        class="link-card-sorvete">
+
+                        <figure>
+                            <img src="imagens/sundae-chocolate-morango.png"
+                                alt="Sundae de chocolate e morango"
+                                class="foto-sorvete">
+                        </figure>
+
+                        <section class="info-sorvete">
+
+                            <h3>Sundae Especial</h3>
+
+                            <p>Chocolate, morango e calda!</p>
+
+                            <section class="preco-tamanho">
+                                <strong class="preco-sorvete">R$ 22,50</strong>
+                                <span class="tamanho-sorvete">500ml</span>
+                            </section>
+
+                            <span class="botao-adicionar-sorvete">
+                                Ver detalhes
+                            </span>
+
+                        </section>
+
+                    </a>
+
+                </article>
+
+            </section>
+
+        </section>
+
+
+        <!-- MENSAGEM DE PESQUISA VAZIA -->
         <p id="mensagemVazia" class="mensagem-vazia" hidden>
             Nenhum sabor encontrado.
         </p>
 
-
     </main>
 
+
     <!-- Menu inferior -->
-    <nav class="menu-inferior">
+    <nav class="menu-inferior" aria-label="Menu principal">
 
         <a href="inicio.html" class="item-menu ativo">
             <span class="icone">&#8962;</span>
@@ -258,33 +420,40 @@
     </nav>
 
 
+    <!-- JAVASCRIPT -->
     <script src="js/carrinho.js"></script>
     <script src="js/sorvetes.js"></script>
 
-
-
-    <!-- Pesquisa de sabores -->
     <script>
         const busca = document.getElementById("buscarSorvetes");
         const produtos = document.querySelectorAll(".link-card-sorvete");
         const mensagem = document.getElementById("mensagemVazia");
 
         busca.addEventListener("input", function () {
+
             const pesquisa = busca.value.toLowerCase().trim();
+
             let encontrados = 0;
 
             produtos.forEach(function (produto) {
-                const nome = produto.querySelector("h2").textContent.toLowerCase();
+
+                const nome = produto.querySelector("h3").textContent.toLowerCase();
 
                 if (nome.includes(pesquisa)) {
-                    produto.style.display = "block";
+
+                    produto.closest(".card-sorvete").hidden = false;
                     encontrados++;
+
                 } else {
-                    produto.style.display = "none";
+
+                    produto.closest(".card-sorvete").hidden = true;
+
                 }
+
             });
 
             mensagem.hidden = encontrados !== 0;
+
         });
     </script>
 

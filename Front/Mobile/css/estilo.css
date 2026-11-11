@@ -190,9 +190,9 @@ button:hover {
     display: inline-block;
     color: #e75480;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 30px;
     white-space: nowrap;
-    margin: 15px auto 0;
+    margin: 20px auto 0;
 }
 
 .voltar:hover {
@@ -251,17 +251,6 @@ button:hover {
     flex-shrink: 0;
 }
 
-.voltar-login {
-    color: #666666;
-    font-size: 13px;
-    margin: 5px 0 0;
-}
-
-.voltar-login a {
-    color: #e75480;
-    font-weight: bold;
-    text-decoration: none;
-}
 
 
 /* ==========================================
@@ -484,7 +473,7 @@ button:hover {
 
 .banner img {
     width: 100%;
-    height: 170px;
+    height: 190px;
     display: block;
     object-fit: cover;
 }
@@ -881,15 +870,10 @@ button:hover {
 /* Página atual */
 
 .item-menu.ativo {
-    color: var(--pink);
+    color: #e75480;
     font-weight: bold;
 }
 
-/* Efeito ao passar o mouse */
-
-.item-menu:hover {
-    color: var(--pink-escuro);
-}
 
 /* Espaço para o conteúdo não ficar
    escondido atrás do menu */
@@ -1174,17 +1158,10 @@ button:hover {
     gap: 10px;
 }
 
-.voltar-carrinho {
-    color: #e75480;
-    font-size: 38px;
-    line-height: 1;
-    text-decoration: none;
-}
 
 .cabecalho-carrinho h1 {
     flex: 1;
-    color: #e75480;
-    font-family: 'Irish Grover', cursive;
+    color: #805466;
     font-size: 27px;
     text-align: center;
 }
@@ -1233,16 +1210,6 @@ button:hover {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Imagem */
-
-.imagem-item-carrinho {
-    width: 95px;
-    height: 105px;
-    flex-shrink: 0;
-
-    object-fit: cover;
-    border-radius: 12px;
-}
 
 /* Informações do produto */
 
@@ -1358,18 +1325,40 @@ button:hover {
     margin-bottom: 18px;
 }
 
+/* BOTÃO ESCOLHER PRODUTOS */
+
 .botao-voltar-loja {
     display: inline-block;
-    padding: 12px 18px;
+    width: 80%;
+    max-width: 250px;
+
+    margin: 20px auto;
+    padding: 13px 15px;
 
     background-color: #e75480;
     color: #ffffff;
 
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 13px;
+    border: none;
+    border-radius: 25px;
+
+    font-size: 16px;
     font-weight: bold;
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+    text-decoration: none;
+
+    box-sizing: border-box;
+    cursor: pointer;
 }
+
+.botao-voltar-loja:hover {
+    background-color: #d94370;
+}
+
+
+
+
 
 /* Opções de entrega */
 
@@ -1527,7 +1516,6 @@ button:hover {
 .botao-finalizar:hover {
     background-color: #d94370;
 }
-
 /* Responsividade */
 
 @media (max-width: 360px) {
@@ -1605,14 +1593,6 @@ button:hover {
     padding: 10px 0;
 }
 
-.voltar-pedidos {
-    position: absolute;
-    left: 0;
-
-    color: #e75480;
-    font-size: 28px;
-    text-decoration: none;
-}
 
 .cabecalho-pedidos h1 {
     margin: 0;
@@ -2346,20 +2326,6 @@ button:hover {
     font-weight: 800;
 }
 
-.pagina-topo .voltar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 38px;
-    height: 38px;
-
-    margin: 0;
-
-    color: #e75480;
-    font-size: 20px;
-    text-decoration: none;
-}
 
 
 /* ========================================
@@ -3119,4 +3085,574 @@ button:hover {
 
 }
 
+
+
+/* ==========================================
+   TELA DE SORVETES
+========================================== */
+
+/* ==========================================
+   1. CONFIGURAÇÕES GERAIS
+========================================== */
+
+.pagina-sorvetes {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    padding: 20px 15px 110px;
+
+    background-color: #fff0f5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ==========================================
+   2. CABEÇALHO
+========================================== */
+
+.cabecalho-sorvetes {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.cabecalho-sorvetes h1 {
+    flex: 1;
+    text-align: center;
+
+    color: #805466;
+    font-size: 30px;
+}
+
+
+
+/* ==========================================
+   3. CAMPO DE PESQUISA
+========================================== */
+
+.busca-sorvetes {
+    width: 100%;
+    padding: 13px 15px;
+
+    border: 1px solid #e4cbd5;
+    border-radius: 12px;
+
+    background-color: #ffffff;
+
+    font-size: 14px;
+    outline: none;
+}
+
+.busca-sorvetes:focus {
+    border-color: #e75480;
+}
+
+
+/* ==========================================
+   4. LISTA DE PRODUTOS
+========================================== */
+
+.lista-sorvetes {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.categoria-sorvetes {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ==========================================
+   6. CARDS DOS PRODUTOS
+========================================== */
+
+.card-sorvete {
+    width: 100%;
+
+    background-color: #ffffff;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 12px rgba(180, 70, 110, 0.12);
+
+    overflow: hidden;
+
+    transition: transform 0.2s;
+}
+
+.card-sorvete:hover {
+    transform: translateY(-3px);
+}
+
+.link-card-sorvete {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+    padding: 12px;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-card-sorvete figure {
+    width: 115px;
+    min-width: 115px;
+    height: 115px;
+
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.foto-sorvete {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   7. INFORMAÇÕES DOS PRODUTOS
+========================================== */
+
+.info-sorvete {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.info-sorvete h3 {
+    color: #333333;
+    font-size: 16px;
+}
+
+.info-sorvete p {
+    color: #805466;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+/* ==========================================
+   8. PREÇO E TAMANHO
+========================================== */
+
+.preco-tamanho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 5px;
+}
+
+.preco-sorvete {
+    color: #e75480;
+    font-size: 16px;
+}
+
+.tamanho-sorvete {
+    color: #805466;
+    font-size: 12px;
+
+    background-color: #fff0f5;
+
+    padding: 5px 8px;
+    border-radius: 8px;
+}
+
+
+/* ==========================================
+   9. BOTÃO VER DETALHES
+========================================== */
+
+.botao-adicionar-sorvete {
+    display: block;
+    width: 100%;
+
+    padding: 9px 8px;
+
+    background-color: #e75480;
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.link-card-sorvete:hover .botao-adicionar-sorvete {
+    background-color: #d94370;
+}
+
+
+/* ==========================================
+   10. MENSAGEM DE PESQUISA VAZIA
+========================================== */
+
+.mensagem-vazia {
+    width: 100%;
+
+    padding: 20px;
+
+    background-color: #ffffff;
+    border-radius: 12px;
+
+    color: #805466;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+
+/* ==========================================
+   12. RESPONSIVIDADE MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+
+    .pagina-sorvetes {
+        padding: 15px 10px 105px;
+    }
+
+    .cabecalho-sorvetes h1 {
+        font-size: 26px;
+    }
+
+    .link-card-sorvete {
+        gap: 10px;
+        padding: 9px;
+    }
+
+    .link-card-sorvete figure {
+        width: 95px;
+        min-width: 95px;
+        height: 105px;
+    }
+
+    .info-sorvete h3 {
+        font-size: 14px;
+    }
+
+    .info-sorvete p {
+        font-size: 12px;
+    }
+
+    .preco-sorvete {
+        font-size: 14px;
+    }
+
+    .icone {
+        font-size: 21px;
+    }
+}
+
+
+/* ==========================================
+   TELA DE BEBIDAS
+========================================== */
+
+/* ==========================================
+   1. CONFIGURAÇÕES GERAIS
+========================================== */
+
+.pagina-bebidas {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    padding: 20px 15px 110px;
+
+    background-color: #fff0f5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ==========================================
+   2. CABEÇALHO
+========================================== */
+
+.cabecalho-bebidas {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.cabecalho-bebidas h1 {
+    flex: 1;
+    text-align: center;
+
+    color: #e75480;
+    font-family: 'Irish Grover', cursive;
+    font-size: 30px;
+}
+
+
+
+/* ==========================================
+   3. CAMPO DE PESQUISA
+========================================== */
+
+.busca-bebidas {
+    width: 100%;
+    padding: 13px 15px;
+
+    border: 1px solid #e4cbd5;
+    border-radius: 12px;
+
+    background-color: #ffffff;
+
+    font-size: 14px;
+    outline: none;
+}
+
+.busca-bebidas:focus {
+    border-color: #e75480;
+}
+
+
+/* ==========================================
+   4. LISTA DE PRODUTOS
+========================================== */
+
+.lista-bebidas {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ==========================================
+   5. CARDS DOS PRODUTOS
+========================================== */
+
+.card-bebida {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 12px;
+
+    background-color: #ffffff;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 12px rgba(180, 70, 110, 0.12);
+
+    overflow: hidden;
+
+    transition: transform 0.2s;
+}
+
+.card-bebida:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   6. LINK E IMAGEM DO PRODUTO
+========================================== */
+
+.link-card-bebida {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-card-bebida > img {
+    width: 100px;
+    min-width: 100px;
+    height: 110px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+
+/* ==========================================
+   7. INFORMAÇÕES DOS PRODUTOS
+========================================== */
+
+.info-bebida {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.info-bebida h2 {
+    color: #333333;
+    font-size: 16px;
+}
+
+.info-bebida p {
+    color: #805466;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+/* ==========================================
+   8. PREÇO E TAMANHO
+========================================== */
+
+.detalhes-bebida {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.preco-bebida {
+    color: #e75480 !important;
+    font-size: 16px !important;
+}
+
+.tamanho-bebida {
+    color: #805466;
+    font-size: 12px;
+
+    background-color: #fff0f5;
+
+    padding: 5px 8px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+
+/* ==========================================
+   9. BOTÃO ADICIONAR
+========================================== */
+
+.botao-adicionar-bebida {
+    align-self: flex-end;
+
+    padding: 9px 10px;
+
+    background-color: #e75480;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 9px;
+
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.botao-adicionar-bebida:hover {
+    background-color: #d94370;
+}
+
+
+/* ==========================================
+   10. MENSAGEM DE PESQUISA VAZIA
+========================================== */
+
+.mensagem-vazia-bebidas {
+    width: 100%;
+
+    padding: 20px;
+
+    background-color: #ffffff;
+    border-radius: 12px;
+
+    color: #805466;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   11. RESPONSIVIDADE MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+
+    .pagina-bebidas {
+        padding: 15px 10px 105px;
+    }
+
+    .cabecalho-bebidas h1 {
+        font-size: 26px;
+    }
+
+    .card-bebida {
+        gap: 7px;
+        padding: 9px;
+    }
+
+    .link-card-bebida {
+        gap: 8px;
+    }
+
+    .link-card-bebida > img {
+        width: 85px;
+        min-width: 85px;
+        height: 100px;
+    }
+
+    .info-bebida h2 {
+        font-size: 14px;
+    }
+
+    .info-bebida p {
+        font-size: 12px;
+    }
+
+    .preco-bebida {
+        font-size: 14px !important;
+    }
+
+    .botao-adicionar-bebida {
+        padding: 8px 7px;
+        font-size: 11px;
+    }
+}
 

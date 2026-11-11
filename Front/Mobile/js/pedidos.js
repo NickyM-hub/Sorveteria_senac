@@ -18,14 +18,12 @@ const PEDIDOS_PADRAO = [
             {
                 nome: "Sorvete Chocolate",
                 descricao: "500 ml • Calda de chocolate",
-                imagem: "imagens/sorvete-chocolate.png",
                 quantidade: 1,
                 preco: 17.70
             },
             {
                 nome: "Milk-shake Oreo",
                 descricao: "400 ml • Adicional de chocolate",
-                imagem: "imagens/milkshake-oreo.png",
                 quantidade: 1,
                 preco: 19.90
             }
@@ -44,7 +42,6 @@ const PEDIDOS_PADRAO = [
             {
                 nome: "Açaí",
                 descricao: "500 ml • Banana e granola",
-                imagem: "imagens/acai.png",
                 quantidade: 1,
                 preco: 19.90
             }
@@ -63,7 +60,6 @@ const PEDIDOS_PADRAO = [
             {
                 nome: "Sorvete Flocos",
                 descricao: "350 ml",
-                imagem: "imagens/sorvete-flocos.png",
                 quantidade: 1,
                 preco: 14.90
             }
@@ -453,6 +449,25 @@ function renderizarDetalhes() {
             `cancelar-pedido.html?id=${encodeURIComponent(pedido.id)}`;
 
     }
+
+
+    /* ========================================
+    BOTÃO DE AVALIAÇÃO
+    ======================================== */
+
+    const botaoAvaliar = document.getElementById("botaoAvaliar");
+
+    if (botaoAvaliar) {
+
+        const podeAvaliar = pedido.status === "Entregue";
+
+        botaoAvaliar.hidden = !podeAvaliar;
+
+        botaoAvaliar.href =
+            `avaliar-pedido.html?id=${encodeURIComponent(pedido.id)}`;
+
+    }
+
 
 }
 

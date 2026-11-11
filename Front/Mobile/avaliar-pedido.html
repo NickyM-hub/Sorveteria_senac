@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Avaliar pedido - Sorveteria</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <script src="js/avaliar-pedido.js" defer></script>
+</head>
+
+<body class="body-avaliacao">
+
+    <main class="tela-avaliacao">
+
+        <!-- Cabeçalho -->
+        <header class="cabecalho-avaliacao">
+
+            <a href="#" id="voltarPedido"
+               class="voltar"
+               aria-label="Voltar para detalhes do pedido">
+                ‹
+            </a>
+
+            <h1>Avaliar pedido</h1>
+
+        </header>
+
+        <!-- Apresentação -->
+        <section class="introducao-avaliacao">
+
+            <span class="icone-avaliacao" aria-hidden="true">★</span>
+
+            <h2>Queremos saber sua opinião!</h2>
+
+            <p>
+                Avalie cada produto do seu pedido
+                e conte como foi sua experiência.
+            </p>
+
+            <strong id="numeroPedido">Pedido #00000</strong>
+
+        </section>
+
+        <!-- Avaliações dos produtos -->
+        <section id="listaAvaliacoes"
+                 class="lista-avaliacoes"
+                 aria-label="Produtos para avaliação">
+        </section>
+
+        <!-- Mensagem do sistema -->
+        <section aria-live="polite">
+
+            <p id="mensagemAvaliacao"
+               class="mensagem-avaliacao"
+               hidden>
+            </p>
+
+        </section>
+
+        <!-- Navegação -->
+        <nav aria-label="Navegação do pedido">
+
+            <a href="meus-pedidos.html"
+               class="botao-pedido botao-secundario">
+                Voltar para meus pedidos
+            </a>
+
+        </nav>
+
+    </main>
+
+</body>
+</html>
