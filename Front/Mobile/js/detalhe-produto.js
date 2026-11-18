@@ -1,9 +1,16 @@
 
 "use strict";
 
-// Catálogo de produtos
+// ==========================================
+// 1. CATÁLOGO DE TODOS OS PRODUTOS
+// ==========================================
+
 const catalogo = {
+
+    // SORVETES
+
     "Sorvete Chocolate": {
+        tipo: "sorvete",
         imagem: "imagens/sorvete-chocolate.png",
         descricao: "Cremoso e irresistível!",
         nota: "4,8",
@@ -11,6 +18,7 @@ const catalogo = {
     },
 
     "Sorvete Morango": {
+        tipo: "sorvete",
         imagem: "imagens/sorvete-morango.png",
         descricao: "Doce e refrescante!",
         nota: "4,7",
@@ -18,6 +26,7 @@ const catalogo = {
     },
 
     "Sorvete Baunilha": {
+        tipo: "sorvete",
         imagem: "imagens/sorvete-baunilha.png",
         descricao: "Clássico e delicioso!",
         nota: "4,8",
@@ -25,6 +34,7 @@ const catalogo = {
     },
 
     "Sorvete Flocos": {
+        tipo: "sorvete",
         imagem: "imagens/sorvete-flocos.png",
         descricao: "Baunilha com pedaços de chocolate!",
         nota: "4,9",
@@ -32,6 +42,7 @@ const catalogo = {
     },
 
     "Sorvete Napolitano": {
+        tipo: "sorvete",
         imagem: "imagens/sorvete-napolitano.png",
         descricao: "Chocolate, morango e baunilha!",
         nota: "4,8",
@@ -39,13 +50,17 @@ const catalogo = {
     },
 
     "Sorvete Coco": {
+        tipo: "sorvete",
         imagem: "imagens/sorvete-coco.png",
         descricao: "Leve e cheio de sabor!",
         nota: "4,6",
         precos: { 200: 9.50, 350: 14.90, 500: 17.70 }
     },
 
+    // SUNDAES
+
     "Sundae Morango": {
+        tipo: "sundae",
         imagem: "imagens/sundae-morango.png",
         descricao: "Sorvete com deliciosa calda de morango!",
         nota: "4,9",
@@ -53,6 +68,7 @@ const catalogo = {
     },
 
     "Sundae Chocolate": {
+        tipo: "sundae",
         imagem: "imagens/sundae-chocolate.png",
         descricao: "Sorvete com calda de chocolate!",
         nota: "4,8",
@@ -60,6 +76,7 @@ const catalogo = {
     },
 
     "Sundae Caramelo": {
+        tipo: "sundae",
         imagem: "imagens/sundae-caramelo.png",
         descricao: "Sorvete com calda de caramelo!",
         nota: "4,7",
@@ -67,44 +84,106 @@ const catalogo = {
     },
 
     "Sundae Especial": {
+        tipo: "sundae",
         imagem: "imagens/sundae-chocolate-morango.png",
         descricao: "Uma combinação de chocolate e morango!",
         nota: "5,0",
         precos: { 200: 14.50, 350: 18.50, 500: 22.50 }
+    },
+
+    // BEBIDAS
+
+    "Milk-shake Oreo": {
+        tipo: "bebida",
+        imagem: "imagens/milkshake-oreo.png",
+        descricao: "Cremoso e delicioso!",
+        nota: "5,0",
+        precos: { 400: 15.50 }
+    },
+
+    "Coca-Cola": {
+        tipo: "bebida",
+        imagem: "imagens/coca-cola.png",
+        descricao: "Refrigerante gelado!",
+        nota: "4,8",
+        precos: { 350: 3.90 }
+    },
+
+    "Água Mineral": {
+        tipo: "bebida",
+        imagem: "imagens/agua-mineral.png",
+        descricao: "Clássica e deliciosa!",
+        nota: "4,7",
+        precos: { 500: 2.00 }
+    },
+
+    "Milk-shake Caramelo": {
+        tipo: "bebida",
+        imagem: "imagens/milkshake-caramelo.png",
+        descricao: "Três sabores em um só!",
+        nota: "4,9",
+        precos: { 500: 21.00 }
     }
 };
 
 
+// ==========================================
+// 2. APELIDOS USADOS NOS LINKS DAS BEBIDAS
+// ==========================================
 
-// Formata os valores em reais
+const produtosPorSlug = {
+    "milkshake-oreo": "Milk-shake Oreo",
+    "coca-cola": "Coca-Cola",
+    "agua-mineral": "Água Mineral",
+    "milkshake-caramelo": "Milk-shake Caramelo"
+};
+
+
+// ==========================================
+// 3. FORMATAÇÃO DE PREÇOS
+// ==========================================
+
 const moeda = valor => Number(valor).toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL"
 });
 
-// Recupera o produto indicado na URL
+
+// ==========================================
+// 4. IDENTIFICA O PRODUTO PELA URL
+// ==========================================
+
 const parametros = new URLSearchParams(window.location.search);
-const nomeSelecionado = parametros.get("nome");
 
-const nomeValido = Object.prototype.hasOwnProperty.call(
-    catalogo,
-    nomeSelecionado
-);
+const nomeDaURL = parametros.get("nome");
+const slugDaURL = parametros.get("produto");
 
-if (!nomeValido) {
-    alert("Produto não identificado. Volte e selecione um sorvete.");
-    window.location.replace("sorvetes.html");
+const nomeSelecionado =
+    nomeDaURL || produtosPorSlug[slugDaURL];
+
+const produto = nomeSelecionado
+    ? catalogo[nomeSelecionado]
+    : null;
+
+if (!produto) {
+
+    alert("Produto não identificado. Volte e selecione um produto.");
+
+    window.location.replace("inicio.html");
+
 } else {
 
-    const nomeAtual = nomeSelecionado;
-    const produto = catalogo[nomeAtual];
+    // ==========================================
+    // 5. MOSTRA OS DADOS DO PRODUTO
+    // ==========================================
 
-    // Preenche os dados do produto
-    document.getElementById("nomeProduto").textContent = nomeAtual;
+    document.getElementById("nomeProduto").textContent =
+        nomeSelecionado;
 
-    const imagemProduto = document.getElementById("imagemProduto");
-    imagemProduto.src = produto.imagem;
-    imagemProduto.alt = nomeAtual;
+    const imagem = document.getElementById("imagemProduto");
+
+    imagem.src = produto.imagem;
+    imagem.alt = nomeSelecionado;
 
     document.getElementById("descricaoProduto").textContent =
         produto.descricao;
@@ -112,9 +191,15 @@ if (!nomeValido) {
     document.getElementById("notaProduto").textContent =
         produto.nota;
 
-    // Carrega as avaliações do produto selecionado
-    function carregarAvaliacoes(nomeProduto) {
-        const avaliacoes = avaliacoesProdutos[nomeProduto];
+
+    // ==========================================
+    // 6. MOSTRA AS AVALIAÇÕES
+    // ==========================================
+
+    function carregarAvaliacoes(nome) {
+
+        const avaliacoes =
+            window.avaliacoesProdutos?.[nome];
 
         const notaResumo = document.getElementById("notaResumo");
         const quantidadeAvaliacoes =
@@ -127,10 +212,12 @@ if (!nomeValido) {
         }
 
         if (!avaliacoes) {
+
             notaResumo.textContent = "0,0";
             quantidadeAvaliacoes.textContent = "(0 avaliações)";
             listaAvaliacoes.textContent =
                 "Este produto ainda não possui avaliações.";
+
             return;
         }
 
@@ -142,18 +229,15 @@ if (!nomeValido) {
         listaAvaliacoes.replaceChildren();
 
         avaliacoes.comentarios.forEach(avaliacao => {
+
             const artigo = document.createElement("article");
             artigo.classList.add("item-avaliacao");
 
-            const nomeCliente = document.createElement("h3");
-            nomeCliente.textContent = avaliacao.cliente;
+            const cliente = document.createElement("h3");
+            cliente.textContent = avaliacao.cliente;
 
             const estrelas = document.createElement("p");
             estrelas.classList.add("estrelas");
-            estrelas.setAttribute(
-                "aria-label",
-                `${avaliacao.estrelas} de 5 estrelas`
-            );
 
             estrelas.textContent =
                 "★".repeat(avaliacao.estrelas) +
@@ -162,18 +246,57 @@ if (!nomeValido) {
             const comentario = document.createElement("p");
             comentario.textContent = avaliacao.comentario;
 
-            artigo.append(nomeCliente, estrelas, comentario);
+            artigo.append(cliente, estrelas, comentario);
+
             listaAvaliacoes.appendChild(artigo);
         });
     }
 
-    carregarAvaliacoes(nomeAtual);
+    carregarAvaliacoes(nomeSelecionado);
 
-    // Preenche os preços dos tamanhos
-    [200, 350, 500].forEach(tamanho => {
-        document.getElementById("preco" + tamanho).textContent =
-            moeda(produto.precos[tamanho]);
-    });
+
+    // ==========================================
+    // 7. CRIA AS OPÇÕES DE TAMANHO
+    // ==========================================
+
+    const areaTamanhos = document.getElementById("opcoesTamanho");
+
+    if (!areaTamanhos) {
+
+        console.error(
+            'Adicione ao HTML um elemento com id="opcoesTamanho".'
+        );
+
+    } else {
+
+        areaTamanhos.replaceChildren();
+
+        Object.entries(produto.precos).forEach(([tamanho, preco], indice) => {
+
+            const label = document.createElement("label");
+
+            const radio = document.createElement("input");
+
+            radio.type = "radio";
+            radio.name = "tamanho";
+            radio.value = tamanho;
+            radio.checked = indice === 0;
+
+            const texto = document.createElement("span");
+
+            texto.textContent =
+                `${tamanho} ml - ${moeda(preco)}`;
+
+            label.append(radio, texto);
+
+            areaTamanhos.appendChild(label);
+        });
+    }
+
+
+    // ==========================================
+    // 8. ELEMENTOS DA TELA
+    // ==========================================
 
     const tamanhos = document.querySelectorAll(
         'input[name="tamanho"]'
@@ -185,8 +308,19 @@ if (!nomeValido) {
 
     const quantidade = document.getElementById("quantidadeProduto");
 
-    // Calcula o preço de acordo com as escolhas
+    const precoProduto = document.getElementById("precoProduto");
+
+    const totalProduto = document.getElementById("totalProduto");
+
+    const botaoAdicionar = document.getElementById("adicionarCarrinho");
+
+
+    // ==========================================
+    // 9. CALCULA O VALOR DO PEDIDO
+    // ==========================================
+
     function calcularTotal() {
+
         const tamanhoSelecionado = document.querySelector(
             'input[name="tamanho"]:checked'
         );
@@ -196,6 +330,7 @@ if (!nomeValido) {
         }
 
         const tamanho = Number(tamanhoSelecionado.value);
+
         const precoBase = produto.precos[tamanho];
 
         const adicionaisSelecionados = Array.from(adicionais)
@@ -211,16 +346,25 @@ if (!nomeValido) {
         );
 
         const totalUnitario = precoBase + totalAdicionais;
-        const qtd = Math.max(1, Number(quantidade.value) || 1);
+
+        const qtd = Math.max(
+            1,
+            Number(quantidade?.value) || 1
+        );
+
         const total = totalUnitario * qtd;
 
-        quantidade.value = qtd;
+        if (quantidade) {
+            quantidade.value = qtd;
+        }
 
-        document.getElementById("precoProduto").textContent =
-            moeda(precoBase);
+        if (precoProduto) {
+            precoProduto.textContent = moeda(precoBase);
+        }
 
-        document.getElementById("totalProduto").textContent =
-            moeda(total);
+        if (totalProduto) {
+            totalProduto.textContent = moeda(total);
+        }
 
         return {
             tamanho,
@@ -231,8 +375,12 @@ if (!nomeValido) {
         };
     }
 
-    // Atualiza os preços quando o cliente faz uma escolha
-    tamanhos.forEach(item => {
+
+    // ==========================================
+    // 10. ATUALIZA O PREÇO QUANDO MUDA A ESCOLHA
+    // ==========================================
+
+    document.querySelectorAll('input[name="tamanho"]').forEach(item => {
         item.addEventListener("change", calcularTotal);
     });
 
@@ -240,82 +388,127 @@ if (!nomeValido) {
         item.addEventListener("change", calcularTotal);
     });
 
-    quantidade.addEventListener("change", calcularTotal);
+    quantidade?.addEventListener("change", calcularTotal);
 
-    // Adiciona o produto ao carrinho
-    document.getElementById("adicionarCarrinho")
-        .addEventListener("click", () => {
 
-            const pedido = calcularTotal();
+    // ==========================================
+    // 11. ADICIONA AO CARRINHO
+    // ==========================================
 
-            if (!pedido) {
-                alert("Selecione um tamanho para continuar.");
-                return;
-            }
+    botaoAdicionar.addEventListener("click", () => {
 
-            const novoItem = {
-                nome: nomeAtual,
-                descricao: produto.descricao,
-                imagem: produto.imagem,
-                tamanho: pedido.tamanho + " ml",
-                quantidade: pedido.quantidade,
-                adicionais: pedido.adicionaisSelecionados,
-                precoUnitario: pedido.totalUnitario
-            };
+        const pedido = calcularTotal();
 
-            let carrinho = [];
+        if (!pedido) {
 
-            try {
-                carrinho = JSON.parse(
-                    localStorage.getItem("carrinhoSorveteria")
-                ) || [];
+            alert("Selecione um tamanho para continuar.");
 
-                if (!Array.isArray(carrinho)) {
-                    carrinho = [];
-                }
-            } catch {
+            return;
+        }
+
+        const novoItem = {
+
+            nome: nomeSelecionado,
+
+            tipo: produto.tipo,
+
+            descricao: produto.descricao,
+
+            imagem: produto.imagem,
+
+            tamanho: pedido.tamanho + " ml",
+
+            quantidade: pedido.quantidade,
+
+            adicionais: pedido.adicionaisSelecionados,
+
+            precoUnitario: pedido.totalUnitario
+        };
+
+
+        // Recupera os produtos já adicionados
+
+        let carrinho = [];
+
+        try {
+
+            carrinho = JSON.parse(
+                localStorage.getItem("carrinhoSorveteria")
+            ) || [];
+
+            if (!Array.isArray(carrinho)) {
                 carrinho = [];
             }
 
-            // Compara os adicionais para agrupar itens iguais
-            const chaveAdicionais = item => JSON.stringify(
-                (item.adicionais || [])
-                    .map(adicional => ({
-                        nome: adicional.nome,
-                        preco: Number(adicional.preco)
-                    }))
-                    .sort((a, b) => a.nome.localeCompare(b.nome))
-            );
+        } catch {
 
-            const existente = carrinho.find(item =>
-                item.nome === novoItem.nome &&
-                item.tamanho === novoItem.tamanho &&
-                chaveAdicionais(item) === chaveAdicionais(novoItem)
-            );
+            carrinho = [];
+        }
 
-            if (existente) {
-                existente.quantidade =
-                    (Number(existente.quantidade) || 1) +
-                    novoItem.quantidade;
-            } else {
-                carrinho.push(novoItem);
-            }
 
-            localStorage.setItem(
-                "carrinhoSorveteria",
-                JSON.stringify(carrinho)
-            );
+        // Compara os adicionais para identificar itens iguais
 
-            const mensagem =
-                document.getElementById("mensagemCarrinho");
+        const chaveAdicionais = item => JSON.stringify(
+            (item.adicionais || [])
+                .map(adicional => ({
+                    nome: adicional.nome,
+                    preco: Number(adicional.preco)
+                }))
+                .sort((a, b) => a.nome.localeCompare(b.nome))
+        );
+
+
+        const existente = carrinho.find(item =>
+
+            item.nome === novoItem.nome &&
+
+            item.tamanho === novoItem.tamanho &&
+
+            chaveAdicionais(item) === chaveAdicionais(novoItem)
+        );
+
+
+        if (existente) {
+
+            existente.quantidade =
+                (Number(existente.quantidade) || 1) +
+                novoItem.quantidade;
+
+        } else {
+
+            carrinho.push(novoItem);
+        }
+
+
+        // Salva no mesmo carrinho usado pelos outros produtos
+
+        localStorage.setItem(
+            "carrinhoSorveteria",
+            JSON.stringify(carrinho)
+        );
+
+
+        // Exibe mensagem de confirmação
+
+        const mensagem = document.getElementById("mensagemCarrinho");
+
+        if (mensagem) {
 
             mensagem.textContent =
                 "✓ Produto adicionado ao carrinho!";
 
             mensagem.hidden = false;
-            mensagem.classList.add("mostrar");
-        });
 
-    // Calcula o preço inicial
+            mensagem.classList.add("mostrar");
+        }
+
+    });
+
+
+    // ==========================================
+    // 12. CALCULA O PREÇO INICIAL
+    // ==========================================
+
     calcularTotal();
+
 }

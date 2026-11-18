@@ -236,27 +236,6 @@ function renderizarLista() {
         });
 
 
-        /* Imagem do produto */
-
-        const img = document.createElement("img");
-
-        img.className = "miniatura-pedido";
-
-        if (primeiroProduto) {
-
-            img.src = primeiroProduto.imagem;
-            img.alt = primeiroProduto.nome;
-
-        } else {
-
-            img.style.display = "none";
-
-        }
-
-        img.onerror = () => {
-            img.style.display = "none";
-        };
-
 
         /* Informações do pedido */
 
@@ -303,7 +282,7 @@ function renderizarLista() {
 
         /* Montagem do cartão */
 
-        card.append(img, info, lado);
+        card.append(info, lado);
 
         lista.appendChild(card);
 

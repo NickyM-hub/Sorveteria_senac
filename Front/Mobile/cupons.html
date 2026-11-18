@@ -45,7 +45,9 @@
         <section class="lista-cupons" aria-label="Lista de cupons">
 
             <!-- Cupom 1 -->
-            <article class="card-cupom" data-validade="2025-10-20">
+            <article class="card-cupom" 
+                     data-codigo="CLIENTE10"
+                     data-validade="2025-10-20">
 
                 <figure class="imagem-cupom">
                     <img src="imagens/cupom.png" alt="Imagem do cupom Cliente 10">
@@ -70,7 +72,9 @@
             </article>
 
             <!-- Cupom 2 -->
-            <article class="card-cupom" data-validade="2026-10-20">
+            <article class="card-cupom" 
+                     data-codigo="PEDIDO15" 
+                     data-validade="2026-10-20">
 
                 <figure class="imagem-cupom">
                     <img src="imagens/cupom.png" alt="Imagem do cupom Pedido 15">
@@ -95,7 +99,9 @@
             </article>
 
             <!-- Cupom 3 -->
-            <article class="card-cupom" data-validade="2026-11-20">
+            <article class="card-cupom" 
+                     data-codigo="ACAI5"
+                     data-validade="2026-11-20">
 
                 <figure class="imagem-cupom">
                     <img src="imagens/cupom.png" alt="Imagem do cupom Açaí 5">
@@ -120,7 +126,9 @@
             </article>
 
             <!-- Cupom 4 -->
-            <article class="card-cupom" data-validade="2026-10-20">
+            <article class="card-cupom" 
+                     data-codigo="FRETEGRATIS"
+                     data-validade="2026-10-20">
 
                 <figure class="imagem-cupom">
                     <img src="imagens/cupom.png" alt="Imagem do cupom Frete Grátis">
@@ -145,7 +153,9 @@
             </article>
 
             <!-- Cupom 5 -->
-            <article class="card-cupom" data-validade="2026-10-20">
+            <article class="card-cupom"
+                      data-codigo="LEVE2"
+                     data-validade="2026-10-20">
 
                 <figure class="imagem-cupom">
                     <img src="imagens/cupom.png" alt="Imagem do cupom Leve 2">
@@ -205,74 +215,9 @@
     </nav>
 
     </footer>
+    
+    <script src="js/cupons.js" defer></script>
 
-    <script>
-
-        // Seleciona os botões de filtros
-        const botoesFiltro = document.querySelectorAll(".filtro");
-
-        // Seleciona todos os cartões de cupons
-        const cupons = document.querySelectorAll(".card-cupom");
-
-        // Percorre os botões
-        botoesFiltro.forEach(botao => {
-
-            botao.addEventListener("click", () => {
-
-                // Remove a seleção dos outros botões
-                botoesFiltro.forEach(item => {
-                    item.classList.remove("ativo");
-                });
-
-                // Ativa o botão clicado
-                botao.classList.add("ativo");
-
-                // Descobre qual filtro foi selecionado
-                const filtroSelecionado = botao.dataset.filtro;
-
-                // Data atual
-                const hoje = new Date();
-                hoje.setHours(0, 0, 0, 0);
-
-                // Percorre os cupons
-                cupons.forEach(cupom => {
-
-                    // Obtém a validade do cupom
-                    const dataValidade = cupom.dataset.validade;
-
-                    const partes = dataValidade.split("-");
-
-                    const validade = new Date(
-                        Number(partes[0]),
-                        Number(partes[1]) - 1,
-                        Number(partes[2])
-                    );
-
-                    // Verifica a situação do cupom
-                    const estaAtivo = validade >= hoje;
-
-                    // Aplica o filtro
-                    if (filtroSelecionado === "todos") {
-
-                        cupom.hidden = false;
-
-                    } else if (filtroSelecionado === "ativos") {
-
-                        cupom.hidden = !estaAtivo;
-
-                    } else if (filtroSelecionado === "expirados") {
-
-                        cupom.hidden = estaAtivo;
-
-                    }
-
-                });
-
-            });
-
-        });
-
-    </script>
 
 </body>
 </html>
