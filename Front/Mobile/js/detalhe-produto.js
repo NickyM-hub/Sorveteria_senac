@@ -314,6 +314,27 @@ if (!produto) {
 
     const botaoAdicionar = document.getElementById("adicionarCarrinho");
 
+    // Esconde os adicionais quando o produto for uma bebida
+
+    const secaoAdicionais = document.getElementById("secaoAdicionais");
+
+    if (produto.tipo === "bebida") {
+        secaoAdicionais.hidden = true;
+    } else {
+        secaoAdicionais.hidden = false;
+    }
+
+
+    // Altera o destino do botão conforme o produto
+
+    const botaoContinuar = document.getElementById("botaoContinuar");
+
+    if (produto.tipo === "bebida") {
+        botaoContinuar.href = "bebidas.html";
+    } else {
+        botaoContinuar.href = "sorvetes.html";
+    }
+
 
     // ==========================================
     // 9. CALCULA O VALOR DO PEDIDO

@@ -1,40 +1,53 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Detalhes do produto - Sorveteria</title>
+
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
 
 <main class="pagina-produto">
 
     <header class="topo-produto">
-        <a href="sorvetes.html" class="voltar" aria-label="Voltar">
+
+        <a href="sorvetes.html" id="botaoVoltar" class="voltar" aria-label="Voltar">
             &#8249;
         </a>
+
         <h1>Detalhes do produto</h1>
+
     </header>
+
 
     <!-- Informações do produto -->
     <section class="detalhe-produto">
 
         <img id="imagemProduto"
              src="imagens/sorvete-chocolate.png"
-             alt="Sorvete selecionado"
+             alt="Produto selecionado"
              class="imagem-detalhe">
 
         <div class="informacoes-detalhe">
+
             <h2 id="nomeProduto">Sorvete Chocolate</h2>
 
             <div class="nota-produto">
+
                 <span class="estrelas">★★★★★</span>
+
                 <span id="notaProduto">4,8</span>
+
                 <a href="#avaliacoes" class="link-avaliacoes">
                     Ver avaliações
                 </a>
+
             </div>
 
             <p id="descricaoProduto">
@@ -44,142 +57,200 @@
             <strong class="preco-detalhe" id="precoProduto">
                 R$ 9,50
             </strong>
+
         </div>
 
     </section>
+
 
     <!-- Tamanhos -->
-    <section class="opcoes-produto">
+    <section class="opcoes-produto" id="secaoTamanhos">
+
         <h2>Escolha o tamanho</h2>
+
         <p class="texto-auxiliar">Selecione uma opção:</p>
 
-        <div class="opcoes-tamanho">
+        <div class="opcoes-tamanho" id="opcoesTamanho">
 
-            <label class="opcao-tamanho">
-                <input type="radio" name="tamanho" value="200" checked>
-                <span>200 ml</span>
-                <small id="preco200">R$ 9,50</small>
-            </label>
-
-            <label class="opcao-tamanho">
-                <input type="radio" name="tamanho" value="350">
-                <span>350 ml</span>
-                <small id="preco350">R$ 14,90</small>
-            </label>
-
-            <label class="opcao-tamanho">
-                <input type="radio" name="tamanho" value="500">
-                <span>500 ml</span>
-                <small id="preco500">R$ 17,70</small>
-            </label>
+            <!-- Os tamanhos serão carregados pelo JavaScript -->
 
         </div>
+
     </section>
 
+
     <!-- Adicionais -->
-    <section class="opcoes-produto">
+    <section class="opcoes-produto" id="secaoAdicionais">
+
         <h2>Escolha seus adicionais</h2>
-        <p class="texto-auxiliar">Adicione seus acompanhamentos favoritos.</p>
+
+        <p class="texto-auxiliar">
+            Adicione seus acompanhamentos favoritos.
+        </p>
 
         <div class="lista-adicionais">
 
             <label class="item-adicional">
+
                 <span>
-                    <input type="checkbox" name="adicional"
-                           value="Granulado" data-preco="2.00">
+
+                    <input type="checkbox"
+                           name="adicional"
+                           value="Granulado"
+                           data-preco="2.00">
+
                     Granulado
+
                 </span>
+
                 <strong>+ R$ 2,00</strong>
+
             </label>
 
+
             <label class="item-adicional">
+
                 <span>
-                    <input type="checkbox" name="adicional"
-                           value="Calda de chocolate" data-preco="2.50">
+
+                    <input type="checkbox"
+                           name="adicional"
+                           value="Calda de chocolate"
+                           data-preco="2.50">
+
                     Calda de chocolate
+
                 </span>
+
                 <strong>+ R$ 2,50</strong>
+
             </label>
 
+
             <label class="item-adicional">
+
                 <span>
-                    <input type="checkbox" name="adicional"
-                           value="Calda de morango" data-preco="2.50">
+
+                    <input type="checkbox"
+                           name="adicional"
+                           value="Calda de morango"
+                           data-preco="2.50">
+
                     Calda de morango
+
                 </span>
+
                 <strong>+ R$ 2,50</strong>
+
             </label>
 
+
             <label class="item-adicional">
+
                 <span>
-                    <input type="checkbox" name="adicional"
-                           value="Leite em pó" data-preco="3.00">
+
+                    <input type="checkbox"
+                           name="adicional"
+                           value="Leite em pó"
+                           data-preco="3.00">
+
                     Leite em pó
+
                 </span>
+
                 <strong>+ R$ 3,00</strong>
+
             </label>
 
+
             <label class="item-adicional">
+
                 <span>
-                    <input type="checkbox" name="adicional"
-                           value="Confete" data-preco="2.00">
+
+                    <input type="checkbox"
+                           name="adicional"
+                           value="Confete"
+                           data-preco="2.00">
+
                     Confete
+
                 </span>
+
                 <strong>+ R$ 2,00</strong>
+
             </label>
 
         </div>
-        
+
     </section>
 
-     <!-- Resumo do pedido -->
+
+    <!-- Resumo do pedido -->
     <section class="resumo-pedido">
 
         <div class="total-produto">
+
             <span>Total do produto</span>
+
             <strong id="totalProduto">R$ 9,50</strong>
+
         </div>
 
+
         <label for="quantidadeProduto">Quantidade</label>
+
         <select id="quantidadeProduto">
+
             <option value="1">1 unidade</option>
+
             <option value="2">2 unidades</option>
+
             <option value="3">3 unidades</option>
+
             <option value="4">4 unidades</option>
+
             <option value="5">5 unidades</option>
+
         </select>
 
+
         <p id="mensagemCarrinho"
-        class="mensagem-produto"
-        role="status"
-        hidden></p>
+           class="mensagem-produto"
+           role="status"
+           hidden></p>
 
     </section>
+
 
     <!-- Avaliações dos clientes -->
     <section class="secao-avaliacoes" id="avaliacoes">
 
         <header class="titulo-avaliacoes">
+
             <h2>Avaliações dos clientes</h2>
 
             <p class="resumo-nota">
+
                 <strong id="notaResumo">4,8</strong> de 5
+
                 <span id="quantidadeAvaliacoes">
                     (12 avaliações)
                 </span>
+
             </p>
+
         </header>
+
 
         <div
             id="listaAvaliacoes"
             class="lista-avaliacoes"
-            aria-live="polite"
-        >
+            aria-live="polite">
+
             <!-- As avaliações serão inseridas pelo JavaScript -->
+
         </div>
 
     </section>
-
 
 
     <!-- Barra inferior com botões -->
@@ -189,13 +260,18 @@
             Adicionar ao carrinho
         </button>
 
-        <a href="sorvetes.html" class="botao-continuar">
+        <a href="sorvetes.html"
+           id="botaoContinuar"
+           class="botao-continuar">
+
             Continuar comprando
+
         </a>
 
     </nav>
 
 </main>
+
 
 <script src="js/detalhe-produto.js"></script>
 
