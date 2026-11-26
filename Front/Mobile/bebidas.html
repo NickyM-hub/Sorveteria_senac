@@ -1,55 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bebidas - Sorveteria</title>
 
     <link rel="stylesheet" href="css/estilo.css">
+
 </head>
 
 <body>
 
     <main class="pagina-bebidas">
 
-        <!-- Cabeçalho -->
+        <!-- CABEÇALHO -->
         <header class="cabecalho-bebidas">
 
-            <a class="voltar"
-               href="inicio.html"
+            <a href="inicio.html"
+               class="voltar"
                aria-label="Voltar para o início">
-                ‹
+               &#8249;
+
             </a>
 
             <h1>Bebidas</h1>
 
+            <!-- PESQUISA -->
+            <input
+                type="search"
+                class="busca-bebidas"
+                id="buscarBebidas"
+                placeholder="Buscar bebidas"
+                aria-label="Buscar bebidas">
+
         </header>
 
-        <!-- Pesquisa de bebidas -->
-        <input
-            type="search"
-            class="busca-bebidas"
-            placeholder="Buscar bebidas"
-            aria-label="Buscar bebidas"
-        >
 
-        <!-- Lista de bebidas -->
-        <section class="lista-bebidas" aria-label="Lista de bebidas">
+        <!-- LISTA DE BEBIDAS -->
+        <section
+            class="lista-bebidas"
+            id="listaBebidas"
+            aria-label="Lista de bebidas">
 
-            <!-- Milk-shake Oreo -->
+
+            <!-- MILK-SHAKE OREO -->
             <article class="card-bebida">
 
-                <a href="produtos.html?nome=milkshake-oreo"
+                <a href="produto.html?nome=Milk-shake%20Oreo&origem=bebidas"
                    class="link-card-bebida">
 
                     <img
                         src="imagens/milkshake-oreo.png"
                         alt="Milk-shake de Oreo"
-                        class="foto-bebidas"
-                    >
+                        class="foto-bebidas">
 
                     <section class="info-bebida">
 
@@ -66,28 +73,26 @@
                         </section>
 
                         <span class="botao-adicionar-bebida">
-                                Ver detalhes
-                            </span>
+                            Ver detalhes
+                        </span>
 
                     </section>
 
                 </a>
 
-                
-
             </article>
 
-            <!-- Coca-Cola -->
+
+            <!-- COCA-COLA -->
             <article class="card-bebida">
 
-                <a href="produtos.html?produto=coca-cola"
+                <a href="produto.html?nome=Coca-Cola&origem=bebidas"
                    class="link-card-bebida">
 
                     <img
                         src="imagens/coca-cola.png"
                         alt="Lata de Coca-Cola"
-                        class="foto-bebidas"
-                    >
+                        class="foto-bebidas">
 
                     <section class="info-bebida">
 
@@ -104,27 +109,26 @@
                         </section>
 
                         <span class="botao-adicionar-bebida">
-                                Ver detalhes
+                            Ver detalhes
                         </span>
 
                     </section>
 
                 </a>
 
-               
             </article>
 
-            <!-- Água mineral -->
+
+            <!-- ÁGUA MINERAL -->
             <article class="card-bebida">
 
-                <a href="produtos.html?produto=agua-mineral"
+                <a href="produto.html?nome=Agua%20mineral&origem=bebidas"
                    class="link-card-bebida">
 
                     <img
                         src="imagens/agua-mineral.png"
                         alt="Garrafa de água mineral"
-                        class="foto-bebidas"
-                    >
+                        class="foto-bebidas">
 
                     <section class="info-bebida">
 
@@ -140,32 +144,31 @@
 
                         </section>
 
-                         <span class="botao-adicionar-bebida">
-                                Ver detalhes
+                        <span class="botao-adicionar-bebida">
+                            Ver detalhes
                         </span>
 
                     </section>
 
                 </a>
 
-
             </article>
 
-            <!-- Milk-shake de caramelo -->
+
+            <!-- MILK-SHAKE CARAMELO -->
             <article class="card-bebida">
 
-                <a href="produtos.html?produto=milkshake-caramelo"
+                <a href="produto.html?nome=Milk-shake%20Caramelo&origem=bebidas"
                    class="link-card-bebida">
 
                     <img
                         src="imagens/milkshake-caramelo.png"
                         alt="Milk-shake de caramelo"
-                        class="foto-bebidas"
-                    >
+                        class="foto-bebidas">
 
                     <section class="info-bebida">
 
-                        <h2>Milk-shake caramelo</h2>
+                        <h2>Milk-shake Caramelo</h2>
 
                         <p>Três sabores em um só!</p>
 
@@ -177,8 +180,8 @@
 
                         </section>
 
-                         <span class="botao-adicionar-bebida">
-                                Ver detalhes
+                        <span class="botao-adicionar-bebida">
+                            Ver detalhes
                         </span>
 
                     </section>
@@ -188,13 +191,14 @@
             </article>
 
 
-            <!-- Milk-shake de Morango -->
+            <!-- MILK-SHAKE MORANGO -->
             <article class="card-bebida">
 
-                <a href="produtos.html?produto=milkshake-morango"
-                class="link-card-bebida">
+                <a href="produto.html?nome=Milk-shake%20Morango&origem=bebidas"
+                   class="link-card-bebida">
 
-                    <img src="imagens/milkshake-morango.png"
+                    <img
+                        src="imagens/milkshake-morango.png"
                         alt="Milk-shake de morango"
                         class="foto-bebidas">
 
@@ -205,28 +209,32 @@
                         <p>Delicioso e cheio de sabor!</p>
 
                         <section class="detalhes-bebida">
+
                             <p class="preco-bebida">R$ 18,50</p>
+
                             <span class="tamanho-bebida">400ml</span>
+
                         </section>
 
-                         <span class="botao-adicionar-bebida">
-                                Ver detalhes
+                        <span class="botao-adicionar-bebida">
+                            Ver detalhes
                         </span>
 
                     </section>
 
                 </a>
 
-
             </article>
 
-            <!-- Milk-shake Ovomaltine -->
+
+            <!-- MILK-SHAKE OVOMALTINE -->
             <article class="card-bebida">
 
-                <a href="produtos.html?produto=milkshake-ovomaltine"
-                class="link-card-bebida">
+                <a href="produto.html?nome=Milk-shake%20Ovomaltine&origem=bebidas"
+                   class="link-card-bebida">
 
-                    <img src="imagens/milkshake-ovomaltine.png"
+                    <img
+                        src="imagens/milkshake-ovomaltine.png"
                         alt="Milk-shake de Ovomaltine"
                         class="foto-bebidas">
 
@@ -237,28 +245,32 @@
                         <p>Crocante e muito cremoso!</p>
 
                         <section class="detalhes-bebida">
+
                             <p class="preco-bebida">R$ 19,50</p>
+
                             <span class="tamanho-bebida">400ml</span>
+
                         </section>
 
-                         <span class="botao-adicionar-bebida">
-                                Ver detalhes
+                        <span class="botao-adicionar-bebida">
+                            Ver detalhes
                         </span>
 
                     </section>
 
                 </a>
 
-
             </article>
 
-            <!-- Milk-shake de Ninho -->
+
+            <!-- MILK-SHAKE NINHO -->
             <article class="card-bebida">
 
-                <a href="produtos.html?produto=milkshake-ninho"
-                class="link-card-bebida">
+                <a href="produto.html?nome=Milk-shake%20Ninho&origem=bebidas"
+                   class="link-card-bebida">
 
-                    <img src="imagens/milkshake-ninho.png"
+                    <img
+                        src="imagens/milkshake-ninho.png"
                         alt="Milk-shake de leite Ninho"
                         class="foto-bebidas">
 
@@ -269,28 +281,32 @@
                         <p>Suave, doce e irresistível!</p>
 
                         <section class="detalhes-bebida">
+
                             <p class="preco-bebida">R$ 20,00</p>
+
                             <span class="tamanho-bebida">500ml</span>
+
                         </section>
 
-                         <span class="botao-adicionar-bebida">
-                                Ver detalhes
+                        <span class="botao-adicionar-bebida">
+                            Ver detalhes
                         </span>
 
                     </section>
 
                 </a>
 
-
             </article>
 
-            <!-- Milk-shake de Paçoca -->
+
+            <!-- MILK-SHAKE PAÇOCA -->
             <article class="card-bebida">
 
-                <a href="produtos.html?produto=milkshake-pacoca"
-                class="link-card-bebida">
+                <a href="produto.html?nome=Milk-shake%20Paçoca&origem=bebidas"
+                   class="link-card-bebida">
 
-                    <img src="imagens/milkshake-pacoca.png"
+                    <img
+                        src="imagens/milkshake-pacoca.png"
                         alt="Milk-shake de paçoca"
                         class="foto-bebidas">
 
@@ -301,12 +317,15 @@
                         <p>Uma combinação deliciosa!</p>
 
                         <section class="detalhes-bebida">
+
                             <p class="preco-bebida">R$ 19,00</p>
+
                             <span class="tamanho-bebida">400ml</span>
+
                         </section>
 
-                         <span class="botao-adicionar-bebida">
-                                Ver detalhes
+                        <span class="botao-adicionar-bebida">
+                            Ver detalhes
                         </span>
 
                     </section>
@@ -319,46 +338,120 @@
         </section>
 
 
-        
+        <!-- MENSAGEM DE PESQUISA VAZIA -->
+        <p id="mensagemVazia"
+           class="mensagem-vazia"
+           hidden>
+
+            Nenhuma bebida encontrada.
+
+        </p>
+
 
     </main>
 
-    <!-- Menu inferior -->
+
+    <!-- MENU INFERIOR -->
     <nav class="menu-inferior" aria-label="Menu principal">
 
         <a href="inicio.html" class="item-menu ativo">
+
             <span class="icone">&#8962;</span>
+
             <span>Início</span>
+
         </a>
+
 
         <a href="cupons.html" class="item-menu">
+
             <span class="icone">&#9737;</span>
+
             <span>Cupons</span>
+
         </a>
+
 
         <a href="carrinho.html" class="item-menu">
+
             <span class="icone">&#128722;</span>
+
             <span>Carrinho</span>
+
         </a>
+
 
         <a href="meus-pedidos.html" class="item-menu">
+
             <span class="icone">&#9776;</span>
+
             <span>Pedidos</span>
+
         </a>
 
+
         <a href="perfil.html" class="item-menu">
+
             <span class="icone">&#9818;</span>
+
             <span>Perfil</span>
+
         </a>
 
     </nav>
 
+
     <!-- JAVASCRIPT -->
     <script src="js/carrinho.js"></script>
-    <script src="js/bebida.js"></script>
 
 
+
+    <!-- PESQUISA DE BEBIDAS -->
+    <script>
+
+        const busca = document.getElementById("buscarBebidas");
+
+        const produtos = document.querySelectorAll(".link-card-bebida");
+
+        const mensagem = document.getElementById("mensagemVazia");
+
+
+        busca.addEventListener("input", function () {
+
+            const pesquisa = busca.value.toLowerCase().trim();
+
+            let encontrados = 0;
+
+
+            produtos.forEach(function (produto) {
+
+                const nome = produto.querySelector("h2").textContent.toLowerCase();
+
+                const card = produto.closest(".card-bebida");
+
+
+                if (nome.includes(pesquisa)) {
+
+                    card.hidden = false;
+
+                    encontrados++;
+
+                } else {
+
+                    card.hidden = true;
+
+                }
+
+            });
+
+
+            mensagem.hidden = encontrados !== 0;
+
+        });
+
+    </script>
 
 
 </body>
+
 </html>

@@ -7,10 +7,10 @@ function adicionarCarrinho(botao) {
     if (!card) return;
 
     const nome = card.querySelector("h2").textContent.trim();
-    const descricao = card.querySelector(".info-sorvete p").textContent.trim();
-    const precoTexto = card.querySelector(".preco-sorvete").textContent;
-    const tamanhoTexto = card.querySelector(".tamanho-sorvete").textContent.trim();
-    const imagem = card.querySelector(".foto-sorvete").getAttribute("src");
+    const descricao = card.querySelector(".info p").textContent.trim();
+    const precoTexto = card.querySelector(".preco").textContent;
+    const tamanhoTexto = card.querySelector(".tamanho").textContent.trim();
+    const imagem = card.querySelector(".foto").getAttribute("src");
 
     const precoUnitario = Number(
         precoTexto.replace("R$", "")
