@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar pedido - Pagamento</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <main class="tela-checkout tela-pagamento">
+
+        <a class="voltar" href="carrinho.html" aria-label="Voltar">‹</a>
+
+        <h1>Finalizar pedido</h1>
+
+        <!-- Etapas do pedido -->
+
+        <nav class="etapas" aria-label="Etapas do pedido">
+
+            <article class="etapa ativa">
+                <span></span>
+                <small>Entrega</small>
+            </article>
+
+            <i></i>
+
+            <article class="etapa ativa">
+                <span></span>
+                <small>Pagamento</small>
+            </article>
+
+            <i></i>
+
+            <article class="etapa">
+                <span></span>
+                <small>Confirmação</small>
+            </article>
+
+        </nav>
+
+
+        <!-- Endereço de entrega -->
+
+        <section class="secao-endereco">
+
+            <header>
+                <h2>Endereço de entrega</h2>
+
+                <button type="button" id="botaoAlterar">
+                    Alterar
+                </button>
+            </header>
+
+            <address id="enderecoAtual">
+
+                <strong id="nomeEndereco">Minha casa</strong>
+
+                <p id="ruaEndereco">Cadastre seu endereço</p>
+
+                <p id="complementoEndereco"></p>
+
+            </address>
+
+        </section>
+
+
+        <!-- Janela para alterar endereço -->
+
+        <section class="modal-endereco" id="modalEndereco" hidden>
+
+            <form id="formEndereco">
+
+                <h2>Alterar endereço</h2>
+
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" placeholder="00000-000" required>
+
+                <label for="rua">Rua</label>
+                <input type="text" id="rua" placeholder="Nome da rua" required>
+
+                <label for="numero">Número</label>
+                <input type="text" id="numero" placeholder="Número" required>
+
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" placeholder="Casa, apartamento...">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" placeholder="Bairro" required>
+
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" placeholder="Cidade" required>
+
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" placeholder="Estado" required>
+
+                <button type="submit" class="botao-principal">
+                    Salvar endereço
+                </button>
+
+                <button type="button" id="botaoCancelar">
+                    Cancelar
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Forma de pagamento -->
+
+        <section class="secao-forma">
+
+            <h2>Forma de pagamento</h2>
+
+            <article class="pix-selecionado">
+
+                <span class="icone-pix">◆</span>
+
+                <section>
+                    <strong>PIX</strong>
+                    <small>Pagamento rápido e seguro</small>
+                </section>
+
+            </article>
+
+        </section>
+
+
+        <!-- QR Code -->
+
+        <section class="area-qr">
+
+            <span class="mini-qr">▦</span>
+
+            <h2>Pagamento via PIX</h2>
+
+            <p>Escaneie o QR Code ou copie o código</p>
+
+            <figure class="qr-ilustrativo"
+                role="img"
+                aria-label="QR Code ilustrativo do PIX">
+
+                <span class="qr-canto canto-1"></span>
+                <span class="qr-canto canto-2"></span>
+                <span class="qr-canto canto-3"></span>
+                <span class="qr-miolo"></span>
+
+            </figure>
+
+            <button type="button" class="botao-copiar" id="botaoCopiar">
+                Copiar código PIX
+            </button>
+
+        </section>
+
+
+        <!-- Aviso -->
+
+        <aside class="aviso-pagamento">
+
+            <span class="aviso-icone">!</span>
+
+            <p>
+                Após confirmar, o pedido será registrado
+                como pago no protótipo.
+            </p>
+
+        </aside>
+
+
+        <button type="button"
+            class="botao-principal botao-confirmar"
+            id="botaoConfirmar">
+
+            Confirmar pagamento
+
+        </button>
+
+    </main>
+
+    <script src="js/pagamento.js"></script>
+
+</body>
+</html>
